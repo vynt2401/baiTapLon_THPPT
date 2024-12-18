@@ -28,29 +28,44 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             app.TabGroup.Position = [1 0 850 532];
 
             % Create Tim_Nghiem_Tab
+            
+            %Vỹ sẽ làm ở tab này
+            
             app.Tim_Nghiem_Tab = uitab(app.TabGroup);
             app.Tim_Nghiem_Tab.Title = 'Nghiệm';
 
             % Create Noi_Suy_Tab
+            
+            %Vỹ sẽ làm ở tab này
+            
             app.Noi_Suy_Tab = uitab(app.TabGroup);
             app.Noi_Suy_Tab.Title = 'Nội Suy';
 
             % Create Hoi_Quy_Tab
+            
+            %Tiến sẽ hồi quy chuyển kiếp ở tab này
+            
             app.Hoi_Quy_Tab = uitab(app.TabGroup);
             app.Hoi_Quy_Tab.Title = 'Hồi Quy';
 
             % Create Dao_Ham_Tab
             
-            %Thuận sẽ làm ở Tab Đạo hàm
+            %Thành sẽ làm ở Tab Đạo hàm
             
             app.Dao_Ham_Tab = uitab(app.TabGroup);
             app.Dao_Ham_Tab.Title = 'Đạo Hàm';
 
             % Create Tich_Phan_Tab
+            
+            %Thuận sẽ làm ở tab Tích Phân
+            
             app.Tich_Phan_Tab = uitab(app.TabGroup);
             app.Tich_Phan_Tab.Title = 'Tích Phân';
 
             % Create Introduce_Tab
+            
+            %Nhường Tâm slot cuối
+            
             app.Introduce_Tab = uitab(app.TabGroup);
             app.Introduce_Tab.Title = 'Giới Thiệu Nhóm';
 
