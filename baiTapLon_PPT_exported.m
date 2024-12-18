@@ -56,6 +56,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         end
     end
 
+      
     % App creation and deletion
     methods (Access = public)
 
@@ -81,3 +82,5 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         end
     end
 end
+
+%created by Nguyen The Vy
