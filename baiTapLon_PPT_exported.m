@@ -40,6 +40,9 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             app.Hoi_Quy_Tab.Title = 'Hồi Quy';
 
             % Create Dao_Ham_Tab
+            
+            %Thuận sẽ làm ở Tab Đạo hàm
+            
             app.Dao_Ham_Tab = uitab(app.TabGroup);
             app.Dao_Ham_Tab.Title = 'Đạo Hàm';
 
