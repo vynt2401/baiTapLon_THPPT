@@ -255,6 +255,107 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Create Dao_Ham_Tab
             app.Dao_Ham_Tab = uitab(app.TabGroup);
             app.Dao_Ham_Tab.Title = 'Đạo Hàm';
+            % Callbacks that handle component events
+    methods (Access = private)
+
+        % Button pushed function: KetQua
+        function KetQuaButtonPushed(app, event)
+            %x_input= app.NhapDuLieux.Value;
+            %x_chuyendoi=strsplit(x_input);
+            %x = str2double(x_chuyendoi); % Chuyển chuỗi nhập từ Area Text thành mảng số
+            %y_input= app.NhapDuLieuy.Value;
+            %y_chuyendoi=strsplit(y_input);
+            %y = str2double(y_chuyendoi); % Chuyển chuỗi nhập từ Area Text thành mảng số
+            % Đọc chuỗi nhập từ Area Text và chuyển đổi thành mảng số
+            %x = eval('[',app.NhapDuLieux.Value,']'); % Chuyển đổi chuỗi nhập thành mảng
+            %y = eval('[',app.NhapDuLieuy.Value,']'); % Chuyển đổi chuỗi nhập thành mảng
+            x_input = app.NhapDuLieux.Value; % Nhập chuỗi từ Text Area
+            y_input = app.NhapDuLieuy.Value; % Nhập chuỗi từ Text Area
+            x = str2num(x_input); % Chuyển đổi chuỗi thành mảng
+            y = str2num(y_input); % Chuyển đổi chuỗi thành mảng
+            Ss = app.ChonSaiSo.Value; % Sai số yêu cầu (O(h) hoặc O(h^2))
+            h = app.NhapBuoch.Value;
+            Pp = app.PhuongPhapDaoHam.Value;
+            gtdh = app.GiaTriCanTinhDaoHam.Value;
+            input_ham = app.NhapHamSo.Value;
+            daoham = str2func(['@(x)', input_ham]); % Chuyển chuỗi thành hàm số
+            % Kiểm tra độ dài vector x và y
+            if length(x) ~= length(y)
+                error('Vector x và y phải có cùng độ dài');
+            end
+
+            dao_ham_xac_dinh= diff(daoham);
+            gia_tri_dao_ham= dao_ham_xac_dinh(gtdh);
+            disp('Đạo hàm chính xác');
+            disp(gia_tri_dao_ham);
+
+            % Sử dụng h được nhập nếu có, nếu không sử dụng h từ dữ liệu
+            if (h <= 0)
+                h_calc = x(2) - x(1);
+                h = h_calc;
+            end
+            n = length(x);
+            switch Ss
+                case 'O(h)'
+                    switch Pp
+                        case 'tiến'
+                            % Taylor Tiến sai số O(h): Không tính được giá trị cuối
+                            for i = 1:n-1
+                                daoham(i) = (y(i+1) - y(i)) / h;
+                            end
+                            disp('Đạo hàm gần đúng');
+                            disp(daoham);
+                        case 'lùi'
+                            % Taylor Lùi sai số O(h): Không tính được giá trị đầu
+                            for i = 2:n
+                                daoham(i) = (y(i) - y(i-1)) / h;
+                            end
+                            disp('Đạo hàm gần đúng');
+                            disp(daoham);
+                        case 'trung tâm'
+                            % Taylor Trung tâm sai số O(h): Không tính được giá trị đầu và cuối
+                            for i = 2:n-1
+                                daoham(i) = (y(i+1) - y(i-1)) / (2 * h);
+                            end
+                            disp('Đạo hàm gần đúng');
+                            disp(daoham);
+                        otherwise
+                            error('Chọn sai hãy chọn lại "tiến", "lùi" hoặc "trung tâm".');
+                    end
+            
+                case 'O(h^2)'
+                    switch Pp
+                        case 'tiến'
+                            % Taylor Tiến sai số O(h^2): Không tính được 2 giá trị cuối
+                            for i = 1:n-2
+                                daoham(i) = (-3 * y(i) + 4 * y(i+1) - y(i+2)) / (2 * h);
+                            end
+                            disp('Đạo hàm gần đúng');
+                            disp(daoham);
+                        case 'lùi'
+                            % Taylor Lùi sai số O(h^2): Không tính được 2 giá trị đầu
+                            for i = 3:n
+                                daoham(i) = (3 * y(i) - 4 * y(i-1) + y(i-2)) / (2 * h);
+                            end
+                            disp('Đạo hàm gần đúng');
+                            disp(daoham);
+                        case 'trung tâm'
+                            % Taylor Trung tâm sai số O(h^2): Không tính được giá trị đầu và cuối
+                            for i = 2:n-1
+                                daoham(i) = (y(i+1) - y(i-1)) / (2 * h);
+                            end
+                            disp('Đạo hàm gần đúng');
+                            disp(daoham);
+                        otherwise
+                            error('Chọn sai hãy chọn lại "tiến", "lùi" hoặc "trung tâm".');
+                    end
+            
+                otherwise
+                    error('Chọn sai hãy chọn lại "O(h)" hoặc "O(h^2)".');
+            end
+    
+        end
+    end
 
             % Create Tich_Phan_Tab
             app.Tich_Phan_Tab = uitab(app.TabGroup);
