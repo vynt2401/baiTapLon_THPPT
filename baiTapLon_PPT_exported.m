@@ -1,4 +1,4 @@
-classdef baiTapLon_PPT_exported < matlab.apps.AppBase
+pclassdef baiTapLon_PPT_exported < matlab.apps.AppBase
 
     % Properties that correspond to app components
     properties (Access = public)
@@ -43,30 +43,29 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         %n là số lần lặp của phép tính
         %x1 là giá trị trả về, nghiệm trả về
         
-        function [c, n] = bisectionMethod(app, fx, a,b, saiso ) 
+        function [loopTime, no] = bisectionMethod(app, fx, a,b, saiso ) 
             fa = feval(fx, a);
             fb = feval(fx, b);
             if(fa .* fb) > 0
-                fprintf("Không có nghiệm trong khoảng phân ly trên");
+               uialert(app.UIFigure,"Không có nghiệm trong khoảng phân ly trên", "Thông báo", "Icon");
             end
-            for n = 1:1:10000
-                c = (a+b)/2
-                fc = feval(fx, c);
-                e = (a-b);
-                caseMUL = fa .* fc;
-                if caseMUL < 0
-                    b = c;
-                else
-                    a = c;
-                end
-                if caseMUL == 0
-                    e = 0;
-                end
-                if  e < saiso
-                    break;  
-                end
+            loopTime = 0; %số lần lặp = 0
+           while (b - a) /2 > saiso
+               c = (a+b)/2;
+               fc = feval(fx,c);
+               loopTime = loopTime +1;
+               if fc == 0
+                   break;
+               elseif fa .* fc < 0
+                   b = c;
+               else
+                   a = c;
+               end
+               no = (a+b)/2;
             end
-            %x1 là nghiệm trả về, n là số lần vòng lặp
+           disp(loopTime);
+           disp(no);
+            %no là nghiệm, loopTime là số vòng lặp trả về
             
         end
         
@@ -114,18 +113,29 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         % Button pushed function: caculateEvent
         function caculateEventButtonPushed(app, event)
            fxi = app.inputEquation.Value;
-           fx = @(x)(fxi);
-          
+           fx = str2func(['@(x)', fxi]);
+           
            saiso = app.inputAllowableError.Value;
            a = app.inputSeparationDistance_a.Value;
            b = app.inputSeparationDistance_b.Value;
-           if app.choseOption.Value == 'Chia đôi'
-               
-               [c, n] = bisectionMethod(app, fx, a, b, saiso);
-               app.resultMethod.Value = c;
-               app.resultLoop.Value = n;
-               plot(app.UIAxes, fx);
+          
+           x = a: 0.1 : b;
+           y = fx(x);
+      
+           
+           switch app.choseOption.Value
+               case 'Chia đôi' 
+             
+               [loopTime, no] = bisectionMethod(app, fx, a, b, saiso);
+               app.resultLoop.Value = loopTime;
+               app.resultMethod.Value = no;
+               plot(app.UIAxes,x,y);
+               grid(app.UIAxes, 'on');
+               xlim(app.UIAxes,[a,b]);
+               ylim(app.UIAxes,[a,b]);
+              
            end
+                
            
           
            
@@ -163,18 +173,18 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Create inputEquation
             app.inputEquation = uieditfield(app.Tim_Nghiem_Tab, 'text');
             app.inputEquation.HorizontalAlignment = 'right';
-            app.inputEquation.Position = [183 441 113 22];
+            app.inputEquation.Position = [184 441 109 22];
 
             % Create ChnphngphptmLabel
             app.ChnphngphptmLabel = uilabel(app.Tim_Nghiem_Tab);
             app.ChnphngphptmLabel.HorizontalAlignment = 'center';
-            app.ChnphngphptmLabel.Position = [44 297 130 22];
+            app.ChnphngphptmLabel.Position = [41 297 130 22];
             app.ChnphngphptmLabel.Text = 'Chọn phương pháp tìm';
 
             % Create choseOption
             app.choseOption = uidropdown(app.Tim_Nghiem_Tab);
             app.choseOption.Items = {'Chia đôi', 'Lặp', 'Newton(Tiếp tuyến)'};
-            app.choseOption.Position = [183 297 113 22];
+            app.choseOption.Position = [180 297 113 22];
             app.choseOption.Value = 'Chia đôi';
 
             % Create caculateEvent
@@ -238,7 +248,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
 
             % Create UIAxes
             app.UIAxes = uiaxes(app.Tim_Nghiem_Tab);
-            title(app.UIAxes, 'Title')
+            title(app.UIAxes, 'Đồ thị ')
             xlabel(app.UIAxes, 'X')
             ylabel(app.UIAxes, 'Y')
             zlabel(app.UIAxes, 'Z')
@@ -255,107 +265,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Create Dao_Ham_Tab
             app.Dao_Ham_Tab = uitab(app.TabGroup);
             app.Dao_Ham_Tab.Title = 'Đạo Hàm';
-            % Callbacks that handle component events
-    methods (Access = private)
-
-        % Button pushed function: KetQua
-        function KetQuaButtonPushed(app, event)
-            %x_input= app.NhapDuLieux.Value;
-            %x_chuyendoi=strsplit(x_input);
-            %x = str2double(x_chuyendoi); % Chuyển chuỗi nhập từ Area Text thành mảng số
-            %y_input= app.NhapDuLieuy.Value;
-            %y_chuyendoi=strsplit(y_input);
-            %y = str2double(y_chuyendoi); % Chuyển chuỗi nhập từ Area Text thành mảng số
-            % Đọc chuỗi nhập từ Area Text và chuyển đổi thành mảng số
-            %x = eval('[',app.NhapDuLieux.Value,']'); % Chuyển đổi chuỗi nhập thành mảng
-            %y = eval('[',app.NhapDuLieuy.Value,']'); % Chuyển đổi chuỗi nhập thành mảng
-            x_input = app.NhapDuLieux.Value; % Nhập chuỗi từ Text Area
-            y_input = app.NhapDuLieuy.Value; % Nhập chuỗi từ Text Area
-            x = str2num(x_input); % Chuyển đổi chuỗi thành mảng
-            y = str2num(y_input); % Chuyển đổi chuỗi thành mảng
-            Ss = app.ChonSaiSo.Value; % Sai số yêu cầu (O(h) hoặc O(h^2))
-            h = app.NhapBuoch.Value;
-            Pp = app.PhuongPhapDaoHam.Value;
-            gtdh = app.GiaTriCanTinhDaoHam.Value;
-            input_ham = app.NhapHamSo.Value;
-            daoham = str2func(['@(x)', input_ham]); % Chuyển chuỗi thành hàm số
-            % Kiểm tra độ dài vector x và y
-            if length(x) ~= length(y)
-                error('Vector x và y phải có cùng độ dài');
-            end
-
-            dao_ham_xac_dinh= diff(daoham);
-            gia_tri_dao_ham= dao_ham_xac_dinh(gtdh);
-            disp('Đạo hàm chính xác');
-            disp(gia_tri_dao_ham);
-
-            % Sử dụng h được nhập nếu có, nếu không sử dụng h từ dữ liệu
-            if (h <= 0)
-                h_calc = x(2) - x(1);
-                h = h_calc;
-            end
-            n = length(x);
-            switch Ss
-                case 'O(h)'
-                    switch Pp
-                        case 'tiến'
-                            % Taylor Tiến sai số O(h): Không tính được giá trị cuối
-                            for i = 1:n-1
-                                daoham(i) = (y(i+1) - y(i)) / h;
-                            end
-                            disp('Đạo hàm gần đúng');
-                            disp(daoham);
-                        case 'lùi'
-                            % Taylor Lùi sai số O(h): Không tính được giá trị đầu
-                            for i = 2:n
-                                daoham(i) = (y(i) - y(i-1)) / h;
-                            end
-                            disp('Đạo hàm gần đúng');
-                            disp(daoham);
-                        case 'trung tâm'
-                            % Taylor Trung tâm sai số O(h): Không tính được giá trị đầu và cuối
-                            for i = 2:n-1
-                                daoham(i) = (y(i+1) - y(i-1)) / (2 * h);
-                            end
-                            disp('Đạo hàm gần đúng');
-                            disp(daoham);
-                        otherwise
-                            error('Chọn sai hãy chọn lại "tiến", "lùi" hoặc "trung tâm".');
-                    end
-            
-                case 'O(h^2)'
-                    switch Pp
-                        case 'tiến'
-                            % Taylor Tiến sai số O(h^2): Không tính được 2 giá trị cuối
-                            for i = 1:n-2
-                                daoham(i) = (-3 * y(i) + 4 * y(i+1) - y(i+2)) / (2 * h);
-                            end
-                            disp('Đạo hàm gần đúng');
-                            disp(daoham);
-                        case 'lùi'
-                            % Taylor Lùi sai số O(h^2): Không tính được 2 giá trị đầu
-                            for i = 3:n
-                                daoham(i) = (3 * y(i) - 4 * y(i-1) + y(i-2)) / (2 * h);
-                            end
-                            disp('Đạo hàm gần đúng');
-                            disp(daoham);
-                        case 'trung tâm'
-                            % Taylor Trung tâm sai số O(h^2): Không tính được giá trị đầu và cuối
-                            for i = 2:n-1
-                                daoham(i) = (y(i+1) - y(i-1)) / (2 * h);
-                            end
-                            disp('Đạo hàm gần đúng');
-                            disp(daoham);
-                        otherwise
-                            error('Chọn sai hãy chọn lại "tiến", "lùi" hoặc "trung tâm".');
-                    end
-            
-                otherwise
-                    error('Chọn sai hãy chọn lại "O(h)" hoặc "O(h^2)".');
-            end
-    
-        end
-    end
 
             % Create Tich_Phan_Tab
             app.Tich_Phan_Tab = uitab(app.TabGroup);
