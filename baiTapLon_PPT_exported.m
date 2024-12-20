@@ -265,6 +265,110 @@ pclassdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Create Dao_Ham_Tab
             app.Dao_Ham_Tab = uitab(app.TabGroup);
             app.Dao_Ham_Tab.Title = 'Đạo Hàm';
+<<<<<<< HEAD
+=======
+            % Callbacks that handle component events
+  methods (Access = private)
+
+        % Button pushed function: KetQua
+        function KetQuaButtonPushed(app, event)
+            % Lấy dữ liệu đầu vào từ GUI
+            x_input = char(app.NhapDuLieux.Value); % Chuyển thành chuỗi ký tự
+            y_input = char(app.NhapDuLieuy.Value); % Chuyển thành chuỗi ký tự
+            x = str2double(strsplit(x_input, {',', ' '})); % Tách và chuyển thành mảng số
+            y = str2double(strsplit(y_input, {',', ' '})); % Tách và chuyển thành mảng số
+            
+            % Kiểm tra độ dài vector
+            if length(x) ~= length(y)
+                uialert(app.UIFigure, 'Vector x và y phải có cùng độ dài!', 'Lỗi'); % Bảng thông báo lỗi
+                return;
+            end
+            
+            % Các giá trị đầu vào khác
+            Ss = app.ChonSaiSo.Value; % Sai số yêu cầu (O(h) hoặc O(h^2))
+            h = app.NhapBuoch.Value; % Giá trị bước h
+            Pp = app.PhuongPhapDaoHam.Value; % Phương pháp đạo hàm (tiến, lùi, trung tâm)
+            gtdh = app.GiaTriCanTinhDaoHam.Value; % Giá trị cần tính đạo hàm
+            input_ham = app.NhapHamSo.Value; % Hàm số được nhập
+            
+            % Chuyển chuỗi thành hàm số
+            try
+                daoham = str2func(['@(x)', input_ham]); % Hàm số
+            catch
+                uialert(app.UIFigure, 'Hàm số không hợp lệ!', 'Lỗi'); % Bảng thông báo lỗi
+                return;
+            end
+            
+            % Tính đạo hàm chính xác 
+            try
+                dao_ham_xac_dinh = matlabFunction(diff(sym(daoham))); % Đạo hàm chính xác
+                gia_tri_dao_ham = dao_ham_xac_dinh(gtdh); % Giá trị đạo hàm tại gtdh
+                disp('Đạo hàm chính xác:');
+                uialert(app.UIFigure, sprintf('Đạo hàm chính xác: %s', mat2str(gia_tri_dao_ham)), 'Kết quả');% Hiển thị đạo hàm chính xác
+            catch
+                uialert(app.UIFigure, 'Không thể tính đạo hàm chính xác từ hàm số.', 'Lỗi'); % Hiển thị lỗi 
+            end
+            
+            % Nếu h <= 0, tự động tính từ dữ liệu x
+            if h <= 0
+                h_calc = x(2) - x(1); % khoảng cách giữa các điểm
+                h = h_calc;
+            end
+            
+            % Tạo vector kết quả đạo hàm
+            n = length(x);
+            daoham = NaN(1, n); % Tạo vector kết quả với giá trị NaN ban đầu
+            
+            % Tính đạo hàm gần đúng dựa trên Ss và Pp
+            switch Ss
+                case 'O(h)'
+                    switch Pp
+                        case 'tiến'
+                            for i = 1:n-1
+                                daoham(i) = (y(i+1) - y(i)) / h;
+                            end
+                        case 'lùi'
+                            for i = 2:n
+                                daoham(i) = (y(i) - y(i-1)) / h;
+                            end
+                        case 'trung tâm'
+                            for i = 2:n-1
+                                daoham(i) = (y(i+1) - y(i-1)) / (2 * h);
+                            end
+                        otherwise
+                            uialert(app.UIFigure, 'Phương pháp không hợp lệ!', 'Lỗi');% bảng thông báo lỗi
+                            return;
+                    end
+            
+                case 'O(h^2)'
+                    switch Pp
+                        case 'tiến'
+                            for i = 1:n-2
+                                daoham(i) = (-3 * y(i) + 4 * y(i+1) - y(i+2)) / (2 * h);
+                            end
+                        case 'lùi'
+                            for i = 3:n
+                                daoham(i) = (3 * y(i) - 4 * y(i-1) + y(i-2)) / (2 * h);
+                            end
+                        case 'trung tâm'
+                            for i = 2:n-1
+                                daoham(i) = (y(i+1) - y(i-1)) / (2 * h);
+                            end
+                        otherwise
+                            uialert(app.UIFigure, 'Phương pháp không hợp lệ!', 'Lỗi');
+                            return;
+                    end
+            
+                otherwise
+                    uialert(app.UIFigure, 'Sai số không hợp lệ!', 'Lỗi'); %bảng báo lỗi
+                    return;
+            end
+            
+            % Hiển thị kết quả
+            disp('Đạo hàm gần đúng:');
+            uialert(app.UIFigure, sprintf('Đạo hàm gần đúng: %s', mat2str(daoham)), 'Kết quả'); % bảng trả về kết quả gần đúng
+    
+>>>>>>> d1c70a1133e296eaf1720dae8e74366443568071
 
             % Create Tich_Phan_Tab
             app.Tich_Phan_Tab = uitab(app.TabGroup);
