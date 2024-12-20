@@ -267,8 +267,8 @@ pclassdef baiTapLon_PPT_exported < matlab.apps.AppBase
             app.Dao_Ham_Tab.Title = 'Đạo Hàm';
 <<<<<<< HEAD
 =======
-            % Callbacks that handle component events
-  methods (Access = private)
+           % Callbacks that handle component events
+    methods (Access = private)
 
         % Button pushed function: KetQua
         function KetQuaButtonPushed(app, event)
@@ -304,7 +304,7 @@ pclassdef baiTapLon_PPT_exported < matlab.apps.AppBase
                 dao_ham_xac_dinh = matlabFunction(diff(sym(daoham))); % Đạo hàm chính xác
                 gia_tri_dao_ham = dao_ham_xac_dinh(gtdh); % Giá trị đạo hàm tại gtdh
                 disp('Đạo hàm chính xác:');
-                uialert(app.UIFigure, sprintf('Đạo hàm chính xác: %s', mat2str(gia_tri_dao_ham)), 'Kết quả');% Hiển thị đạo hàm chính xác
+                uialert(app.UIFigure, sprintf('Đạo hàm chính xác: %s', mat2str(gia_tri_dao_ham)), 'Kết quả', 'Icon', 'success');
             catch
                 uialert(app.UIFigure, 'Không thể tính đạo hàm chính xác từ hàm số.', 'Lỗi'); % Hiển thị lỗi 
             end
@@ -366,7 +366,7 @@ pclassdef baiTapLon_PPT_exported < matlab.apps.AppBase
             
             % Hiển thị kết quả
             disp('Đạo hàm gần đúng:');
-            uialert(app.UIFigure, sprintf('Đạo hàm gần đúng: %s', mat2str(daoham)), 'Kết quả'); % bảng trả về kết quả gần đúng
+            uialert(app.UIFigure, sprintf('Đạo hàm gần đúng: %s', mat2str(daoham)), 'Kết quả', 'Icon', 'success');
     
 >>>>>>> d1c70a1133e296eaf1720dae8e74366443568071
 
