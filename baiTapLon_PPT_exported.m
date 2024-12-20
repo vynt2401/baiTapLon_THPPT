@@ -315,7 +315,12 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Create Dao_Ham_Tab
             app.Dao_Ham_Tab = uitab(app.TabGroup);
             app.Dao_Ham_Tab.Title = 'Đạo Hàm';
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/main
            % Callbacks that handle component events
     methods (Access = private)
 
@@ -416,7 +421,12 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Hiển thị kết quả
             disp('Đạo hàm gần đúng:');
             uialert(app.UIFigure, sprintf('Đạo hàm gần đúng: %s', mat2str(daoham)), 'Kết quả', 'Icon', 'success');
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d1c70a1133e296eaf1720dae8e74366443568071
+>>>>>>> refs/remotes/origin/main
 
             % Create Tich_Phan_Tab
             app.Tich_Phan_Tab = uitab(app.TabGroup);
