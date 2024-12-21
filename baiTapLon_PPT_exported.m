@@ -719,8 +719,4 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             delete(app.UIFigure)
         end
     end
-%<<<<<<< NguyenDucThung
-%end
-%=======
-%end
-%>>>>>>> main
+
