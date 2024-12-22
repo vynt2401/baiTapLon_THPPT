@@ -2,7 +2,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
 
     % Properties that correspond to app components
     properties (Access = public)
-%<<<<<<< NguyenDucThung
+
         UIFigure                 matlab.ui.Figure
         TabGroup                 matlab.ui.container.TabGroup
         Tim_Nghiem_Tab           matlab.ui.container.Tab
@@ -31,7 +31,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         Introduce_Tab            matlab.ui.container.Tab
         Test_Field               matlab.ui.control.EditField
         EditFieldLabel           matlab.ui.control.Label
-%=======
         UIFigure                   matlab.ui.Figure
         TabGroup                   matlab.ui.container.TabGroup
         Tim_Nghiem_Tab             matlab.ui.container.Tab
@@ -62,9 +61,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
     end
 
     
-    %this line trust comment in to test
-    
-%<<<<<<< NguyenDucThung
+
 
     % Callbacks that handle component events
     methods (Access = private)
@@ -144,7 +141,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
      uialert(app.UIFigure, sprintf('Tích phân gần đúng: %s\n', mat2str(result)), 'Kết quả', 'Icon', 'success');
       
     
-%=======
+
     methods (Access = private)
         
         %tạo function sử dụng phương pháp chia đôi để tìm nghiệm
@@ -250,12 +247,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
            
            saiso = app.inputAllowableError.Value;
            a = app.inputSeparationDistance_a.Value;
-           b = app.inputSeparationDistance_b.Value;
-%            syms x;
-%            fp = matlabFunction(diff(fx, x));
-         
-         
-           
+           b = app.inputSeparationDistance_b.Value;           
            switch app.choseOption.Value
                case 'Chia đôi' 
                [loopTime, no] = bisectionMethod(app, fx, a, b, saiso);              
@@ -295,14 +287,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                
               
            end
-                
-           
-          
-           
-           
-           
-           
-%>>>>>>> main
+            
         end
     end
 
@@ -428,14 +413,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Create Dao_Ham_Tab
             app.Dao_Ham_Tab = uitab(app.TabGroup);
             app.Dao_Ham_Tab.Title = 'Đạo Hàm';
-%<<<<<<< HEAD
 
-%<<<<<<< NguyenDucThung
-%=======
-%=======
-%<<<<<<< HEAD
-%=======
-%>>>>>>> refs/remotes/origin/main
            % Callbacks that handle component events
     methods (Access = private)
 
@@ -536,14 +514,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Hiển thị kết quả
             disp('Đạo hàm gần đúng:');
             uialert(app.UIFigure, sprintf('Đạo hàm gần đúng: %s', mat2str(daoham)), 'Kết quả', 'Icon', 'success');
-%<<<<<<< HEAD
 
-%=======
-    
-%>>>>>>> d1c70a1133e296eaf1720dae8e74366443568071
-%>>>>>>> refs/remotes/origin/main
-
-%>>>>>>> main
             % Create Tich_Phan_Tab
             app.Tich_Phan_Tab = uitab(app.TabGroup);
             app.Tich_Phan_Tab.Title = 'Tích Phân';
