@@ -160,7 +160,8 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
       
         end
     end
-%=======
+%======= end NguyenDucThung
+%<<<<<<< Nguyen The Vy
   methods (Access = private)
         
     %tạo function sử dụng phương pháp chia đôi để tìm nghiệm
@@ -201,9 +202,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             %no là nghiệm, loopTime là số vòng lặp trả về
             
         end
-        
-        
-        %change file
+
         %function sử dụng phương pháp lặp để tìm nghiệm
         function [x1, n, x_plot, y] = repeatMethod(app, fx, a, b, saiso)
             syms x;
@@ -220,8 +219,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             x_plot = a: 0.1 : b;
             y = subs(fp,x, x_plot);
         end
-        
-        
         
         %function sử dụng phương pháp tiếp tuyến (Newton) để tìm nghiệm
         function [x1, n, x_plot, y] = newtonMethod(app, fx, a, b, saiso)
@@ -251,10 +248,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             
             %x1 là nghiệm trả về, n là số lần vòng lặp
             %đẩy sai số ra sau
-        end
-        
-        
-        
+        end   
         function d = divideDifference(app, xIn,yIn) %function tính tỷ hiệu các cấp 
             %d là giá trị trả về, 
             %xIn là mảng x nhập vào
@@ -267,10 +261,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                 end
             end
         end
-        
-        
-        
-        
         
         function results = NewtonForm(app, xIn, yIn, d, x) % function tính giá trị nội suy = đa thức newton
             % d là kết quả của function tính tỷ hiệu các cấp được khai báo
@@ -308,10 +298,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
            
             results_PLN = sym(newtonPolynomial);  
         end
-        
-      
-        
-        
+
         function results = larangeProduct(app, xIn, yIn, x)
             n = length(xIn);
             sum = 0;
@@ -327,8 +314,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             results = sum;
         end
             
-        
-        
         function results = LarangeInterpolationPolynomial(app, xIn, yIn, x)
             syms x;
             n = length(xIn);
@@ -346,9 +331,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         end
     end
     
-    
-    
-
     % Callbacks that handle component events
     methods (Access = private)
 
@@ -478,8 +460,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                %với lại output text bên ngoài Design View
                app.resultPolynomial.Value = string(results_PLN); 
       
-               
-               
                %Các dòng code để chuyển đổi từ giá trị syms của results_PLN sang
                %function để tính toán giá trị biểu thức trên x, từ đó vẽ đồ
                %thị ra.
@@ -523,18 +503,10 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                    grid(app.UIAxesInterpolation, 'on');
                    xlim(app.UIAxesInterpolation, xIn, yIn);
                    ylim(app.UIAxesInterpolation, xIn, yIn);
-              
-
            end
-           
-           
         end
     end
-
-    
-
- 
-           
+% end Nguyen The Vy
 %>>>>>>> main
 
     % Component initialization
@@ -651,8 +623,9 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Create Noi_Suy_Tab
             app.Noi_Suy_Tab = uitab(app.TabGroup);
             app.Noi_Suy_Tab.Title = 'Nội Suy';
+            %<<<<<<< Nguyen The Vy
             
-              % Create PhngphpnisuyDropDownLabel
+            % Create PhngphpnisuyDropDownLabel
             app.PhngphpnisuyDropDownLabel = uilabel(app.Noi_Suy_Tab);
             app.PhngphpnisuyDropDownLabel.HorizontalAlignment = 'right';
             app.PhngphpnisuyDropDownLabel.Position = [39 243 121 22];
@@ -744,20 +717,19 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             app.UIAxesInterpolation.Position = [322 152 515 342];
 
 
+            % end Nguyen The Vy
+
             % Create Hoi_Quy_Tab
             app.Hoi_Quy_Tab = uitab(app.TabGroup);
             app.Hoi_Quy_Tab.Title = 'Hồi Quy';
+%<<<<<<< HEAD
 
+%<<<<<<< nhatthanh123
             % Create Dao_Ham_Tab
             app.Dao_Ham_Tab = uitab(app.TabGroup);
             app.Dao_Ham_Tab.Title = 'Đạo Hàm';
-%<<<<<<< HEAD
 
-%<<<<<<< NguyenDucThung
-%=======
-%=======
-%<<<<<<< HEAD
-%=======
+
 %>>>>>>> refs/remotes/origin/main
            % Callbacks that handle component events
     methods (Access = private)
@@ -859,12 +831,9 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Hiển thị kết quả
             disp('Đạo hàm gần đúng:');
             uialert(app.UIFigure, sprintf('Đạo hàm gần đúng: %s', mat2str(daoham)), 'Kết quả', 'Icon', 'success');
+% end nhatthanh123
 %<<<<<<< HEAD
-
-%=======
-    
-%>>>>>>> d1c70a1133e296eaf1720dae8e74366443568071
-%>>>>>>> refs/remotes/origin/main
+%<<<<<<< NguyenDucThung
 
 %>>>>>>> main
             % Create Tich_Phan_Tab
@@ -1042,8 +1011,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             delete(app.UIFigure)
         end
     end
-%<<<<<<< NguyenDucThung
-%end
-%=======
+
 %end
 %>>>>>>> main
