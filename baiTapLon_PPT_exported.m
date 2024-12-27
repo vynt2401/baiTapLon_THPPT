@@ -601,17 +601,20 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
 %/////////////// pp simpson 1/3
              %///////ham
        function result = TichPhanSimpson13_Ham(fx, a, b, N)
-         
+    
            if mod(N, 2) ~= 0
                 uialert(app.UIFigure, 'N phải là số chẵn!', 'Cảnh báo','Icon','warning'); % Hiển thị thông báo lỗi
                 return;
            end
             h = (b - a) / N; % Độ rộng mỗi đoạn
-            x = a:h:b;       % Các điểm chia trên đoạn [a, b]
-            y_values = fx(x); % Giá trị của hàm số tại các điểm chia
+            xValues = a:h:b;
+             fValues = arrayfun(fx, xValues);
             
-            % Công thức Simpson 1/3
-            result = h / 3 * (y_values(1) +4 * sum(y_values(2:2:end-1)) +2 * sum(y_values(3:2:end-2)) +y_values(end));
+             result = fValues(1) + fValues(end);
+             result = result + 4 * sum(fValues(2:2:end-1));
+             result = result + 2 * sum(fValues(3:2:end-2));
+             result = (h / 3) * result;
+
        end
         
        %////////vector
@@ -632,11 +635,14 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
            end
           
             h = (b - a) / N; % Độ rộng mỗi đoạn
-            x = a:h:b;       % Các điểm chia trên đoạn [a, b]
-            y_values = fx(x); % Giá trị của hàm số tại các điểm chia
-            
-            % Công thức Simpson 3/8
-           result= ((3*h) / 8) * (y_values(1) +4 * sum(y_values(2:2:end-1)) +2 * sum(y_values(3:2:end-2)) +y_values(end));
+            xValues = a:h:b;
+             fValues = arrayfun(fx, xValues);
+             result = fValues(1) + fValues(end);
+             result = result + 3 * sum(fValues(2:3:end-1));
+             result = result + 3 * sum(fValues(3:3:end-2));
+             result = result + 2 * sum(fValues(4:3:end-3));
+             result = (3 * h / 8) * result;
+
        end
           %////////vector
        function result = TichPhanSimpson38_Vector(a, b, N, y)
@@ -653,29 +659,28 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
 Val = app.ChnPhngPhpDropDown.Value;
 
 if strcmp(Val, 'Hình Thang')
-        if isempty(fx)
-            result = TichPhanThangVector(a, b, N, X, Y);
-        else
-            result = TichPhanThangHam(fx, a, b, N);
-        end
-    elseif strcmp(Val, 'Simpson 1/3')
-        if isempty(fx)
-            result = TichPhanSimpson13_Vector(a, b, N, X, Y);
-        else
-            result = TichPhanSimpson13_Ham(fx, a, b, N);
-        end
-    elseif strcmp(Val, 'Simpson 3/8')
-        if isempty(fx)
-            result = TichPhanSimpson38_Vector(a, b, N, X, Y);
-        else
-            result = TichPhanSimpson38Ham(fx, a, b, N);
-        end
+    if isempty(fx)
+        result = TichPhanThangVector(a, b, N, X, Y);
     else
-        error('Unknown method specified.');
+        result = TichPhanThangHam(fx, a, b, N);
+    end
+elseif strcmp(Val, 'Simpson 1/3')
+    if isempty(fx)
+        result = TichPhanSimpson13_Vector(a, b, N, X, Y);
+    else
+        result = TichPhanSimpson13_Ham(fx, a, b, N);
+    end
+elseif strcmp(Val, 'Simpson 3/8')
+    if isempty(fx)
+        result = TichPhanSimpson38_Vector(a, b, N, X, Y);
+    else
+        result = TichPhanSimpson38Ham(fx, a, b, N);
+    end
+else
+    error('Unknown method specified.');
 end
 
-     uialert(app.UIFigure, sprintf('Tích phân gần đúng: %s\n', mat2str(result)), 'Kết quả', 'Icon', 'success');
-   
+     uialert(app.UIFigure, sprintf('Tích phân gần đúng: %s\n', mat2str(result)), 'Kết quả', 'Icon', 'success');    
     
         end
     end
