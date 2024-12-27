@@ -2,169 +2,87 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
 
     % Properties that correspond to app components
     properties (Access = public)
-%<<<<<<< NguyenDucThung
-        UIFigure                 matlab.ui.Figure
-        TabGroup                 matlab.ui.container.TabGroup
-        Tim_Nghiem_Tab           matlab.ui.container.Tab
-        Noi_Suy_Tab              matlab.ui.container.Tab
-        Hoi_Quy_Tab              matlab.ui.container.Tab
-        Dao_Ham_Tab              matlab.ui.container.Tab
-        Tich_Phan_Tab            matlab.ui.container.Tab
-        ChnPhngPhpDropDown       matlab.ui.control.DropDown
-        ChnPhngPhpDropDownLabel  matlab.ui.control.Label
-        NhphmsEditField          matlab.ui.control.EditField
-        NhphmsEditFieldLabel     matlab.ui.control.Label
-        EditField2_5             matlab.ui.control.NumericEditField
-        EditField2_4             matlab.ui.control.NumericEditField
-        NhpNEditField            matlab.ui.control.NumericEditField
-        NhpNEditFieldLabel       matlab.ui.control.Label
-        KtquButton               matlab.ui.control.Button
-        Label_3                  matlab.ui.control.Label
-        Label_2                  matlab.ui.control.Label
-        Label                    matlab.ui.control.Label
-        NhpcnLabel               matlab.ui.control.Label
-        HocLabel                 matlab.ui.control.Label
-        NhpdliuyEditField        matlab.ui.control.EditField
-        NhpdliuyEditFieldLabel   matlab.ui.control.Label
-        NhpdliuxEditField        matlab.ui.control.EditField
-        NhpdliuxEditFieldLabel   matlab.ui.control.Label
-        Introduce_Tab            matlab.ui.container.Tab
-        Test_Field               matlab.ui.control.EditField
-        EditFieldLabel           matlab.ui.control.Label
-%=======
-        UIFigure                   matlab.ui.Figure
-        TabGroup                   matlab.ui.container.TabGroup
-        Tim_Nghiem_Tab             matlab.ui.container.Tab
-        NhpphngtrnhEditFieldLabel  matlab.ui.control.Label
-        inputEquation              matlab.ui.control.EditField
-        ChnphngphptmLabel          matlab.ui.control.Label
-        choseOption                matlab.ui.control.DropDown
-        caculateEvent              matlab.ui.control.Button
-        NhpkhongphnlyngimaEditFieldLabel  matlab.ui.control.Label
-        inputSeparationDistance_a  matlab.ui.control.NumericEditField
+        UIFigure                       matlab.ui.Figure
+        TabGroup                       matlab.ui.container.TabGroup
+        Tim_Nghiem_Tab                 matlab.ui.container.Tab
+        resultMethod                   matlab.ui.control.NumericEditField
+        NghimcaphngphptrnlLabel        matlab.ui.control.Label
+        resultLoop                     matlab.ui.control.NumericEditField
+        SlnlpcaphngphptrnlLabel        matlab.ui.control.Label
+        inputAllowableError            matlab.ui.control.NumericEditField
+        NhpsaisEditFieldLabel          matlab.ui.control.Label
+        inputSeparationDistance_b      matlab.ui.control.NumericEditField
         NhpkhongphnlynghimbEditFieldLabel  matlab.ui.control.Label
-        inputSeparationDistance_b  matlab.ui.control.NumericEditField
-        NhpsaisEditFieldLabel      matlab.ui.control.Label
-        inputAllowableError        matlab.ui.control.NumericEditField
-        SlnlpcaphngphptrnlLabel    matlab.ui.control.Label
-        resultLoop                 matlab.ui.control.NumericEditField
-        NghimcaphngphptrnlLabel    matlab.ui.control.Label
-        resultMethod               matlab.ui.control.NumericEditField
-        UIAxes                     matlab.ui.control.UIAxes
-        Noi_Suy_Tab                matlab.ui.container.Tab
-        PhngphpnisuyDropDownLabel    matlab.ui.control.Label
-        choseOptionInterpolation     matlab.ui.control.DropDown
-        KtqunisuytrnlEditFieldLabel  matlab.ui.control.Label
-        restultInterpolation         matlab.ui.control.NumericEditField
-        Button                       matlab.ui.control.Button
-        NhpgitrxEditFieldLabel       matlab.ui.control.Label
-        InputArangeX                 matlab.ui.control.EditField
-        NhpgitryEditFieldLabel       matlab.ui.control.Label
-        InputArangeY                 matlab.ui.control.EditField
-        NhpgitrcnnisuyLabel          matlab.ui.control.Label
-        InputValueToInterpolated     matlab.ui.control.EditField
+        inputSeparationDistance_a      matlab.ui.control.NumericEditField
+        NhpkhongphnlyngimaEditFieldLabel  matlab.ui.control.Label
+        caculateEvent                  matlab.ui.control.Button
+        choseOption                    matlab.ui.control.DropDown
+        ChnphngphptmLabel              matlab.ui.control.Label
+        inputEquation                  matlab.ui.control.EditField
+        NhpphngtrnhEditFieldLabel      matlab.ui.control.Label
+        UIAxes                         matlab.ui.control.UIAxes
+        Noi_Suy_Tab                    matlab.ui.container.Tab
+        resultPolynomial               matlab.ui.control.EditField
         KtquathcnisuycaphngphptrnlEditFieldLabel  matlab.ui.control.Label
-        resultPolynomial             matlab.ui.control.EditField
-        UIAxesInterpolation          matlab.ui.control.UIAxes
-        Hoi_Quy_Tab                matlab.ui.container.Tab
-        Dao_Ham_Tab                matlab.ui.container.Tab
-        Tich_Phan_Tab              matlab.ui.container.Tab
-
-        Introduce_Tab              matlab.ui.container.Tab
-        EditFieldLabel             matlab.ui.control.Label
-        Test_Field                 matlab.ui.control.EditField
-%>>>>>>> main
+        InputValueToInterpolated       matlab.ui.control.EditField
+        NhpgitrcnnisuyLabel            matlab.ui.control.Label
+        InputArangeY                   matlab.ui.control.EditField
+        NhpgitryEditFieldLabel         matlab.ui.control.Label
+        InputArangeX                   matlab.ui.control.EditField
+        NhpgitrxEditFieldLabel         matlab.ui.control.Label
+        Button                         matlab.ui.control.Button
+        restultInterpolation           matlab.ui.control.NumericEditField
+        KtqunisuytrnlEditFieldLabel    matlab.ui.control.Label
+        choseOptionInterpolation       matlab.ui.control.DropDown
+        PhngphpnisuyDropDownLabel      matlab.ui.control.Label
+        UIAxesInterpolation            matlab.ui.control.UIAxes
+        Hoi_Quy_Tab                    matlab.ui.container.Tab
+        Dao_Ham_Tab                    matlab.ui.container.Tab
+        PhuongPhapDaoHam               matlab.ui.control.DropDown
+        PhngphpohmDropDownLabel        matlab.ui.control.Label
+        ChonSaiSo                      matlab.ui.control.DropDown
+        ChnsaisOhhocOh2DropDownLabel   matlab.ui.control.Label
+        NhapDuLieuy                    matlab.ui.control.EditField
+        NhpdliuyEditFieldLabel         matlab.ui.control.Label
+        NhapDuLieux                    matlab.ui.control.EditField
+        NhpdliuxEditFieldLabel         matlab.ui.control.Label
+        NhapHamSo                      matlab.ui.control.EditField
+        NhphmsEditFieldLabel           matlab.ui.control.Label
+        GiaTriCanTinhDaoHam            matlab.ui.control.NumericEditField
+        NhpgitrcntnhohmEditFieldLabel  matlab.ui.control.Label
+        NhapBuoch                      matlab.ui.control.NumericEditField
+        NhpbchEditFieldLabel           matlab.ui.control.Label
+        KetQua                         matlab.ui.control.Button
+        Tich_Phan_Tab                  matlab.ui.container.Tab
+        ChnPhngPhpDropDown             matlab.ui.control.DropDown
+        ChnPhngPhpDropDownLabel        matlab.ui.control.Label
+        NhphmsEditField                matlab.ui.control.EditField
+        NhphmsEditFieldLabel_2         matlab.ui.control.Label
+        NhpNEditField                  matlab.ui.control.NumericEditField
+        NhpNEditFieldLabel             matlab.ui.control.Label
+        NhpdliuyEditField              matlab.ui.control.EditField
+        NhpdliuyEditFieldLabel_2       matlab.ui.control.Label
+        NhpdliuxEditField              matlab.ui.control.EditField
+        NhpdliuxEditFieldLabel_2       matlab.ui.control.Label
+        EditField2_2                   matlab.ui.control.NumericEditField
+        EditField2                     matlab.ui.control.NumericEditField
+        KtquButton                     matlab.ui.control.Button
+        Label_3                        matlab.ui.control.Label
+        Label_2                        matlab.ui.control.Label
+        Label                          matlab.ui.control.Label
+        NhpcnLabel                     matlab.ui.control.Label
+        HocLabel                       matlab.ui.control.Label
+        Introduce_Tab                  matlab.ui.container.Tab
+        Test_Field                     matlab.ui.control.EditField
+        EditFieldLabel                 matlab.ui.control.Label
     end
 
     
     %this line trust comment in to test
     
-%<<<<<<< NguyenDucThung
-
-    % Callbacks that handle component events
     methods (Access = private)
-
-        % Button pushed function: KtquButton
-        function KtquButtonPushed(app, event)
-  %///////////// khai báo 
-            y_simpson38=0;
-            N=0;
-            y=0;
- %///////////////input 
-            try
-                fx= str2func(['@(x)', app.NhphmsEditField.Value]); % Hàm số
-            catch
-                uialert(app.UIFigure, 'Hàm số không hợp lệ!', 'Lỗi'); % Bảng thông báo lỗi
-                return;
-            end
-
         
-            a = app.EditField2_4.Value;
-            b = app.EditField2_5.Value;
-            N = app.NhpNEditField.Value;
-          
-   
-%///////////////pp hình thang
-
-       function y = TichPhanHinhThang(fx, a, b, N)
-            h = (b - a) / N; % Độ dài mỗi đoạn con
-            x = a:h:b; % Chia đoạn [a, b] thành N đoạn
-            y = fx(x(1)) / 2; % Giá trị đầu tiên của hình thang
-            for i = 2:length(x) - 1
-                y = y + fx(x(i)); % Cộng các giá trị ở giữa
-            end
-            y = y + fx(x(end)) / 2; % Giá trị cuối cùng của hình thang
-            y = y * h; % Nhân với độ dài
-       end 
-%/////////////// pp simpson 1/3
-       function y = TichPhanSimpson13(fx, a, b, N)
-           if mod(N, 2) ~= 0
-                uialert(app.UIFigure, 'N phải là số chẵn!', 'Cảnh báo','Icon','warning'); % Hiển thị thông báo lỗi
-                return;
-           end
-            h = (b - a) / N; % Độ rộng mỗi đoạn
-            x = a:h:b;       % Các điểm chia trên đoạn [a, b]
-            y_values = fx(x); % Giá trị của hàm số tại các điểm chia
-            
-            % Công thức Simpson 1/3
-            y = h / 3 * (y_values(1) +4 * sum(y_values(2:2:end-1)) +2 * sum(y_values(3:2:end-2)) +y_values(end));
-       end
- %///////////// pp simpson 3/8
-       function y = TichPhanSimpson38(fx, a, b, N)
-           if mod(N, 3) ~= 0
-                uialert(app.UIFigure, 'N phải là bội số của 3!', 'Cảnh báo','Icon','warning'); % Hiển thị thông báo lỗi
-                return;
-           end
-          
-            h = (b - a) / N; % Độ rộng mỗi đoạn
-            x = a:h:b;       % Các điểm chia trên đoạn [a, b]
-            y_values = fx(x); % Giá trị của hàm số tại các điểm chia
-            
-            % Công thức Simpson 3/8
-            y = ((3*h) / 8) * (y_values(1) +4 * sum(y_values(2:2:end-1)) +2 * sum(y_values(3:2:end-2)) +y_values(end));
-       end
-  %/////// drop down select
-       Value = app.ChnPhngPhpDropDown.Value;
-    if strcmp(Value, 'Hình Thang')
-        y_hinhthang = TichPhanHinhThang(fx, a, b, N);
-        result = y_hinhthang;
-    elseif strcmp(Value, 'Simpson 1/3')
-        y_simpson13 = TichPhanSimpson13(fx, a, b, N);
-        result = y_simpson13;
-    else
-        y_simpson38 = TichPhanSimpson38(fx, a, b, N);
-        result = y_simpson38;
-    end
-   
-     uialert(app.UIFigure, sprintf('Tích phân gần đúng: %s\n', mat2str(result)), 'Kết quả', 'Icon', 'success');
-      
-        end
-    end
-%======= end NguyenDucThung
-%<<<<<<< Nguyen The Vy
-  methods (Access = private)
-        
-    %tạo function sử dụng phương pháp chia đôi để tìm nghiệm
+        %tạo function sử dụng phương pháp chia đôi để tìm nghiệm
         %fx là hàm cần tìm gần đúng
         %fp là hàm lặp, là hàm đạo hàm của fx
         %a, b là khoảng phân ly nghiệm
@@ -202,7 +120,9 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             %no là nghiệm, loopTime là số vòng lặp trả về
             
         end
-
+        
+        
+        
         %function sử dụng phương pháp lặp để tìm nghiệm
         function [x1, n, x_plot, y] = repeatMethod(app, fx, a, b, saiso)
             syms x;
@@ -219,6 +139,8 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             x_plot = a: 0.1 : b;
             y = subs(fp,x, x_plot);
         end
+        
+        
         
         %function sử dụng phương pháp tiếp tuyến (Newton) để tìm nghiệm
         function [x1, n, x_plot, y] = newtonMethod(app, fx, a, b, saiso)
@@ -248,7 +170,10 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             
             %x1 là nghiệm trả về, n là số lần vòng lặp
             %đẩy sai số ra sau
-        end   
+        end
+        
+        
+        
         function d = divideDifference(app, xIn,yIn) %function tính tỷ hiệu các cấp 
             %d là giá trị trả về, 
             %xIn là mảng x nhập vào
@@ -261,6 +186,10 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                 end
             end
         end
+        
+        
+        
+        
         
         function results = NewtonForm(app, xIn, yIn, d, x) % function tính giá trị nội suy = đa thức newton
             % d là kết quả của function tính tỷ hiệu các cấp được khai báo
@@ -298,7 +227,10 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
            
             results_PLN = sym(newtonPolynomial);  
         end
-
+        
+      
+        
+        
         function results = larangeProduct(app, xIn, yIn, x)
             n = length(xIn);
             sum = 0;
@@ -314,6 +246,8 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             results = sum;
         end
             
+        
+        
         function results = LarangeInterpolationPolynomial(app, xIn, yIn, x)
             syms x;
             n = length(xIn);
@@ -331,6 +265,9 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         end
     end
     
+    
+    
+
     % Callbacks that handle component events
     methods (Access = private)
 
@@ -460,6 +397,8 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                %với lại output text bên ngoài Design View
                app.resultPolynomial.Value = string(results_PLN); 
       
+               
+               
                %Các dòng code để chuyển đổi từ giá trị syms của results_PLN sang
                %function để tính toán giá trị biểu thức trên x, từ đó vẽ đồ
                %thị ra.
@@ -503,236 +442,12 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                    grid(app.UIAxesInterpolation, 'on');
                    xlim(app.UIAxesInterpolation, xIn, yIn);
                    ylim(app.UIAxesInterpolation, xIn, yIn);
+              
+
            end
+           
+           
         end
-    end
-% end Nguyen The Vy
-%>>>>>>> main
-
-    % Component initialization
-    methods (Access = private)
-
-        % Create UIFigure and components
-        function createComponents(app)
-
-            % Create UIFigure and hide until all components are created
-            app.UIFigure = uifigure('Visible', 'off');
-            app.UIFigure.Position = [100 100 850 531];
-            app.UIFigure.Name = 'MATLAB App';
-
-            % Create TabGroup
-            app.TabGroup = uitabgroup(app.UIFigure);
-            app.TabGroup.Position = [1 0 850 532];
-
-            % Create Tim_Nghiem_Tab
-            app.Tim_Nghiem_Tab = uitab(app.TabGroup);
-            app.Tim_Nghiem_Tab.Title = 'Nghiệm';
-
-            % Create NhpphngtrnhEditFieldLabel
-            app.NhpphngtrnhEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.NhpphngtrnhEditFieldLabel.HorizontalAlignment = 'center';
-            app.NhpphngtrnhEditFieldLabel.Position = [53 441 107 22];
-            app.NhpphngtrnhEditFieldLabel.Text = 'Nhập phương trình';
-
-            % Create inputEquation
-            app.inputEquation = uieditfield(app.Tim_Nghiem_Tab, 'text');
-            app.inputEquation.HorizontalAlignment = 'right';
-            app.inputEquation.Position = [184 441 109 22];
-
-            % Create ChnphngphptmLabel
-            app.ChnphngphptmLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.ChnphngphptmLabel.HorizontalAlignment = 'center';
-            app.ChnphngphptmLabel.Position = [41 297 130 22];
-            app.ChnphngphptmLabel.Text = 'Chọn phương pháp tìm';
-
-            % Create choseOption
-            app.choseOption = uidropdown(app.Tim_Nghiem_Tab);
-            app.choseOption.Items = {'Chia đôi', 'Lặp', 'Newton(Tiếp tuyến)'};
-            app.choseOption.Position = [180 297 113 22];
-            app.choseOption.Value = 'Chia đôi';
-
-            % Create caculateEvent
-            app.caculateEvent = uibutton(app.Tim_Nghiem_Tab, 'push');
-            app.caculateEvent.ButtonPushedFcn = createCallbackFcn(app, @caculateEventButtonPushed, true);
-            app.caculateEvent.Position = [120 222 139 22];
-            app.caculateEvent.Text = 'Vẽ tín hiệu và tính toán';
-
-            % Create NhpkhongphnlyngimaEditFieldLabel
-            app.NhpkhongphnlyngimaEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.NhpkhongphnlyngimaEditFieldLabel.HorizontalAlignment = 'center';
-            app.NhpkhongphnlyngimaEditFieldLabel.Position = [12 407 165 22];
-            app.NhpkhongphnlyngimaEditFieldLabel.Text = 'Nhập khoảng phân ly ngiệm a';
-
-            % Create inputSeparationDistance_a
-            app.inputSeparationDistance_a = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.inputSeparationDistance_a.HorizontalAlignment = 'center';
-            app.inputSeparationDistance_a.Position = [184 407 109 22];
-
-            % Create NhpkhongphnlynghimbEditFieldLabel
-            app.NhpkhongphnlynghimbEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.NhpkhongphnlynghimbEditFieldLabel.HorizontalAlignment = 'center';
-            app.NhpkhongphnlynghimbEditFieldLabel.Position = [6 370 171 22];
-            app.NhpkhongphnlynghimbEditFieldLabel.Text = 'Nhập khoảng phân ly nghiệm b';
-
-            % Create inputSeparationDistance_b
-            app.inputSeparationDistance_b = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.inputSeparationDistance_b.HorizontalAlignment = 'center';
-            app.inputSeparationDistance_b.Position = [184 370 109 22];
-
-            % Create NhpsaisEditFieldLabel
-            app.NhpsaisEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.NhpsaisEditFieldLabel.HorizontalAlignment = 'center';
-            app.NhpsaisEditFieldLabel.Position = [108 334 69 22];
-            app.NhpsaisEditFieldLabel.Text = 'Nhập sai số';
-
-            % Create inputAllowableError
-            app.inputAllowableError = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.inputAllowableError.HorizontalAlignment = 'center';
-            app.inputAllowableError.Position = [184 334 109 22];
-
-            % Create SlnlpcaphngphptrnlLabel
-            app.SlnlpcaphngphptrnlLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.SlnlpcaphngphptrnlLabel.HorizontalAlignment = 'center';
-            app.SlnlpcaphngphptrnlLabel.Position = [417 111 308 19];
-            app.SlnlpcaphngphptrnlLabel.Text = 'Số lần lặp của phương pháp ở trên là';
-
-            % Create resultLoop
-            app.resultLoop = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.resultLoop.HorizontalAlignment = 'center';
-            app.resultLoop.Position = [724 110 100 22];
-
-            % Create NghimcaphngphptrnlLabel
-            app.NghimcaphngphptrnlLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.NghimcaphngphptrnlLabel.HorizontalAlignment = 'right';
-            app.NghimcaphngphptrnlLabel.Position = [27 111 198 22];
-            app.NghimcaphngphptrnlLabel.Text = 'Nghiệm của phương pháp  ở trên là';
-
-            % Create resultMethod
-            app.resultMethod = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.resultMethod.HorizontalAlignment = 'center';
-            app.resultMethod.Position = [240 111 100 22];
-
-            % Create UIAxes
-            app.UIAxes = uiaxes(app.Tim_Nghiem_Tab);
-            title(app.UIAxes, 'Đồ thị ')
-            xlabel(app.UIAxes, 'X')
-            ylabel(app.UIAxes, 'Y')
-            zlabel(app.UIAxes, 'Z')
-            app.UIAxes.Position = [339 157 442 302];
-
-            % Create Noi_Suy_Tab
-            app.Noi_Suy_Tab = uitab(app.TabGroup);
-            app.Noi_Suy_Tab.Title = 'Nội Suy';
-            %<<<<<<< Nguyen The Vy
-            
-            % Create PhngphpnisuyDropDownLabel
-            app.PhngphpnisuyDropDownLabel = uilabel(app.Noi_Suy_Tab);
-            app.PhngphpnisuyDropDownLabel.HorizontalAlignment = 'right';
-            app.PhngphpnisuyDropDownLabel.Position = [39 243 121 22];
-            app.PhngphpnisuyDropDownLabel.Text = 'Phương pháp nội suy';
-
-            % Create choseOptionInterpolation
-            app.choseOptionInterpolation = uidropdown(app.Noi_Suy_Tab);
-            app.choseOptionInterpolation.Items = {'Larange', 'Newton'};
-            app.choseOptionInterpolation.Position = [175 243 100 22];
-            app.choseOptionInterpolation.Value = 'Larange';
-
-            % Create KtqunisuytrnlEditFieldLabel
-            app.KtqunisuytrnlEditFieldLabel = uilabel(app.Noi_Suy_Tab);
-            app.KtqunisuytrnlEditFieldLabel.HorizontalAlignment = 'center';
-            app.KtqunisuytrnlEditFieldLabel.FontName = 'Arial';
-            app.KtqunisuytrnlEditFieldLabel.Position = [584 98 125 22];
-            app.KtqunisuytrnlEditFieldLabel.Text = 'Kết quả nội suy trên là';
-
-            % Create restultInterpolation
-            app.restultInterpolation = uieditfield(app.Noi_Suy_Tab, 'numeric');
-            app.restultInterpolation.HorizontalAlignment = 'center';
-            app.restultInterpolation.FontName = 'Arial';
-            app.restultInterpolation.Position = [724 98 100 22];
-
-            % Create Button
-            app.Button = uibutton(app.Noi_Suy_Tab, 'push');
-            app.Button.ButtonPushedFcn = createCallbackFcn(app, @ButtonPushed, true);
-            app.Button.Position = [108 157 139 22];
-            app.Button.Text = 'Vẽ tín hiệu và tính toán';
-
-            % Create NhpgitrxEditFieldLabel
-            app.NhpgitrxEditFieldLabel = uilabel(app.Noi_Suy_Tab);
-            app.NhpgitrxEditFieldLabel.HorizontalAlignment = 'center';
-            app.NhpgitrxEditFieldLabel.FontName = 'Arial';
-            app.NhpgitrxEditFieldLabel.Position = [84 420 76 22];
-            app.NhpgitrxEditFieldLabel.Text = 'Nhập giá trị x';
-
-            % Create InputArangeX
-            app.InputArangeX = uieditfield(app.Noi_Suy_Tab, 'text');
-            app.InputArangeX.HorizontalAlignment = 'center';
-            app.InputArangeX.FontName = 'Arial';
-            app.InputArangeX.Position = [175 420 100 22];
-
-            % Create NhpgitryEditFieldLabel
-            app.NhpgitryEditFieldLabel = uilabel(app.Noi_Suy_Tab);
-            app.NhpgitryEditFieldLabel.HorizontalAlignment = 'center';
-            app.NhpgitryEditFieldLabel.FontName = 'Arial';
-            app.NhpgitryEditFieldLabel.Position = [84 370 76 22];
-            app.NhpgitryEditFieldLabel.Text = 'Nhập giá trị y';
-
-            % Create InputArangeY
-            app.InputArangeY = uieditfield(app.Noi_Suy_Tab, 'text');
-            app.InputArangeY.HorizontalAlignment = 'center';
-            app.InputArangeY.FontName = 'Arial';
-            app.InputArangeY.Position = [175 370 100 22];
-
-            % Create NhpgitrcnnisuyLabel
-            app.NhpgitrcnnisuyLabel = uilabel(app.Noi_Suy_Tab);
-            app.NhpgitrcnnisuyLabel.HorizontalAlignment = 'center';
-            app.NhpgitrcnnisuyLabel.FontName = 'Arial';
-            app.NhpgitrcnnisuyLabel.Position = [29 308 131 22];
-            app.NhpgitrcnnisuyLabel.Text = 'Nhập giá trị cần nội suy';
-
-            % Create InputValueToInterpolated
-            app.InputValueToInterpolated = uieditfield(app.Noi_Suy_Tab, 'text');
-            app.InputValueToInterpolated.HorizontalAlignment = 'center';
-            app.InputValueToInterpolated.FontName = 'Arial';
-            app.InputValueToInterpolated.Position = [175 308 100 22];
-
-            % Create KtquathcnisuycaphngphptrnlEditFieldLabel
-            app.KtquathcnisuycaphngphptrnlEditFieldLabel = uilabel(app.Noi_Suy_Tab);
-            app.KtquathcnisuycaphngphptrnlEditFieldLabel.HorizontalAlignment = 'center';
-            app.KtquathcnisuycaphngphptrnlEditFieldLabel.FontName = 'Arial';
-            app.KtquathcnisuycaphngphptrnlEditFieldLabel.Position = [12 98 270 22];
-            app.KtquathcnisuycaphngphptrnlEditFieldLabel.Text = 'Kết quả đa thức nội suy của phương pháp trên là';
-
-            % Create resultPolynomial
-            app.resultPolynomial = uieditfield(app.Noi_Suy_Tab, 'text');
-            app.resultPolynomial.HorizontalAlignment = 'center';
-            app.resultPolynomial.FontName = 'Arial';
-            app.resultPolynomial.Position = [297 98 278 22];
-
-            % Create UIAxesInterpolation
-            app.UIAxesInterpolation = uiaxes(app.Noi_Suy_Tab);
-            title(app.UIAxesInterpolation, 'Đồ thị')
-            xlabel(app.UIAxesInterpolation, 'X')
-            ylabel(app.UIAxesInterpolation, 'Y')
-            zlabel(app.UIAxesInterpolation, 'Z')
-            app.UIAxesInterpolation.Position = [322 152 515 342];
-
-
-            % end Nguyen The Vy
-
-            % Create Hoi_Quy_Tab
-            app.Hoi_Quy_Tab = uitab(app.TabGroup);
-            app.Hoi_Quy_Tab.Title = 'Hồi Quy';
-%<<<<<<< HEAD
-
-%<<<<<<< nhatthanh123
-            % Create Dao_Ham_Tab
-            app.Dao_Ham_Tab = uitab(app.TabGroup);
-            app.Dao_Ham_Tab.Title = 'Đạo Hàm';
-
-
-%>>>>>>> refs/remotes/origin/main
-           % Callbacks that handle component events
-    methods (Access = private)
 
         % Button pushed function: KetQua
         function KetQuaButtonPushed(app, event)
@@ -831,49 +546,444 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             % Hiển thị kết quả
             disp('Đạo hàm gần đúng:');
             uialert(app.UIFigure, sprintf('Đạo hàm gần đúng: %s', mat2str(daoham)), 'Kết quả', 'Icon', 'success');
-% end nhatthanh123
-%<<<<<<< HEAD
-%<<<<<<< NguyenDucThung
+        end
 
-%>>>>>>> main
+        % Button pushed function: KtquButton
+        function KtquButtonPushed(app, event)
+              %///////////// khai báo 
+        result=0;
+         
+ %///////////////input 
+
+             % Xử lý vector X
+             x1 = app.NhpdliuxEditField.Value;
+            X= str2double(split(x1, ',')); % Chuyển chuỗi thành mảng số
+            
+             % Xử lý vector Y
+             y2 = app.NhpdliuyEditField.Value;
+             Y= str2double(split(y2, ',')); % Chuyển chuỗi thành mảng số
+             f = app.NhphmsEditField.Value;
+             if isempty(f) % Nếu ô hàm để trống
+                fx = []; % Không sử dụng hàm fx
+                 else
+                     if ~contains(f, 'x') % Kiểm tra xem chuỗi hàm có chứa 'x' hay không
+                         uialert(app.UIFigure, 'Hàm số không hợp lệ!', 'Lỗi'); % Bảng thông báo lỗi
+                     end
+
+                     fx= str2func(['@(x)', f]); % Hàm số
+             end
+     
+
+        
+            a = app.EditField2.Value;
+            b = app.EditField2_2.Value;
+            N = app.NhpNEditField.Value;
+          
+   
+%///////////////pp hình thang
+                %///////ham
+       function result = TichPhanThangHam(fx, a, b, N)
+            h = (b - a) / N; % Độ dài mỗi đoạn con
+            x = a:h:b; % Chia đoạn [a, b] thành N đoạn
+            result = fx(x(1)) / 2; % Giá trị đầu tiên của hình thang
+            for i = 2:length(x) - 1
+                result = result + fx(x(i)); % Cộng các giá trị ở giữa
+            end
+            result = result + fx(x(end)) / 2; % Giá trị cuối cùng của hình thang
+            result =result* h; % Nhân với độ dài
+       end 
+               %////////vector
+       function result = TichPhanThangVector(a, b, N,y)
+           
+             result = (b - a) * (y(1) + y(end) + 2 * sum(y(2:end-1))) / (2 * N);
+       end
+
+%/////////////// pp simpson 1/3
+             %///////ham
+       function result = TichPhanSimpson13_Ham(fx, a, b, N)
+         
+           if mod(N, 2) ~= 0
+                uialert(app.UIFigure, 'N phải là số chẵn!', 'Cảnh báo','Icon','warning'); % Hiển thị thông báo lỗi
+                return;
+           end
+            h = (b - a) / N; % Độ rộng mỗi đoạn
+            x = a:h:b;       % Các điểm chia trên đoạn [a, b]
+            y_values = fx(x); % Giá trị của hàm số tại các điểm chia
+            
+            % Công thức Simpson 1/3
+            result = h / 3 * (y_values(1) +4 * sum(y_values(2:2:end-1)) +2 * sum(y_values(3:2:end-2)) +y_values(end));
+       end
+        
+       %////////vector
+       function result = TichPhanSimpson13_Vector(a, b, N,y)
+             h = (b - a) / N;
+             result = y(1) + y(end);
+             result = result + 4 * sum(y(2:2:end-1));
+             result = result + 2 * sum(y(3:2:end-2));
+             result = (h / 3) * result;
+       end
+
+ %///////////// pp simpson 3/8
+         %///////ham
+       function  result= TichPhanSimpson38Ham(fx, a, b, N)
+           if mod(N, 3) ~= 0
+                uialert(app.UIFigure, 'N phải là bội số của 3!', 'Cảnh báo','Icon','warning'); % Hiển thị thông báo lỗi
+                return;
+           end
+          
+            h = (b - a) / N; % Độ rộng mỗi đoạn
+            x = a:h:b;       % Các điểm chia trên đoạn [a, b]
+            y_values = fx(x); % Giá trị của hàm số tại các điểm chia
+            
+            % Công thức Simpson 3/8
+           result= ((3*h) / 8) * (y_values(1) +4 * sum(y_values(2:2:end-1)) +2 * sum(y_values(3:2:end-2)) +y_values(end));
+       end
+          %////////vector
+       function result = TichPhanSimpson38_Vector(a, b, N, y)
+         h = (b - a) / N;
+         result = y(1) + y(end);
+         result = result + 3 * sum(y(2:3:end-1));
+         result = result + 3 * sum(y(3:3:end-2));
+         result = result + 2 * sum(y(4:3:end-3));
+         result = (3 * h / 8) * result;
+        end
+
+
+  %/////// drop down select
+Val = app.ChnPhngPhpDropDown.Value;
+
+if strcmp(Val, 'Hình Thang')
+        if isempty(fx)
+            result = TichPhanThangVector(a, b, N, X, Y);
+        else
+            result = TichPhanThangHam(fx, a, b, N);
+        end
+    elseif strcmp(Val, 'Simpson 1/3')
+        if isempty(fx)
+            result = TichPhanSimpson13_Vector(a, b, N, X, Y);
+        else
+            result = TichPhanSimpson13_Ham(fx, a, b, N);
+        end
+    elseif strcmp(Val, 'Simpson 3/8')
+        if isempty(fx)
+            result = TichPhanSimpson38_Vector(a, b, N, X, Y);
+        else
+            result = TichPhanSimpson38Ham(fx, a, b, N);
+        end
+    else
+        error('Unknown method specified.');
+end
+
+     uialert(app.UIFigure, sprintf('Tích phân gần đúng: %s\n', mat2str(result)), 'Kết quả', 'Icon', 'success');
+   
+    
+        end
+    end
+
+    % Component initialization
+    methods (Access = private)
+
+        % Create UIFigure and components
+        function createComponents(app)
+
+            % Create UIFigure and hide until all components are created
+            app.UIFigure = uifigure('Visible', 'off');
+            app.UIFigure.Position = [100 100 850 531];
+            app.UIFigure.Name = 'MATLAB App';
+
+            % Create TabGroup
+            app.TabGroup = uitabgroup(app.UIFigure);
+            app.TabGroup.Position = [1 0 850 532];
+
+            % Create Tim_Nghiem_Tab
+            app.Tim_Nghiem_Tab = uitab(app.TabGroup);
+            app.Tim_Nghiem_Tab.Title = 'Nghiệm';
+
+            % Create UIAxes
+            app.UIAxes = uiaxes(app.Tim_Nghiem_Tab);
+            title(app.UIAxes, 'Đồ thị ')
+            xlabel(app.UIAxes, 'X')
+            ylabel(app.UIAxes, 'Y')
+            zlabel(app.UIAxes, 'Z')
+            app.UIAxes.Position = [339 157 498 337];
+
+            % Create NhpphngtrnhEditFieldLabel
+            app.NhpphngtrnhEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.NhpphngtrnhEditFieldLabel.HorizontalAlignment = 'center';
+            app.NhpphngtrnhEditFieldLabel.Position = [53 441 107 22];
+            app.NhpphngtrnhEditFieldLabel.Text = 'Nhập phương trình';
+
+            % Create inputEquation
+            app.inputEquation = uieditfield(app.Tim_Nghiem_Tab, 'text');
+            app.inputEquation.HorizontalAlignment = 'right';
+            app.inputEquation.Position = [184 441 109 22];
+
+            % Create ChnphngphptmLabel
+            app.ChnphngphptmLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.ChnphngphptmLabel.HorizontalAlignment = 'center';
+            app.ChnphngphptmLabel.Position = [41 297 130 22];
+            app.ChnphngphptmLabel.Text = 'Chọn phương pháp tìm';
+
+            % Create choseOption
+            app.choseOption = uidropdown(app.Tim_Nghiem_Tab);
+            app.choseOption.Items = {'Chia đôi', 'Lặp', 'Newton(Tiếp tuyến)'};
+            app.choseOption.Position = [180 297 113 22];
+            app.choseOption.Value = 'Chia đôi';
+
+            % Create caculateEvent
+            app.caculateEvent = uibutton(app.Tim_Nghiem_Tab, 'push');
+            app.caculateEvent.ButtonPushedFcn = createCallbackFcn(app, @caculateEventButtonPushed, true);
+            app.caculateEvent.Position = [120 222 139 22];
+            app.caculateEvent.Text = 'Vẽ tín hiệu và tính toán';
+
+            % Create NhpkhongphnlyngimaEditFieldLabel
+            app.NhpkhongphnlyngimaEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.NhpkhongphnlyngimaEditFieldLabel.HorizontalAlignment = 'center';
+            app.NhpkhongphnlyngimaEditFieldLabel.Position = [12 407 165 22];
+            app.NhpkhongphnlyngimaEditFieldLabel.Text = 'Nhập khoảng phân ly ngiệm a';
+
+            % Create inputSeparationDistance_a
+            app.inputSeparationDistance_a = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.inputSeparationDistance_a.HorizontalAlignment = 'center';
+            app.inputSeparationDistance_a.Position = [184 407 109 22];
+
+            % Create NhpkhongphnlynghimbEditFieldLabel
+            app.NhpkhongphnlynghimbEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.NhpkhongphnlynghimbEditFieldLabel.HorizontalAlignment = 'center';
+            app.NhpkhongphnlynghimbEditFieldLabel.Position = [6 370 171 22];
+            app.NhpkhongphnlynghimbEditFieldLabel.Text = 'Nhập khoảng phân ly nghiệm b';
+
+            % Create inputSeparationDistance_b
+            app.inputSeparationDistance_b = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.inputSeparationDistance_b.HorizontalAlignment = 'center';
+            app.inputSeparationDistance_b.Position = [184 370 109 22];
+
+            % Create NhpsaisEditFieldLabel
+            app.NhpsaisEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.NhpsaisEditFieldLabel.HorizontalAlignment = 'center';
+            app.NhpsaisEditFieldLabel.Position = [108 334 69 22];
+            app.NhpsaisEditFieldLabel.Text = 'Nhập sai số';
+
+            % Create inputAllowableError
+            app.inputAllowableError = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.inputAllowableError.HorizontalAlignment = 'center';
+            app.inputAllowableError.Position = [184 334 109 22];
+
+            % Create SlnlpcaphngphptrnlLabel
+            app.SlnlpcaphngphptrnlLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.SlnlpcaphngphptrnlLabel.HorizontalAlignment = 'center';
+            app.SlnlpcaphngphptrnlLabel.Position = [417 111 308 19];
+            app.SlnlpcaphngphptrnlLabel.Text = 'Số lần lặp của phương pháp ở trên là';
+
+            % Create resultLoop
+            app.resultLoop = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.resultLoop.HorizontalAlignment = 'center';
+            app.resultLoop.Position = [724 110 100 22];
+
+            % Create NghimcaphngphptrnlLabel
+            app.NghimcaphngphptrnlLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.NghimcaphngphptrnlLabel.HorizontalAlignment = 'right';
+            app.NghimcaphngphptrnlLabel.Position = [27 111 198 22];
+            app.NghimcaphngphptrnlLabel.Text = 'Nghiệm của phương pháp  ở trên là';
+
+            % Create resultMethod
+            app.resultMethod = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.resultMethod.HorizontalAlignment = 'center';
+            app.resultMethod.Position = [240 111 100 22];
+
+            % Create Noi_Suy_Tab
+            app.Noi_Suy_Tab = uitab(app.TabGroup);
+            app.Noi_Suy_Tab.Title = 'Nội Suy';
+
+            % Create UIAxesInterpolation
+            app.UIAxesInterpolation = uiaxes(app.Noi_Suy_Tab);
+            title(app.UIAxesInterpolation, 'Đồ thị')
+            xlabel(app.UIAxesInterpolation, 'X')
+            ylabel(app.UIAxesInterpolation, 'Y')
+            zlabel(app.UIAxesInterpolation, 'Z')
+            app.UIAxesInterpolation.Position = [322 152 515 342];
+
+            % Create PhngphpnisuyDropDownLabel
+            app.PhngphpnisuyDropDownLabel = uilabel(app.Noi_Suy_Tab);
+            app.PhngphpnisuyDropDownLabel.HorizontalAlignment = 'right';
+            app.PhngphpnisuyDropDownLabel.Position = [39 243 121 22];
+            app.PhngphpnisuyDropDownLabel.Text = 'Phương pháp nội suy';
+
+            % Create choseOptionInterpolation
+            app.choseOptionInterpolation = uidropdown(app.Noi_Suy_Tab);
+            app.choseOptionInterpolation.Items = {'Larange', 'Newton'};
+            app.choseOptionInterpolation.Position = [175 243 100 22];
+            app.choseOptionInterpolation.Value = 'Larange';
+
+            % Create KtqunisuytrnlEditFieldLabel
+            app.KtqunisuytrnlEditFieldLabel = uilabel(app.Noi_Suy_Tab);
+            app.KtqunisuytrnlEditFieldLabel.HorizontalAlignment = 'center';
+            app.KtqunisuytrnlEditFieldLabel.FontName = 'Arial';
+            app.KtqunisuytrnlEditFieldLabel.Position = [584 98 125 22];
+            app.KtqunisuytrnlEditFieldLabel.Text = 'Kết quả nội suy trên là';
+
+            % Create restultInterpolation
+            app.restultInterpolation = uieditfield(app.Noi_Suy_Tab, 'numeric');
+            app.restultInterpolation.HorizontalAlignment = 'center';
+            app.restultInterpolation.FontName = 'Arial';
+            app.restultInterpolation.Position = [724 98 100 22];
+
+            % Create Button
+            app.Button = uibutton(app.Noi_Suy_Tab, 'push');
+            app.Button.ButtonPushedFcn = createCallbackFcn(app, @ButtonPushed, true);
+            app.Button.Position = [108 157 139 22];
+            app.Button.Text = 'Vẽ tín hiệu và tính toán';
+
+            % Create NhpgitrxEditFieldLabel
+            app.NhpgitrxEditFieldLabel = uilabel(app.Noi_Suy_Tab);
+            app.NhpgitrxEditFieldLabel.HorizontalAlignment = 'center';
+            app.NhpgitrxEditFieldLabel.FontName = 'Arial';
+            app.NhpgitrxEditFieldLabel.Position = [84 420 76 22];
+            app.NhpgitrxEditFieldLabel.Text = 'Nhập giá trị x';
+
+            % Create InputArangeX
+            app.InputArangeX = uieditfield(app.Noi_Suy_Tab, 'text');
+            app.InputArangeX.HorizontalAlignment = 'center';
+            app.InputArangeX.FontName = 'Arial';
+            app.InputArangeX.Position = [175 420 100 22];
+
+            % Create NhpgitryEditFieldLabel
+            app.NhpgitryEditFieldLabel = uilabel(app.Noi_Suy_Tab);
+            app.NhpgitryEditFieldLabel.HorizontalAlignment = 'center';
+            app.NhpgitryEditFieldLabel.FontName = 'Arial';
+            app.NhpgitryEditFieldLabel.Position = [84 370 76 22];
+            app.NhpgitryEditFieldLabel.Text = 'Nhập giá trị y';
+
+            % Create InputArangeY
+            app.InputArangeY = uieditfield(app.Noi_Suy_Tab, 'text');
+            app.InputArangeY.HorizontalAlignment = 'center';
+            app.InputArangeY.FontName = 'Arial';
+            app.InputArangeY.Position = [175 370 100 22];
+
+            % Create NhpgitrcnnisuyLabel
+            app.NhpgitrcnnisuyLabel = uilabel(app.Noi_Suy_Tab);
+            app.NhpgitrcnnisuyLabel.HorizontalAlignment = 'center';
+            app.NhpgitrcnnisuyLabel.FontName = 'Arial';
+            app.NhpgitrcnnisuyLabel.Position = [29 308 131 22];
+            app.NhpgitrcnnisuyLabel.Text = 'Nhập giá trị cần nội suy';
+
+            % Create InputValueToInterpolated
+            app.InputValueToInterpolated = uieditfield(app.Noi_Suy_Tab, 'text');
+            app.InputValueToInterpolated.HorizontalAlignment = 'center';
+            app.InputValueToInterpolated.FontName = 'Arial';
+            app.InputValueToInterpolated.Position = [175 308 100 22];
+
+            % Create KtquathcnisuycaphngphptrnlEditFieldLabel
+            app.KtquathcnisuycaphngphptrnlEditFieldLabel = uilabel(app.Noi_Suy_Tab);
+            app.KtquathcnisuycaphngphptrnlEditFieldLabel.HorizontalAlignment = 'center';
+            app.KtquathcnisuycaphngphptrnlEditFieldLabel.FontName = 'Arial';
+            app.KtquathcnisuycaphngphptrnlEditFieldLabel.Position = [12 98 270 22];
+            app.KtquathcnisuycaphngphptrnlEditFieldLabel.Text = 'Kết quả đa thức nội suy của phương pháp trên là';
+
+            % Create resultPolynomial
+            app.resultPolynomial = uieditfield(app.Noi_Suy_Tab, 'text');
+            app.resultPolynomial.HorizontalAlignment = 'center';
+            app.resultPolynomial.FontName = 'Arial';
+            app.resultPolynomial.Position = [297 98 278 22];
+
+            % Create Hoi_Quy_Tab
+            app.Hoi_Quy_Tab = uitab(app.TabGroup);
+            app.Hoi_Quy_Tab.Title = 'Hồi Quy';
+
+            % Create Dao_Ham_Tab
+            app.Dao_Ham_Tab = uitab(app.TabGroup);
+            app.Dao_Ham_Tab.Title = 'Đạo Hàm';
+
+            % Create KetQua
+            app.KetQua = uibutton(app.Dao_Ham_Tab, 'push');
+            app.KetQua.ButtonPushedFcn = createCallbackFcn(app, @KetQuaButtonPushed, true);
+            app.KetQua.Position = [364 77 143 62];
+            app.KetQua.Text = 'Kết quả';
+
+            % Create NhpbchEditFieldLabel
+            app.NhpbchEditFieldLabel = uilabel(app.Dao_Ham_Tab);
+            app.NhpbchEditFieldLabel.HorizontalAlignment = 'right';
+            app.NhpbchEditFieldLabel.Position = [545 330 76 22];
+            app.NhpbchEditFieldLabel.Text = 'Nhập bước h';
+
+            % Create NhapBuoch
+            app.NhapBuoch = uieditfield(app.Dao_Ham_Tab, 'numeric');
+            app.NhapBuoch.Position = [636 330 136 22];
+
+            % Create NhpgitrcntnhohmEditFieldLabel
+            app.NhpgitrcntnhohmEditFieldLabel = uilabel(app.Dao_Ham_Tab);
+            app.NhpgitrcntnhohmEditFieldLabel.HorizontalAlignment = 'center';
+            app.NhpgitrcntnhohmEditFieldLabel.Position = [354 290 163 22];
+            app.NhpgitrcntnhohmEditFieldLabel.Text = 'Nhập giá trị cần tính đạo hàm';
+
+            % Create GiaTriCanTinhDaoHam
+            app.GiaTriCanTinhDaoHam = uieditfield(app.Dao_Ham_Tab, 'numeric');
+            app.GiaTriCanTinhDaoHam.Position = [388 256 100 22];
+
+            % Create NhphmsEditFieldLabel
+            app.NhphmsEditFieldLabel = uilabel(app.Dao_Ham_Tab);
+            app.NhphmsEditFieldLabel.HorizontalAlignment = 'right';
+            app.NhphmsEditFieldLabel.Position = [536 393 87 22];
+            app.NhphmsEditFieldLabel.Text = 'Nhập hàm số';
+
+            % Create NhapHamSo
+            app.NhapHamSo = uieditfield(app.Dao_Ham_Tab, 'text');
+            app.NhapHamSo.Position = [638 393 134 22];
+
+            % Create NhpdliuxEditFieldLabel
+            app.NhpdliuxEditFieldLabel = uilabel(app.Dao_Ham_Tab);
+            app.NhpdliuxEditFieldLabel.HorizontalAlignment = 'right';
+            app.NhpdliuxEditFieldLabel.Position = [125 393 87 22];
+            app.NhpdliuxEditFieldLabel.Text = 'Nhập dữ liệu x ';
+
+            % Create NhapDuLieux
+            app.NhapDuLieux = uieditfield(app.Dao_Ham_Tab, 'text');
+            app.NhapDuLieux.Position = [227 393 100 22];
+
+            % Create NhpdliuyEditFieldLabel
+            app.NhpdliuyEditFieldLabel = uilabel(app.Dao_Ham_Tab);
+            app.NhpdliuyEditFieldLabel.HorizontalAlignment = 'right';
+            app.NhpdliuyEditFieldLabel.Position = [129 330 83 22];
+            app.NhpdliuyEditFieldLabel.Text = 'Nhập dữ liệu y';
+
+            % Create NhapDuLieuy
+            app.NhapDuLieuy = uieditfield(app.Dao_Ham_Tab, 'text');
+            app.NhapDuLieuy.Position = [227 330 100 22];
+
+            % Create ChnsaisOhhocOh2DropDownLabel
+            app.ChnsaisOhhocOh2DropDownLabel = uilabel(app.Dao_Ham_Tab);
+            app.ChnsaisOhhocOh2DropDownLabel.HorizontalAlignment = 'right';
+            app.ChnsaisOhhocOh2DropDownLabel.Position = [92 189 165 22];
+            app.ChnsaisOhhocOh2DropDownLabel.Text = 'Chọn sai số O(h) hoặc O(h^2)';
+
+            % Create ChonSaiSo
+            app.ChonSaiSo = uidropdown(app.Dao_Ham_Tab);
+            app.ChonSaiSo.Items = {'Chọn', 'O(h)', 'O(h^2)'};
+            app.ChonSaiSo.Position = [272 189 100 22];
+            app.ChonSaiSo.Value = 'Chọn';
+
+            % Create PhngphpohmDropDownLabel
+            app.PhngphpohmDropDownLabel = uilabel(app.Dao_Ham_Tab);
+            app.PhngphpohmDropDownLabel.HorizontalAlignment = 'right';
+            app.PhngphpohmDropDownLabel.Position = [528 189 129 22];
+            app.PhngphpohmDropDownLabel.Text = 'Phương pháp đạo hàm';
+
+            % Create PhuongPhapDaoHam
+            app.PhuongPhapDaoHam = uidropdown(app.Dao_Ham_Tab);
+            app.PhuongPhapDaoHam.Items = {'Chọn', 'tiến', 'lùi', 'trung tâm'};
+            app.PhuongPhapDaoHam.Position = [672 189 100 22];
+            app.PhuongPhapDaoHam.Value = 'Chọn';
+
             % Create Tich_Phan_Tab
             app.Tich_Phan_Tab = uitab(app.TabGroup);
             app.Tich_Phan_Tab.Title = 'Tích Phân';
-
-            % Create NhpdliuxEditFieldLabel
-            app.NhpdliuxEditFieldLabel = uilabel(app.Tich_Phan_Tab);
-            app.NhpdliuxEditFieldLabel.HorizontalAlignment = 'right';
-            app.NhpdliuxEditFieldLabel.FontName = 'Times New Roman';
-            app.NhpdliuxEditFieldLabel.FontSize = 14;
-            app.NhpdliuxEditFieldLabel.FontWeight = 'bold';
-            app.NhpdliuxEditFieldLabel.Position = [34 411 94 22];
-            app.NhpdliuxEditFieldLabel.Text = 'Nhập dữ liệu x';
-
-            % Create NhpdliuxEditField
-            app.NhpdliuxEditField = uieditfield(app.Tich_Phan_Tab, 'text');
-            app.NhpdliuxEditField.HorizontalAlignment = 'center';
-            app.NhpdliuxEditField.Position = [143 411 100 22];
-
-            % Create NhpdliuyEditFieldLabel
-            app.NhpdliuyEditFieldLabel = uilabel(app.Tich_Phan_Tab);
-            app.NhpdliuyEditFieldLabel.HorizontalAlignment = 'right';
-            app.NhpdliuyEditFieldLabel.FontName = 'Times New Roman';
-            app.NhpdliuyEditFieldLabel.FontSize = 14;
-            app.NhpdliuyEditFieldLabel.FontWeight = 'bold';
-            app.NhpdliuyEditFieldLabel.Position = [34 342 94 22];
-            app.NhpdliuyEditFieldLabel.Text = 'Nhập dữ liệu y';
-
-            % Create NhpdliuyEditField
-            app.NhpdliuyEditField = uieditfield(app.Tich_Phan_Tab, 'text');
-            app.NhpdliuyEditField.HorizontalAlignment = 'center';
-            app.NhpdliuyEditField.Position = [143 342 100 22];
 
             % Create HocLabel
             app.HocLabel = uilabel(app.Tich_Phan_Tab);
             app.HocLabel.FontName = 'Times New Roman';
             app.HocLabel.FontSize = 14;
             app.HocLabel.FontWeight = 'bold';
-            app.HocLabel.Position = [74 281 36 22];
+            app.HocLabel.Position = [126 278 36 22];
             app.HocLabel.Text = 'Hoặc';
 
             % Create NhpcnLabel
@@ -881,28 +991,28 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             app.NhpcnLabel.FontName = 'Times New Roman';
             app.NhpcnLabel.FontSize = 14;
             app.NhpcnLabel.FontWeight = 'bold';
-            app.NhpcnLabel.Position = [455 275 74 42];
+            app.NhpcnLabel.Position = [507 272 74 42];
             app.NhpcnLabel.Text = 'Nhập cận ';
 
             % Create Label
             app.Label = uilabel(app.Tich_Phan_Tab);
             app.Label.FontSize = 20;
             app.Label.FontWeight = 'bold';
-            app.Label.Position = [549 275 35 43];
+            app.Label.Position = [601 272 35 43];
             app.Label.Text = '[';
 
             % Create Label_2
             app.Label_2 = uilabel(app.Tich_Phan_Tab);
             app.Label_2.FontSize = 20;
             app.Label_2.FontWeight = 'bold';
-            app.Label_2.Position = [648 275 35 43];
+            app.Label_2.Position = [700 272 35 43];
             app.Label_2.Text = ']';
 
             % Create Label_3
             app.Label_3 = uilabel(app.Tich_Phan_Tab);
             app.Label_3.FontSize = 22;
             app.Label_3.FontWeight = 'bold';
-            app.Label_3.Position = [600 282 17 28];
+            app.Label_3.Position = [652 279 17 28];
             app.Label_3.Text = ';';
 
             % Create KtquButton
@@ -911,8 +1021,46 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             app.KtquButton.FontName = 'Times New Roman';
             app.KtquButton.FontSize = 14;
             app.KtquButton.FontWeight = 'bold';
-            app.KtquButton.Position = [299 104 207 42];
+            app.KtquButton.Position = [351 101 207 42];
             app.KtquButton.Text = 'Kết quả';
+
+            % Create EditField2
+            app.EditField2 = uieditfield(app.Tich_Phan_Tab, 'numeric');
+            app.EditField2.HorizontalAlignment = 'center';
+            app.EditField2.Position = [612 280 29 30];
+
+            % Create EditField2_2
+            app.EditField2_2 = uieditfield(app.Tich_Phan_Tab, 'numeric');
+            app.EditField2_2.HorizontalAlignment = 'center';
+            app.EditField2_2.Position = [668 280 29 30];
+
+            % Create NhpdliuxEditFieldLabel_2
+            app.NhpdliuxEditFieldLabel_2 = uilabel(app.Tich_Phan_Tab);
+            app.NhpdliuxEditFieldLabel_2.HorizontalAlignment = 'right';
+            app.NhpdliuxEditFieldLabel_2.FontName = 'Times New Roman';
+            app.NhpdliuxEditFieldLabel_2.FontSize = 14;
+            app.NhpdliuxEditFieldLabel_2.FontWeight = 'bold';
+            app.NhpdliuxEditFieldLabel_2.Position = [86 408 94 22];
+            app.NhpdliuxEditFieldLabel_2.Text = 'Nhập dữ liệu x';
+
+            % Create NhpdliuxEditField
+            app.NhpdliuxEditField = uieditfield(app.Tich_Phan_Tab, 'text');
+            app.NhpdliuxEditField.HorizontalAlignment = 'center';
+            app.NhpdliuxEditField.Position = [195 408 100 22];
+
+            % Create NhpdliuyEditFieldLabel_2
+            app.NhpdliuyEditFieldLabel_2 = uilabel(app.Tich_Phan_Tab);
+            app.NhpdliuyEditFieldLabel_2.HorizontalAlignment = 'right';
+            app.NhpdliuyEditFieldLabel_2.FontName = 'Times New Roman';
+            app.NhpdliuyEditFieldLabel_2.FontSize = 14;
+            app.NhpdliuyEditFieldLabel_2.FontWeight = 'bold';
+            app.NhpdliuyEditFieldLabel_2.Position = [86 339 94 22];
+            app.NhpdliuyEditFieldLabel_2.Text = 'Nhập dữ liệu y';
+
+            % Create NhpdliuyEditField
+            app.NhpdliuyEditField = uieditfield(app.Tich_Phan_Tab, 'text');
+            app.NhpdliuyEditField.HorizontalAlignment = 'center';
+            app.NhpdliuyEditField.Position = [195 339 100 22];
 
             % Create NhpNEditFieldLabel
             app.NhpNEditFieldLabel = uilabel(app.Tich_Phan_Tab);
@@ -920,37 +1068,27 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             app.NhpNEditFieldLabel.FontName = 'Times New Roman';
             app.NhpNEditFieldLabel.FontSize = 14;
             app.NhpNEditFieldLabel.FontWeight = 'bold';
-            app.NhpNEditFieldLabel.Position = [455 207 51 22];
+            app.NhpNEditFieldLabel.Position = [507 204 51 22];
             app.NhpNEditFieldLabel.Text = 'Nhập N';
 
             % Create NhpNEditField
             app.NhpNEditField = uieditfield(app.Tich_Phan_Tab, 'numeric');
             app.NhpNEditField.HorizontalAlignment = 'center';
-            app.NhpNEditField.Position = [521 198 142 40];
+            app.NhpNEditField.Position = [573 195 142 40];
 
-            % Create EditField2_4
-            app.EditField2_4 = uieditfield(app.Tich_Phan_Tab, 'numeric');
-            app.EditField2_4.HorizontalAlignment = 'center';
-            app.EditField2_4.Position = [560 283 29 30];
-
-            % Create EditField2_5
-            app.EditField2_5 = uieditfield(app.Tich_Phan_Tab, 'numeric');
-            app.EditField2_5.HorizontalAlignment = 'center';
-            app.EditField2_5.Position = [616 283 29 30];
-
-            % Create NhphmsEditFieldLabel
-            app.NhphmsEditFieldLabel = uilabel(app.Tich_Phan_Tab);
-            app.NhphmsEditFieldLabel.HorizontalAlignment = 'right';
-            app.NhphmsEditFieldLabel.FontName = 'Times New Roman';
-            app.NhphmsEditFieldLabel.FontSize = 14;
-            app.NhphmsEditFieldLabel.FontWeight = 'bold';
-            app.NhphmsEditFieldLabel.Position = [34 207 84 22];
-            app.NhphmsEditFieldLabel.Text = 'Nhập hàm số';
+            % Create NhphmsEditFieldLabel_2
+            app.NhphmsEditFieldLabel_2 = uilabel(app.Tich_Phan_Tab);
+            app.NhphmsEditFieldLabel_2.HorizontalAlignment = 'right';
+            app.NhphmsEditFieldLabel_2.FontName = 'Times New Roman';
+            app.NhphmsEditFieldLabel_2.FontSize = 14;
+            app.NhphmsEditFieldLabel_2.FontWeight = 'bold';
+            app.NhphmsEditFieldLabel_2.Position = [86 204 84 22];
+            app.NhphmsEditFieldLabel_2.Text = 'Nhập hàm số';
 
             % Create NhphmsEditField
             app.NhphmsEditField = uieditfield(app.Tich_Phan_Tab, 'text');
             app.NhphmsEditField.HorizontalAlignment = 'center';
-            app.NhphmsEditField.Position = [127 202 118 36];
+            app.NhphmsEditField.Position = [179 199 118 36];
 
             % Create ChnPhngPhpDropDownLabel
             app.ChnPhngPhpDropDownLabel = uilabel(app.Tich_Phan_Tab);
@@ -958,13 +1096,13 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             app.ChnPhngPhpDropDownLabel.FontName = 'Times New Roman';
             app.ChnPhngPhpDropDownLabel.FontSize = 14;
             app.ChnPhngPhpDropDownLabel.FontWeight = 'bold';
-            app.ChnPhngPhpDropDownLabel.Position = [450 411 123 22];
+            app.ChnPhngPhpDropDownLabel.Position = [502 408 123 22];
             app.ChnPhngPhpDropDownLabel.Text = 'Chọn Phương Pháp';
 
             % Create ChnPhngPhpDropDown
             app.ChnPhngPhpDropDown = uidropdown(app.Tich_Phan_Tab);
             app.ChnPhngPhpDropDown.Items = {'Hình Thang', 'Simpson 1/3', 'Simpson 3/8'};
-            app.ChnPhngPhpDropDown.Position = [583 411 100 22];
+            app.ChnPhngPhpDropDown.Position = [635 408 100 22];
             app.ChnPhngPhpDropDown.Value = 'Simpson 1/3';
 
             % Create Introduce_Tab
@@ -1011,6 +1149,4 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             delete(app.UIFigure)
         end
     end
-
-%end
-%>>>>>>> main
+end
