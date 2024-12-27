@@ -494,7 +494,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                 h = h_calc;
             end
             
-            % Tạo vector kết quả đạo hàm
+            % Tạo vector kết quả 
             n = length(x);
             daoham = NaN(1, n); % Tạo vector kết quả với giá trị NaN ban đầu
             
