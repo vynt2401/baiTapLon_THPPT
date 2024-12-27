@@ -543,7 +543,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                     return;
             end
             
-            % Hiển thị kết quả
+            % Hiển thị kết quả dao ham gan dung
             disp('Đạo hàm gần đúng:');
             uialert(app.UIFigure, sprintf('Đạo hàm gần đúng: %s', mat2str(daoham)), 'Kết quả', 'Icon', 'success');
         end
