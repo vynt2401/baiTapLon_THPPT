@@ -73,8 +73,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         NhpcnLabel                     matlab.ui.control.Label
         HocLabel                       matlab.ui.control.Label
         Introduce_Tab                  matlab.ui.container.Tab
-        Test_Field                     matlab.ui.control.EditField
-        EditFieldLabel                 matlab.ui.control.Label
+        AVy                            matlab.ui.control.Image
     end
 
     
@@ -494,7 +493,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                 h = h_calc;
             end
             
-            % Tạo vector kết quả 
+            % Tạo vector kết quả đạo hàm
             n = length(x);
             daoham = NaN(1, n); % Tạo vector kết quả với giá trị NaN ban đầu
             
@@ -543,7 +542,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                     return;
             end
             
-            % Hiển thị kết quả dao ham gan dung
+            % Hiển thị kết quả
             disp('Đạo hàm gần đúng:');
             uialert(app.UIFigure, sprintf('Đạo hàm gần đúng: %s', mat2str(daoham)), 'Kết quả', 'Icon', 'success');
         end
@@ -690,6 +689,9 @@ end
 
         % Create UIFigure and components
         function createComponents(app)
+
+            % Get the file path for locating images
+            pathToMLAPP = fileparts(mfilename('fullpath'));
 
             % Create UIFigure and hide until all components are created
             app.UIFigure = uifigure('Visible', 'off');
@@ -1114,16 +1116,10 @@ end
             app.Introduce_Tab = uitab(app.TabGroup);
             app.Introduce_Tab.Title = 'Giới Thiệu Nhóm';
 
-            % Create EditFieldLabel
-            app.EditFieldLabel = uilabel(app.Introduce_Tab);
-            app.EditFieldLabel.HorizontalAlignment = 'right';
-            app.EditFieldLabel.Position = [88 453 55 22];
-            app.EditFieldLabel.Text = 'Edit Field';
-
-            % Create Test_Field
-            app.Test_Field = uieditfield(app.Introduce_Tab, 'text');
-            app.Test_Field.Position = [158 453 164 22];
-            app.Test_Field.Value = 'Tab này cho Tâm làm';
+            % Create AVy
+            app.AVy = uiimage(app.Introduce_Tab);
+            app.AVy.Position = [246 2 234 213];
+            app.AVy.ImageSource = fullfile(pathToMLAPP, 'NTV.png');
 
             % Show the figure after all components are created
             app.UIFigure.Visible = 'on';
