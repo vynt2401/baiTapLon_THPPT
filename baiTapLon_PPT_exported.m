@@ -2,6 +2,48 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
 
     % Properties that correspond to app components
     properties (Access = public)
+%<<<<<<< ThanhTien91
+        UIFigure                    matlab.ui.Figure
+        TabGroup                    matlab.ui.container.TabGroup
+        Tim_Nghiem_Tab              matlab.ui.container.Tab
+        NhpphngtrnhEditFieldLabel   matlab.ui.control.Label
+        inputEquation               matlab.ui.control.EditField
+        ChnphngphptmLabel           matlab.ui.control.Label
+        choseOption                 matlab.ui.control.DropDown
+        caculateEvent               matlab.ui.control.Button
+        NhpkhongphnlyngimaEditFieldLabel  matlab.ui.control.Label
+        inputSeparationDistance_a   matlab.ui.control.NumericEditField
+        NhpkhongphnlynghimbEditFieldLabel  matlab.ui.control.Label
+        inputSeparationDistance_b   matlab.ui.control.NumericEditField
+        NhpsaisEditFieldLabel       matlab.ui.control.Label
+        inputAllowableError         matlab.ui.control.NumericEditField
+        SlnlpcaphngphptrnlLabel     matlab.ui.control.Label
+        resultLoop                  matlab.ui.control.NumericEditField
+        NghimcaphngphptrnlLabel     matlab.ui.control.Label
+        resultMethod                matlab.ui.control.NumericEditField
+        UIAxes                      matlab.ui.control.UIAxes
+        Noi_Suy_Tab                 matlab.ui.container.Tab
+        Hoi_Quy_Tab                 matlab.ui.container.Tab
+        Button                      matlab.ui.control.Button
+        NhpdliuxEditFieldLabel      matlab.ui.control.Label
+        EditFieldX                  matlab.ui.control.NumericEditField
+        NhpdliuyEditFieldLabel      matlab.ui.control.Label
+        EditFieldY                  matlab.ui.control.NumericEditField
+        NhpgitrcndonEditFieldLabel  matlab.ui.control.Label
+        EditFieldNhapgiatridudoan   matlab.ui.control.NumericEditField
+        KtqudonEditFieldLabel       matlab.ui.control.Label
+        EditFieldKetquadudoan       matlab.ui.control.NumericEditField
+        KtquchngtrnhhiquyEditFieldLabel  matlab.ui.control.Label
+        EditFieldKetquachuongtrinh  matlab.ui.control.EditField
+        PhngphpDropDownLabel        matlab.ui.control.Label
+        PhngphpDropDown             matlab.ui.control.DropDown
+        UIAxes2                     matlab.ui.control.UIAxes
+        Dao_Ham_Tab                 matlab.ui.container.Tab
+        Tich_Phan_Tab               matlab.ui.container.Tab
+        Introduce_Tab               matlab.ui.container.Tab
+        EditFieldLabel              matlab.ui.control.Label
+        Test_Field                  matlab.ui.control.EditField
+%=======
         UIFigure                       matlab.ui.Figure
         TabGroup                       matlab.ui.container.TabGroup
         Tim_Nghiem_Tab                 matlab.ui.container.Tab
@@ -74,6 +116,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         HocLabel                       matlab.ui.control.Label
         Introduce_Tab                  matlab.ui.container.Tab
         AVy                            matlab.ui.control.Image
+%>>>>>>> main
     end
 
     
@@ -153,8 +196,12 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                    app.resultMethod.Value = result;
                    plot(app.UIAxes,0,0);
                    uialert(app.UIFigure, 'Khoảng phân ly trên khi tính toán thì nghiệm tính ra sẽ bị sai, mời nhập lại khoảng phân ly nghiệm a và b.', 'Lỗi', 'Icon', 'error');
+%<<<<<<< ThanhTien91
+                   error('Khoảng phân ly trên không có nghiệm');
+%=======
                    
                    return;
+%>>>>>>> main
             end
             x1 = x0 - fx(x0) / subs(df, x, x0);
             
@@ -170,6 +217,8 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             %x1 là nghiệm trả về, n là số lần vòng lặp
             %đẩy sai số ra sau
         end
+%<<<<<<< ThanhTien91
+%=======
         
         
         
@@ -262,6 +311,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             end
             results = sym(sum);
         end
+%>>>>>>> main
     end
     
     
@@ -272,15 +322,39 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
 
         % Button pushed function: caculateEvent
         function caculateEventButtonPushed(app, event)
+%<<<<<<< ThanhTien91
+%=======
          
           %lấy giá trị từ bên ngoài UI sau đó đối với fx của tab tìm nghiệm
           %thì đẩy về dạng function với symbols là x
+%>>>>>>> main
            fxi = app.inputEquation.Value;
            fx = str2func(['@(x)', fxi]);
            
            saiso = app.inputAllowableError.Value;
            a = app.inputSeparationDistance_a.Value;
            b = app.inputSeparationDistance_b.Value;
+%<<<<<<< ThanhTien91
+%            syms x;
+%            fp = matlabFunction(diff(fx, x));
+         
+         
+           
+           switch app.choseOption.Value
+               case 'Chia đôi' 
+               [loopTime, no] = bisectionMethod(app, fx, a, b, saiso);              
+               app.resultLoop.Value = loopTime;
+               app.resultMethod.Value = no;
+               x = a: 0.1 : b;
+               y = fx(x);
+         
+               plot(app.UIAxes,x,y);
+               grid(app.UIAxes, 'on');
+               xlim(app.UIAxes,[a,b]);
+               ylim(app.UIAxes,[a,b]);
+               
+               case 'Lặp'
+%=======
 
            %đẩy các phương pháp chọn ở trong drop down vào hàm switch case
            %để đưa ra các điều kiện sau khi event buttonPushed được nhấn
@@ -306,10 +380,22 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                case 'Lặp'
                %đẩy các giá trị output ở hàm tính toán nghiệm lặp sau
                %đó đưa nó vào các value text
+%>>>>>>> main
                [x1, n, x_plot, y] = repeatMethod(app, fx, a,b,saiso);
             
                app.resultLoop.Value= double(n);
                app.resultMethod.Value = double(x1);
+%<<<<<<< ThanhTien91
+               
+
+               
+               plot(app.UIAxes, x_plot, y);
+               grid(app.UIAxes, 'on');
+               xlim(app.UIAxes,[a,b]);
+               ylim(app.UIAxes,[a,b]);
+               
+               case 'Newton(Tiếp tuyến)'
+%======
                %Vẽ đồ thị
                grid(app.UIAxes, 'on');
      
@@ -321,11 +407,126 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                case 'Newton(Tiếp tuyến)'
                %đẩy các giá trị output ở hàm tính toán nghiệm chia đôi sau
                %đó đưa nó vào các value text
+%>>>>>>> main
                [x1, n,x_plot, y] = newtonMethod(app, fx, a, b, saiso);
                
                app.resultLoop.Value = double(n);
                app.resultMethod.Value = double(x1);
                
+%<<<<<<< ThanhTien91
+               plot(app.UIAxes, x_plot, y);
+               grid(app.UIAxes, 'on');
+               xlim(app.UIAxes,[a,b]);
+               ylim(app.UIAxes,[a,b]);
+               
+              
+           end
+                
+           
+          
+           
+           
+           
+           
+        end
+
+        % Value changed function: resultLoop
+        function resultLoopValueChanged(app, event)
+                  
+        end
+%
+        % Callback function: Button, PhngphpDropDown
+        function ButtonPushed(app, event)
+          
+                                      % Lấy giá trị từ các trường EditFields
+                        x = app.EditFieldX.Value;
+                        y = app.EditFieldY.Value;
+                        
+                        % Vẽ dữ liệu gốc
+                        app.plotRegression(x, y);  % Gọi hàm plotRegression để vẽ dữ liệu
+                        
+                        % Lấy phương pháp hồi quy từ DropDown
+                        selectedMethod = app.PhngphpDropDown.Value;
+                        
+                        % Thực hiện hồi quy theo phương pháp đã chọn
+                        switch selectedMethod
+                            case 'Hàm mũ'
+                                [y_exp, A, B] = app.plotHammu(x, y);  % Lấy kết quả hồi quy hàm mũ
+                                app.EditFieldKetquachuongtrinh.Value = sprintf('A: %.3f, B: %.3f', A, B);
+                            case 'Tiếp tuyến'
+                                [y_tuyentinh, p] = app.plotTieptuyen(x, y);  % Lấy kết quả hồi quy tuyến tính
+                                app.EditFieldKetquachuongtrinh.Value = sprintf('Hệ số góc: %.3f, Intercept: %.3f', p(1), p(2));
+                            case 'Logarit'
+                                [y_log, A, B] = app.plotLogarit(x, y);  % Lấy kết quả hồi quy logarit
+                                app.EditFieldKetquachuongtrinh.Value = sprintf('A: %.3f, B: %.3f', A, B);
+                            otherwise
+                                disp('Phương pháp không hợp lệ');
+                        end
+                    end
+                    
+                    % Hàm vẽ dữ liệu gốc và đường hồi quy
+                    function plotRegression(app, x, y)
+                        plot(app.UIAxes2, x, y, 'bo', 'MarkerFaceColor', 'b');  % Vẽ các điểm dữ liệu
+                        hold(app.UIAxes2, 'on');
+                        grid(app.UIAxes2, 'on');
+                        xlabel(app.UIAxes2, 'X');
+                        ylabel(app.UIAxes2, 'Y');
+                        title(app.UIAxes2, 'Dữ liệu gốc và Hồi quy');
+                        hold(app.UIAxes2, 'off');
+                    end
+                    
+                    % Hồi quy hàm mũ (Exponential Regression)
+                    function [y_exp, A, B] = plotHammu(app, x, y)
+                        log_y = log(y);  % Chuyển đổi y sang logarit
+                        
+                        % Hồi quy tuyến tính trên (x, log(y))
+                        p = polyfit(x, log_y, 1);
+                        
+                        % Tính toán các tham số A và B
+                        A = exp(p(2));  % A = exp(intercept)
+                        B = p(1);       % B = slope
+                        
+                        % Tạo giá trị y_exp cho đường hồi quy
+                        x_range = linspace(min(x), max(x), 100);
+                        y_exp = A * exp(B * x_range);  % Phương trình hồi quy hàm mũ
+                        
+                        % Vẽ đường hồi quy hàm mũ
+                        plot(app.UIAxes2, x_range, y_exp, 'r-', 'LineWidth', 2, 'DisplayName', 'Hồi quy hàm mũ');
+                        legend(app.UIAxes2, 'show');
+                    end
+                    
+                    % Hồi quy tuyến tính (Linear Regression)
+                    function [y_tuyentinh, p] = plotTieptuyen(app, x, y)
+                        p = polyfit(x, y, 1);  % Hồi quy tuyến tính
+                        
+                        % Tính giá trị y theo phương trình hồi quy
+                        y_tuyentinh = polyval(p, x);  % Đường hồi quy tuyến tính
+                        
+                        % Vẽ đường hồi quy tuyến tính
+                        plot(app.UIAxes2, x, y_tuyentinh, 'g-', 'LineWidth', 2, 'DisplayName', 'Hồi quy tuyến tính');
+                        legend(app.UIAxes2, 'show');
+                    end
+                    
+                    % Hồi quy logarit (Logarithmic Regression)
+                    function [y_log, A, B] = plotLogarit(app, x, y)
+                        log_x = log(x);  % Chuyển đổi x sang logarit
+                        
+                        % Hồi quy tuyến tính trên (log(x), y)
+                        p = polyfit(log_x, y, 1);
+                        
+                        % Tính toán các tham số A và B
+                        A = p(2);  % Hằng số
+                        B = p(1);  % Hệ số góc
+                        
+                        % Tạo giá trị y_log cho đường hồi quy
+                        x_range = linspace(min(x), max(x), 100);
+                        y_log = A + B * log(x_range);  % Phương trình hồi quy logarit
+                        
+                        % Vẽ đường hồi quy logarit
+                        plot(app.UIAxes2, x_range, y_log, 'm--', 'LineWidth', 2, 'DisplayName', 'Hồi quy logarit');
+                        legend(app.UIAxes2, 'show');
+
+%=======
                %Vẽ đồ thị
                hold(app.UIAxes, 'on');            
                plot(app.UIAxes, x_plot, y,'black');              
@@ -681,6 +882,7 @@ end
 
      uialert(app.UIFigure, sprintf('Tích phân gần đúng: %s\n', mat2str(result)), 'Kết quả', 'Icon', 'success');    
     
+%>>>>>>> main
         end
     end
 
@@ -748,6 +950,66 @@ end
             app.NhpkhongphnlyngimaEditFieldLabel.HorizontalAlignment = 'center';
             app.NhpkhongphnlyngimaEditFieldLabel.Position = [12 407 165 22];
             app.NhpkhongphnlyngimaEditFieldLabel.Text = 'Nhập khoảng phân ly ngiệm a';
+%<<<<<<< ThanhTien91
+
+            % Create inputSeparationDistance_a
+            app.inputSeparationDistance_a = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.inputSeparationDistance_a.HorizontalAlignment = 'center';
+            app.inputSeparationDistance_a.Position = [184 407 109 22];
+
+            % Create NhpkhongphnlynghimbEditFieldLabel
+            app.NhpkhongphnlynghimbEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.NhpkhongphnlynghimbEditFieldLabel.HorizontalAlignment = 'center';
+            app.NhpkhongphnlynghimbEditFieldLabel.Position = [6 370 171 22];
+            app.NhpkhongphnlynghimbEditFieldLabel.Text = 'Nhập khoảng phân ly nghiệm b';
+
+            % Create inputSeparationDistance_b
+            app.inputSeparationDistance_b = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.inputSeparationDistance_b.HorizontalAlignment = 'center';
+            app.inputSeparationDistance_b.Position = [184 370 109 22];
+
+            % Create NhpsaisEditFieldLabel
+            app.NhpsaisEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.NhpsaisEditFieldLabel.HorizontalAlignment = 'center';
+            app.NhpsaisEditFieldLabel.Position = [108 334 69 22];
+            app.NhpsaisEditFieldLabel.Text = 'Nhập sai số';
+
+            % Create inputAllowableError
+            app.inputAllowableError = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.inputAllowableError.HorizontalAlignment = 'center';
+            app.inputAllowableError.Position = [184 334 109 22];
+
+            % Create SlnlpcaphngphptrnlLabel
+            app.SlnlpcaphngphptrnlLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.SlnlpcaphngphptrnlLabel.HorizontalAlignment = 'center';
+            app.SlnlpcaphngphptrnlLabel.Position = [417 111 308 19];
+            app.SlnlpcaphngphptrnlLabel.Text = 'Số lần lặp của phương pháp ở trên là';
+
+            % Create resultLoop
+            app.resultLoop = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.resultLoop.ValueChangedFcn = createCallbackFcn(app, @resultLoopValueChanged, true);
+            app.resultLoop.HorizontalAlignment = 'center';
+            app.resultLoop.Position = [724 110 100 22];
+
+            % Create NghimcaphngphptrnlLabel
+            app.NghimcaphngphptrnlLabel = uilabel(app.Tim_Nghiem_Tab);
+            app.NghimcaphngphptrnlLabel.HorizontalAlignment = 'right';
+            app.NghimcaphngphptrnlLabel.Position = [27 111 198 22];
+            app.NghimcaphngphptrnlLabel.Text = 'Nghiệm của phương pháp  ở trên là';
+
+            % Create resultMethod
+            app.resultMethod = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
+            app.resultMethod.HorizontalAlignment = 'center';
+            app.resultMethod.Position = [240 111 100 22];
+
+            % Create UIAxes
+            app.UIAxes = uiaxes(app.Tim_Nghiem_Tab);
+            title(app.UIAxes, 'Đồ thị ')
+            xlabel(app.UIAxes, 'X')
+            ylabel(app.UIAxes, 'Y')
+            zlabel(app.UIAxes, 'Z')
+            app.UIAxes.Position = [339 157 442 302];
+%=======
 
             % Create inputSeparationDistance_a
             app.inputSeparationDistance_a = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
@@ -797,6 +1059,7 @@ end
             app.resultMethod = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
             app.resultMethod.HorizontalAlignment = 'center';
             app.resultMethod.Position = [240 111 100 22];
+%>>>>>>> main
 
             % Create Noi_Suy_Tab
             app.Noi_Suy_Tab = uitab(app.TabGroup);
@@ -896,6 +1159,83 @@ end
             % Create Hoi_Quy_Tab
             app.Hoi_Quy_Tab = uitab(app.TabGroup);
             app.Hoi_Quy_Tab.Title = 'Hồi Quy';
+
+            % Create Button
+            app.Button = uibutton(app.Hoi_Quy_Tab, 'push');
+            app.Button.ButtonPushedFcn = createCallbackFcn(app, @ButtonPushed, true);
+            app.Button.Position = [384 26 100 22];
+
+            % Create NhpdliuxEditFieldLabel
+            app.NhpdliuxEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
+            app.NhpdliuxEditFieldLabel.HorizontalAlignment = 'right';
+            app.NhpdliuxEditFieldLabel.Position = [41 415 83 22];
+            app.NhpdliuxEditFieldLabel.Text = 'Nhập dữ liệu x';
+
+            % Create EditFieldX
+            app.EditFieldX = uieditfield(app.Hoi_Quy_Tab, 'numeric');
+            app.EditFieldX.Position = [139 415 100 22];
+
+            % Create NhpdliuyEditFieldLabel
+            app.NhpdliuyEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
+            app.NhpdliuyEditFieldLabel.HorizontalAlignment = 'right';
+            app.NhpdliuyEditFieldLabel.Position = [41 355 83 22];
+            app.NhpdliuyEditFieldLabel.Text = 'Nhập dữ liệu y';
+
+            % Create EditFieldY
+            app.EditFieldY = uieditfield(app.Hoi_Quy_Tab, 'numeric');
+            app.EditFieldY.Position = [139 355 100 22];
+
+            % Create NhpgitrcndonEditFieldLabel
+            app.NhpgitrcndonEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
+            app.NhpgitrcndonEditFieldLabel.HorizontalAlignment = 'right';
+            app.NhpgitrcndonEditFieldLabel.Position = [41 174 138 22];
+            app.NhpgitrcndonEditFieldLabel.Text = 'Nhập giá trị cần dự đoán';
+
+            % Create EditFieldNhapgiatridudoan
+            app.EditFieldNhapgiatridudoan = uieditfield(app.Hoi_Quy_Tab, 'numeric');
+            app.EditFieldNhapgiatridudoan.Position = [194 174 100 22];
+
+            % Create KtqudonEditFieldLabel
+            app.KtqudonEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
+            app.KtqudonEditFieldLabel.HorizontalAlignment = 'right';
+            app.KtqudonEditFieldLabel.Position = [41 109 95 22];
+            app.KtqudonEditFieldLabel.Text = 'Kết quả dự đoán';
+
+            % Create EditFieldKetquadudoan
+            app.EditFieldKetquadudoan = uieditfield(app.Hoi_Quy_Tab, 'numeric');
+            app.EditFieldKetquadudoan.Position = [151 109 100 22];
+
+            % Create KtquchngtrnhhiquyEditFieldLabel
+            app.KtquchngtrnhhiquyEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
+            app.KtquchngtrnhhiquyEditFieldLabel.HorizontalAlignment = 'right';
+            app.KtquchngtrnhhiquyEditFieldLabel.Position = [41 243 161 22];
+            app.KtquchngtrnhhiquyEditFieldLabel.Text = 'Kết quả chương trình hồi quy';
+
+            % Create EditFieldKetquachuongtrinh
+            app.EditFieldKetquachuongtrinh = uieditfield(app.Hoi_Quy_Tab, 'text');
+            app.EditFieldKetquachuongtrinh.Position = [217 243 100 22];
+
+            % Create PhngphpDropDownLabel
+            app.PhngphpDropDownLabel = uilabel(app.Hoi_Quy_Tab);
+            app.PhngphpDropDownLabel.HorizontalAlignment = 'right';
+            app.PhngphpDropDownLabel.Position = [41 297 79 22];
+            app.PhngphpDropDownLabel.Text = 'Phương pháp';
+
+            % Create PhngphpDropDown
+            app.PhngphpDropDown = uidropdown(app.Hoi_Quy_Tab);
+            app.PhngphpDropDown.Items = {'Tiếp tuyến', 'Hàm mũ', 'Logarit', 'Option 4'};
+            app.PhngphpDropDown.ValueChangedFcn = createCallbackFcn(app, @ButtonPushed, true);
+            app.PhngphpDropDown.Position = [135 297 100 22];
+            app.PhngphpDropDown.Value = 'Hàm mũ';
+
+            % Create UIAxes2
+            app.UIAxes2 = uiaxes(app.Hoi_Quy_Tab);
+            title(app.UIAxes2, 'Đồ thị mô hình hồi quy')
+            xlabel(app.UIAxes2, 'X')
+            ylabel(app.UIAxes2, 'Y')
+            zlabel(app.UIAxes2, 'Z')
+            app.UIAxes2.PlotBoxAspectRatio = [1.66095890410959 1 1];
+            app.UIAxes2.Position = [363 174 436 289];
 
             % Create Dao_Ham_Tab
             app.Dao_Ham_Tab = uitab(app.TabGroup);
