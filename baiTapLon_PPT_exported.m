@@ -88,7 +88,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             b = app.EditField2_5.Value;
             N = app.NhpNEditField.Value;
           
-   
+   % viet ham
 %///////////////pp hình thang
 
        function y = TichPhanHinhThang(fx, a, b, N)
