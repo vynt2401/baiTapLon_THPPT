@@ -43,7 +43,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         Introduce_Tab               matlab.ui.container.Tab
         EditFieldLabel              matlab.ui.control.Label
         Test_Field                  matlab.ui.control.EditField
-%=======
         UIFigure                       matlab.ui.Figure
         TabGroup                       matlab.ui.container.TabGroup
         Tim_Nghiem_Tab                 matlab.ui.container.Tab
@@ -198,7 +197,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                    uialert(app.UIFigure, 'Khoảng phân ly trên khi tính toán thì nghiệm tính ra sẽ bị sai, mời nhập lại khoảng phân ly nghiệm a và b.', 'Lỗi', 'Icon', 'error');
 %<<<<<<< ThanhTien91
                    error('Khoảng phân ly trên không có nghiệm');
-%=======
+
                    
                    return;
 %>>>>>>> main
@@ -218,7 +217,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             %đẩy sai số ra sau
         end
 %<<<<<<< ThanhTien91
-%=======
+
         
         
         
@@ -323,7 +322,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         % Button pushed function: caculateEvent
         function caculateEventButtonPushed(app, event)
 %<<<<<<< ThanhTien91
-%=======
+
          
           %lấy giá trị từ bên ngoài UI sau đó đối với fx của tab tìm nghiệm
           %thì đẩy về dạng function với symbols là x
@@ -354,8 +353,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                ylim(app.UIAxes,[a,b]);
                
                case 'Lặp'
-%=======
-
            %đẩy các phương pháp chọn ở trong drop down vào hàm switch case
            %để đưa ra các điều kiện sau khi event buttonPushed được nhấn
            switch app.choseOption.Value
@@ -395,7 +392,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                ylim(app.UIAxes,[a,b]);
                
                case 'Newton(Tiếp tuyến)'
-%======
                %Vẽ đồ thị
                grid(app.UIAxes, 'on');
      
@@ -417,24 +413,14 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                plot(app.UIAxes, x_plot, y);
                grid(app.UIAxes, 'on');
                xlim(app.UIAxes,[a,b]);
-               ylim(app.UIAxes,[a,b]);
-               
-              
-           end
-                
-           
-          
-           
-           
-           
-           
+               ylim(app.UIAxes,[a,b]);                 
+           end          
         end
 
         % Value changed function: resultLoop
         function resultLoopValueChanged(app, event)
                   
         end
-%
         % Callback function: Button, PhngphpDropDown
         function ButtonPushed(app, event)
           
@@ -526,7 +512,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                         plot(app.UIAxes2, x_range, y_log, 'm--', 'LineWidth', 2, 'DisplayName', 'Hồi quy logarit');
                         legend(app.UIAxes2, 'show');
 
-%=======
+
                %Vẽ đồ thị
                hold(app.UIAxes, 'on');            
                plot(app.UIAxes, x_plot, y,'black');              
@@ -753,7 +739,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
               %///////////// khai báo 
         result=0;
          
- %///////////////input 
+
 
              % Xử lý vector X
              x1 = app.NhpdliuxEditField.Value;
