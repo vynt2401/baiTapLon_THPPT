@@ -2,47 +2,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
 
     % Properties that correspond to app components
     properties (Access = public)
-%<<<<<<< ThanhTien91
-        UIFigure                    matlab.ui.Figure
-        TabGroup                    matlab.ui.container.TabGroup
-        Tim_Nghiem_Tab              matlab.ui.container.Tab
-        NhpphngtrnhEditFieldLabel   matlab.ui.control.Label
-        inputEquation               matlab.ui.control.EditField
-        ChnphngphptmLabel           matlab.ui.control.Label
-        choseOption                 matlab.ui.control.DropDown
-        caculateEvent               matlab.ui.control.Button
-        NhpkhongphnlyngimaEditFieldLabel  matlab.ui.control.Label
-        inputSeparationDistance_a   matlab.ui.control.NumericEditField
-        NhpkhongphnlynghimbEditFieldLabel  matlab.ui.control.Label
-        inputSeparationDistance_b   matlab.ui.control.NumericEditField
-        NhpsaisEditFieldLabel       matlab.ui.control.Label
-        inputAllowableError         matlab.ui.control.NumericEditField
-        SlnlpcaphngphptrnlLabel     matlab.ui.control.Label
-        resultLoop                  matlab.ui.control.NumericEditField
-        NghimcaphngphptrnlLabel     matlab.ui.control.Label
-        resultMethod                matlab.ui.control.NumericEditField
-        UIAxes                      matlab.ui.control.UIAxes
-        Noi_Suy_Tab                 matlab.ui.container.Tab
-        Hoi_Quy_Tab                 matlab.ui.container.Tab
-        Button                      matlab.ui.control.Button
-        NhpdliuxEditFieldLabel      matlab.ui.control.Label
-        EditFieldX                  matlab.ui.control.NumericEditField
-        NhpdliuyEditFieldLabel      matlab.ui.control.Label
-        EditFieldY                  matlab.ui.control.NumericEditField
-        NhpgitrcndonEditFieldLabel  matlab.ui.control.Label
-        EditFieldNhapgiatridudoan   matlab.ui.control.NumericEditField
-        KtqudonEditFieldLabel       matlab.ui.control.Label
-        EditFieldKetquadudoan       matlab.ui.control.NumericEditField
-        KtquchngtrnhhiquyEditFieldLabel  matlab.ui.control.Label
-        EditFieldKetquachuongtrinh  matlab.ui.control.EditField
-        PhngphpDropDownLabel        matlab.ui.control.Label
-        PhngphpDropDown             matlab.ui.control.DropDown
-        UIAxes2                     matlab.ui.control.UIAxes
-        Dao_Ham_Tab                 matlab.ui.container.Tab
-        Tich_Phan_Tab               matlab.ui.container.Tab
-        Introduce_Tab               matlab.ui.container.Tab
-        EditFieldLabel              matlab.ui.control.Label
-        Test_Field                  matlab.ui.control.EditField
         UIFigure                       matlab.ui.Figure
         TabGroup                       matlab.ui.container.TabGroup
         Tim_Nghiem_Tab                 matlab.ui.container.Tab
@@ -114,8 +73,50 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         NhpcnLabel                     matlab.ui.control.Label
         HocLabel                       matlab.ui.control.Label
         Introduce_Tab                  matlab.ui.container.Tab
+        VThnhTin_22200162Panel         matlab.ui.container.Panel
+        Label_9                        matlab.ui.control.Label
+        imtnhgiLabel_5                 matlab.ui.control.Label
+        NghincuvthitkTabHiQuyLabel     matlab.ui.control.Label
+        CngvicLabel_5                  matlab.ui.control.Label
+        XButton_5                      matlab.ui.control.Button
+        Button_2                       matlab.ui.control.Button
+        LngTm_22200140Panel            matlab.ui.container.Panel
+        Label_8                        matlab.ui.control.Label
+        imtnhgiLabel_4                 matlab.ui.control.Label
+        NghincuvthitkTabGiithiunhmTnghpnidungvlmbocoLabel  matlab.ui.control.Label
+        CngvicLabel_4                  matlab.ui.control.Label
+        XButton_4                      matlab.ui.control.Button
+        NguynVNhtThnh_22200145Panel    matlab.ui.container.Panel
+        Label_6                        matlab.ui.control.Label
+        imtnhgiLabel_2                 matlab.ui.control.Label
+        NghincuvthitkTabohmLabel       matlab.ui.control.Label
+        CngvicLabel_2                  matlab.ui.control.Label
+        XButton_3                      matlab.ui.control.Button
+        NguyncThun_22200158Panel       matlab.ui.container.Panel
+        Label_7                        matlab.ui.control.Label
+        CngvicLabel_3                  matlab.ui.control.Label
+        NghincuvthitkTabTchPhnLabel_2  matlab.ui.control.Label
+        imtnhgiLabel_3                 matlab.ui.control.Label
+        XButton_2                      matlab.ui.control.Button
+        NguynThV_22200186Panel         matlab.ui.container.Panel
+        Label_5                        matlab.ui.control.Label
+        imtnhgiLabel                   matlab.ui.control.Label
+        NghincuvthitkTabNghimTabNiSuyLabel  matlab.ui.control.Label
+        CngvicLabel                    matlab.ui.control.Label
+        XButton                        matlab.ui.control.Button
+        Label_4                        matlab.ui.control.Label
+        GIITHIUNHMLabel                matlab.ui.control.Label
+        VThnhTin22200162Button         matlab.ui.control.Button
+        LngTm22200140Button            matlab.ui.control.Button
+        NguynVNhtThnh22200145Button    matlab.ui.control.Button
+        NguyncThun22200158Button       matlab.ui.control.Button
+        NguynThV22200186Button         matlab.ui.control.Button
+        TienImage                      matlab.ui.control.Image
+        TamImage                       matlab.ui.control.Image
+        ThanhImage                     matlab.ui.control.Image
+        ThuanImage                     matlab.ui.control.Image
         AVy                            matlab.ui.control.Image
-%>>>>>>> main
+        Image                          matlab.ui.control.Image
     end
 
     
@@ -195,12 +196,8 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                    app.resultMethod.Value = result;
                    plot(app.UIAxes,0,0);
                    uialert(app.UIFigure, 'Khoảng phân ly trên khi tính toán thì nghiệm tính ra sẽ bị sai, mời nhập lại khoảng phân ly nghiệm a và b.', 'Lỗi', 'Icon', 'error');
-%<<<<<<< ThanhTien91
-                   error('Khoảng phân ly trên không có nghiệm');
-
                    
                    return;
-%>>>>>>> main
             end
             x1 = x0 - fx(x0) / subs(df, x, x0);
             
@@ -216,8 +213,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             %x1 là nghiệm trả về, n là số lần vòng lặp
             %đẩy sai số ra sau
         end
-%<<<<<<< ThanhTien91
-
         
         
         
@@ -310,10 +305,9 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
             end
             results = sym(sum);
         end
-%>>>>>>> main
+        
+    
     end
-    
-    
     
 
     % Callbacks that handle component events
@@ -321,38 +315,16 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
 
         % Button pushed function: caculateEvent
         function caculateEventButtonPushed(app, event)
-%<<<<<<< ThanhTien91
-
          
           %lấy giá trị từ bên ngoài UI sau đó đối với fx của tab tìm nghiệm
           %thì đẩy về dạng function với symbols là x
-%>>>>>>> main
            fxi = app.inputEquation.Value;
            fx = str2func(['@(x)', fxi]);
            
            saiso = app.inputAllowableError.Value;
            a = app.inputSeparationDistance_a.Value;
            b = app.inputSeparationDistance_b.Value;
-%<<<<<<< ThanhTien91
-%            syms x;
-%            fp = matlabFunction(diff(fx, x));
-         
-         
-           
-           switch app.choseOption.Value
-               case 'Chia đôi' 
-               [loopTime, no] = bisectionMethod(app, fx, a, b, saiso);              
-               app.resultLoop.Value = loopTime;
-               app.resultMethod.Value = no;
-               x = a: 0.1 : b;
-               y = fx(x);
-         
-               plot(app.UIAxes,x,y);
-               grid(app.UIAxes, 'on');
-               xlim(app.UIAxes,[a,b]);
-               ylim(app.UIAxes,[a,b]);
-               
-               case 'Lặp'
+
            %đẩy các phương pháp chọn ở trong drop down vào hàm switch case
            %để đưa ra các điều kiện sau khi event buttonPushed được nhấn
            switch app.choseOption.Value
@@ -377,21 +349,10 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                case 'Lặp'
                %đẩy các giá trị output ở hàm tính toán nghiệm lặp sau
                %đó đưa nó vào các value text
-%>>>>>>> main
                [x1, n, x_plot, y] = repeatMethod(app, fx, a,b,saiso);
             
                app.resultLoop.Value= double(n);
                app.resultMethod.Value = double(x1);
-%<<<<<<< ThanhTien91
-               
-
-               
-               plot(app.UIAxes, x_plot, y);
-               grid(app.UIAxes, 'on');
-               xlim(app.UIAxes,[a,b]);
-               ylim(app.UIAxes,[a,b]);
-               
-               case 'Newton(Tiếp tuyến)'
                %Vẽ đồ thị
                grid(app.UIAxes, 'on');
      
@@ -403,116 +364,11 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                case 'Newton(Tiếp tuyến)'
                %đẩy các giá trị output ở hàm tính toán nghiệm chia đôi sau
                %đó đưa nó vào các value text
-%>>>>>>> main
                [x1, n,x_plot, y] = newtonMethod(app, fx, a, b, saiso);
                
                app.resultLoop.Value = double(n);
                app.resultMethod.Value = double(x1);
                
-%<<<<<<< ThanhTien91
-               plot(app.UIAxes, x_plot, y);
-               grid(app.UIAxes, 'on');
-               xlim(app.UIAxes,[a,b]);
-               ylim(app.UIAxes,[a,b]);                 
-           end          
-        end
-
-        % Value changed function: resultLoop
-        function resultLoopValueChanged(app, event)
-                  
-        end
-        % Callback function: Button, PhngphpDropDown
-        function ButtonPushed(app, event)
-          
-                                      % Lấy giá trị từ các trường EditFields
-                        x = app.EditFieldX.Value;
-                        y = app.EditFieldY.Value;
-                        
-                        % Vẽ dữ liệu gốc
-                        app.plotRegression(x, y);  % Gọi hàm plotRegression để vẽ dữ liệu
-                        
-                        % Lấy phương pháp hồi quy từ DropDown
-                        selectedMethod = app.PhngphpDropDown.Value;
-                        
-                        % Thực hiện hồi quy theo phương pháp đã chọn
-                        switch selectedMethod
-                            case 'Hàm mũ'
-                                [y_exp, A, B] = app.plotHammu(x, y);  % Lấy kết quả hồi quy hàm mũ
-                                app.EditFieldKetquachuongtrinh.Value = sprintf('A: %.3f, B: %.3f', A, B);
-                            case 'Tiếp tuyến'
-                                [y_tuyentinh, p] = app.plotTieptuyen(x, y);  % Lấy kết quả hồi quy tuyến tính
-                                app.EditFieldKetquachuongtrinh.Value = sprintf('Hệ số góc: %.3f, Intercept: %.3f', p(1), p(2));
-                            case 'Logarit'
-                                [y_log, A, B] = app.plotLogarit(x, y);  % Lấy kết quả hồi quy logarit
-                                app.EditFieldKetquachuongtrinh.Value = sprintf('A: %.3f, B: %.3f', A, B);
-                            otherwise
-                                disp('Phương pháp không hợp lệ');
-                        end
-                    end
-                    
-                    % Hàm vẽ dữ liệu gốc và đường hồi quy
-                    function plotRegression(app, x, y)
-                        plot(app.UIAxes2, x, y, 'bo', 'MarkerFaceColor', 'b');  % Vẽ các điểm dữ liệu
-                        hold(app.UIAxes2, 'on');
-                        grid(app.UIAxes2, 'on');
-                        xlabel(app.UIAxes2, 'X');
-                        ylabel(app.UIAxes2, 'Y');
-                        title(app.UIAxes2, 'Dữ liệu gốc và Hồi quy');
-                        hold(app.UIAxes2, 'off');
-                    end
-                    
-                    % Hồi quy hàm mũ (Exponential Regression)
-                    function [y_exp, A, B] = plotHammu(app, x, y)
-                        log_y = log(y);  % Chuyển đổi y sang logarit
-                        
-                        % Hồi quy tuyến tính trên (x, log(y))
-                        p = polyfit(x, log_y, 1);
-                        
-                        % Tính toán các tham số A và B
-                        A = exp(p(2));  % A = exp(intercept)
-                        B = p(1);       % B = slope
-                        
-                        % Tạo giá trị y_exp cho đường hồi quy
-                        x_range = linspace(min(x), max(x), 100);
-                        y_exp = A * exp(B * x_range);  % Phương trình hồi quy hàm mũ
-                        
-                        % Vẽ đường hồi quy hàm mũ
-                        plot(app.UIAxes2, x_range, y_exp, 'r-', 'LineWidth', 2, 'DisplayName', 'Hồi quy hàm mũ');
-                        legend(app.UIAxes2, 'show');
-                    end
-                    
-                    % Hồi quy tuyến tính (Linear Regression)
-                    function [y_tuyentinh, p] = plotTieptuyen(app, x, y)
-                        p = polyfit(x, y, 1);  % Hồi quy tuyến tính
-                        
-                        % Tính giá trị y theo phương trình hồi quy
-                        y_tuyentinh = polyval(p, x);  % Đường hồi quy tuyến tính
-                        
-                        % Vẽ đường hồi quy tuyến tính
-                        plot(app.UIAxes2, x, y_tuyentinh, 'g-', 'LineWidth', 2, 'DisplayName', 'Hồi quy tuyến tính');
-                        legend(app.UIAxes2, 'show');
-                    end
-                    
-                    % Hồi quy logarit (Logarithmic Regression)
-                    function [y_log, A, B] = plotLogarit(app, x, y)
-                        log_x = log(x);  % Chuyển đổi x sang logarit
-                        
-                        % Hồi quy tuyến tính trên (log(x), y)
-                        p = polyfit(log_x, y, 1);
-                        
-                        % Tính toán các tham số A và B
-                        A = p(2);  % Hằng số
-                        B = p(1);  % Hệ số góc
-                        
-                        % Tạo giá trị y_log cho đường hồi quy
-                        x_range = linspace(min(x), max(x), 100);
-                        y_log = A + B * log(x_range);  % Phương trình hồi quy logarit
-                        
-                        % Vẽ đường hồi quy logarit
-                        plot(app.UIAxes2, x_range, y_log, 'm--', 'LineWidth', 2, 'DisplayName', 'Hồi quy logarit');
-                        legend(app.UIAxes2, 'show');
-
-
                %Vẽ đồ thị
                hold(app.UIAxes, 'on');            
                plot(app.UIAxes, x_plot, y,'black');              
@@ -739,7 +595,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
               %///////////// khai báo 
         result=0;
          
-
+ %///////////////input 
 
              % Xử lý vector X
              x1 = app.NhpdliuxEditField.Value;
@@ -868,7 +724,133 @@ end
 
      uialert(app.UIFigure, sprintf('Tích phân gần đúng: %s\n', mat2str(result)), 'Kết quả', 'Icon', 'success');    
     
-%>>>>>>> main
+        end
+
+        % Image clicked function: AVy
+        function AVyImageClicked(app, event)
+            app.NguynThV_22200186Panel.Visible = 'on'; % Hiển thị Panel của Vỹ
+            app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận 
+            app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
+            app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+            app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+        end
+
+        % Button pushed function: XButton
+        function XButtonPushed(app, event)
+            app.NguynThV_22200186Panel.Visible = 'off'; % Tắt Panel của Vỹ
+        end
+
+        % Button down function: NguynThV_22200186Panel
+        function NguynThV_22200186PanelButtonDown(app, event)
+            
+        end
+
+        % Button pushed function: XButton_2
+        function XButton_2Pushed(app, event)
+            app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận   
+        end
+
+        % Button pushed function: NguynThV22200186Button
+        function NguynThV22200186ButtonPushed(app, event)
+            app.NguynThV_22200186Panel.Visible = 'on'; % Hiển thị Panel của Vỹ
+            app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận 
+            app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
+            app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+            app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+        end
+
+        % Image clicked function: ThuanImage
+        function ThuanImageClicked(app, event)
+            app.NguyncThun_22200158Panel.Visible = 'on'; % Hiển thị Panel của Thuận 
+            app.NguynThV_22200186Panel.Visible = 'off'; % Hiển thị Panel của Vỹ
+            app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
+            app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+            app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+        end
+
+        % Button pushed function: NguyncThun22200158Button
+        function NguyncThun22200158ButtonPushed(app, event)
+            app.NguyncThun_22200158Panel.Visible = 'on'; % Hiển thị Panel của Thuận  
+            app.NguynThV_22200186Panel.Visible = 'off'; % Hiển thị Panel của Vỹ
+            app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
+            app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+            app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+        
+        end
+
+        % Image clicked function: ThanhImage
+        function ThanhImageClicked(app, event)
+            app.NguynVNhtThnh_22200145Panel.Visible = 'on'; % Hiển thị Panel của Thành
+            app.NguynThV_22200186Panel.Visible = 'off'; % Hiển thị Panel của Vỹ
+            app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
+            app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+            app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+        end
+
+        % Button pushed function: NguynVNhtThnh22200145Button
+        function NguynVNhtThnh22200145ButtonPushed(app, event)
+               app.NguynVNhtThnh_22200145Panel.Visible = 'on'; % Hiển thị Panel của Thành 
+               app.NguynThV_22200186Panel.Visible = 'off'; % Hiển thị Panel của Vỹ
+                app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
+                app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+                app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+        end
+
+        % Button pushed function: XButton_3
+        function XButton_3Pushed(app, event)
+                        app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
+        end
+
+        % Image clicked function: TamImage
+        function TamImageClicked(app, event)
+               app.LngTm_22200140Panel.Visible = 'on'; % Hiển thị Panel của Tâm
+               app.NguynThV_22200186Panel.Visible = 'off'; % Hiển thị Panel của Vỹ
+                app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
+                app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
+                app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+        end
+
+        % Button pushed function: LngTm22200140Button
+        function LngTm22200140ButtonPushed(app, event)
+            app.LngTm_22200140Panel.Visible = 'on'; % Hiển thị Panel của Tâm
+            app.NguynThV_22200186Panel.Visible = 'off'; % Hiển thị Panel của Vỹ
+            app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
+            app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
+            app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+        end
+
+        % Button pushed function: XButton_4
+        function XButton_4Pushed(app, event)
+            app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+        end
+
+        % Image clicked function: TienImage
+        function TienImageClicked(app, event)
+            app.VThnhTin_22200162Panel.Visible = 'on'; % Hiển thị Panel của Tiến
+            app.NguynThV_22200186Panel.Visible = 'off'; % Hiển thị Panel của Vỹ
+            app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
+            app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
+            app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+        end
+
+        % Button pushed function: VThnhTin22200162Button
+        function VThnhTin22200162ButtonPushed(app, event)
+            app.VThnhTin_22200162Panel.Visible = 'on'; % Hiển thị Panel của Tiến
+            app.NguynThV_22200186Panel.Visible = 'off'; % Hiển thị Panel của Vỹ
+            app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
+            app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
+            app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+        end
+
+        % Button pushed function: XButton_5
+        function XButton_5Pushed(app, event)
+            app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+        end
+
+        % Button pushed function: Button_2
+        function Button_2Pushed(app, event)
+            url = 'https://github.com/vynt2401/baiTapLon_THPPT';
+        web(url, '-browser');  % Mở URL trong trình duyệt
         end
     end
 
@@ -936,66 +918,6 @@ end
             app.NhpkhongphnlyngimaEditFieldLabel.HorizontalAlignment = 'center';
             app.NhpkhongphnlyngimaEditFieldLabel.Position = [12 407 165 22];
             app.NhpkhongphnlyngimaEditFieldLabel.Text = 'Nhập khoảng phân ly ngiệm a';
-%<<<<<<< ThanhTien91
-
-            % Create inputSeparationDistance_a
-            app.inputSeparationDistance_a = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.inputSeparationDistance_a.HorizontalAlignment = 'center';
-            app.inputSeparationDistance_a.Position = [184 407 109 22];
-
-            % Create NhpkhongphnlynghimbEditFieldLabel
-            app.NhpkhongphnlynghimbEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.NhpkhongphnlynghimbEditFieldLabel.HorizontalAlignment = 'center';
-            app.NhpkhongphnlynghimbEditFieldLabel.Position = [6 370 171 22];
-            app.NhpkhongphnlynghimbEditFieldLabel.Text = 'Nhập khoảng phân ly nghiệm b';
-
-            % Create inputSeparationDistance_b
-            app.inputSeparationDistance_b = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.inputSeparationDistance_b.HorizontalAlignment = 'center';
-            app.inputSeparationDistance_b.Position = [184 370 109 22];
-
-            % Create NhpsaisEditFieldLabel
-            app.NhpsaisEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.NhpsaisEditFieldLabel.HorizontalAlignment = 'center';
-            app.NhpsaisEditFieldLabel.Position = [108 334 69 22];
-            app.NhpsaisEditFieldLabel.Text = 'Nhập sai số';
-
-            % Create inputAllowableError
-            app.inputAllowableError = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.inputAllowableError.HorizontalAlignment = 'center';
-            app.inputAllowableError.Position = [184 334 109 22];
-
-            % Create SlnlpcaphngphptrnlLabel
-            app.SlnlpcaphngphptrnlLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.SlnlpcaphngphptrnlLabel.HorizontalAlignment = 'center';
-            app.SlnlpcaphngphptrnlLabel.Position = [417 111 308 19];
-            app.SlnlpcaphngphptrnlLabel.Text = 'Số lần lặp của phương pháp ở trên là';
-
-            % Create resultLoop
-            app.resultLoop = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.resultLoop.ValueChangedFcn = createCallbackFcn(app, @resultLoopValueChanged, true);
-            app.resultLoop.HorizontalAlignment = 'center';
-            app.resultLoop.Position = [724 110 100 22];
-
-            % Create NghimcaphngphptrnlLabel
-            app.NghimcaphngphptrnlLabel = uilabel(app.Tim_Nghiem_Tab);
-            app.NghimcaphngphptrnlLabel.HorizontalAlignment = 'right';
-            app.NghimcaphngphptrnlLabel.Position = [27 111 198 22];
-            app.NghimcaphngphptrnlLabel.Text = 'Nghiệm của phương pháp  ở trên là';
-
-            % Create resultMethod
-            app.resultMethod = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
-            app.resultMethod.HorizontalAlignment = 'center';
-            app.resultMethod.Position = [240 111 100 22];
-
-            % Create UIAxes
-            app.UIAxes = uiaxes(app.Tim_Nghiem_Tab);
-            title(app.UIAxes, 'Đồ thị ')
-            xlabel(app.UIAxes, 'X')
-            ylabel(app.UIAxes, 'Y')
-            zlabel(app.UIAxes, 'Z')
-            app.UIAxes.Position = [339 157 442 302];
-%=======
 
             % Create inputSeparationDistance_a
             app.inputSeparationDistance_a = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
@@ -1045,7 +967,6 @@ end
             app.resultMethod = uieditfield(app.Tim_Nghiem_Tab, 'numeric');
             app.resultMethod.HorizontalAlignment = 'center';
             app.resultMethod.Position = [240 111 100 22];
-%>>>>>>> main
 
             % Create Noi_Suy_Tab
             app.Noi_Suy_Tab = uitab(app.TabGroup);
@@ -1145,83 +1066,6 @@ end
             % Create Hoi_Quy_Tab
             app.Hoi_Quy_Tab = uitab(app.TabGroup);
             app.Hoi_Quy_Tab.Title = 'Hồi Quy';
-
-            % Create Button
-            app.Button = uibutton(app.Hoi_Quy_Tab, 'push');
-            app.Button.ButtonPushedFcn = createCallbackFcn(app, @ButtonPushed, true);
-            app.Button.Position = [384 26 100 22];
-
-            % Create NhpdliuxEditFieldLabel
-            app.NhpdliuxEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
-            app.NhpdliuxEditFieldLabel.HorizontalAlignment = 'right';
-            app.NhpdliuxEditFieldLabel.Position = [41 415 83 22];
-            app.NhpdliuxEditFieldLabel.Text = 'Nhập dữ liệu x';
-
-            % Create EditFieldX
-            app.EditFieldX = uieditfield(app.Hoi_Quy_Tab, 'numeric');
-            app.EditFieldX.Position = [139 415 100 22];
-
-            % Create NhpdliuyEditFieldLabel
-            app.NhpdliuyEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
-            app.NhpdliuyEditFieldLabel.HorizontalAlignment = 'right';
-            app.NhpdliuyEditFieldLabel.Position = [41 355 83 22];
-            app.NhpdliuyEditFieldLabel.Text = 'Nhập dữ liệu y';
-
-            % Create EditFieldY
-            app.EditFieldY = uieditfield(app.Hoi_Quy_Tab, 'numeric');
-            app.EditFieldY.Position = [139 355 100 22];
-
-            % Create NhpgitrcndonEditFieldLabel
-            app.NhpgitrcndonEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
-            app.NhpgitrcndonEditFieldLabel.HorizontalAlignment = 'right';
-            app.NhpgitrcndonEditFieldLabel.Position = [41 174 138 22];
-            app.NhpgitrcndonEditFieldLabel.Text = 'Nhập giá trị cần dự đoán';
-
-            % Create EditFieldNhapgiatridudoan
-            app.EditFieldNhapgiatridudoan = uieditfield(app.Hoi_Quy_Tab, 'numeric');
-            app.EditFieldNhapgiatridudoan.Position = [194 174 100 22];
-
-            % Create KtqudonEditFieldLabel
-            app.KtqudonEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
-            app.KtqudonEditFieldLabel.HorizontalAlignment = 'right';
-            app.KtqudonEditFieldLabel.Position = [41 109 95 22];
-            app.KtqudonEditFieldLabel.Text = 'Kết quả dự đoán';
-
-            % Create EditFieldKetquadudoan
-            app.EditFieldKetquadudoan = uieditfield(app.Hoi_Quy_Tab, 'numeric');
-            app.EditFieldKetquadudoan.Position = [151 109 100 22];
-
-            % Create KtquchngtrnhhiquyEditFieldLabel
-            app.KtquchngtrnhhiquyEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
-            app.KtquchngtrnhhiquyEditFieldLabel.HorizontalAlignment = 'right';
-            app.KtquchngtrnhhiquyEditFieldLabel.Position = [41 243 161 22];
-            app.KtquchngtrnhhiquyEditFieldLabel.Text = 'Kết quả chương trình hồi quy';
-
-            % Create EditFieldKetquachuongtrinh
-            app.EditFieldKetquachuongtrinh = uieditfield(app.Hoi_Quy_Tab, 'text');
-            app.EditFieldKetquachuongtrinh.Position = [217 243 100 22];
-
-            % Create PhngphpDropDownLabel
-            app.PhngphpDropDownLabel = uilabel(app.Hoi_Quy_Tab);
-            app.PhngphpDropDownLabel.HorizontalAlignment = 'right';
-            app.PhngphpDropDownLabel.Position = [41 297 79 22];
-            app.PhngphpDropDownLabel.Text = 'Phương pháp';
-
-            % Create PhngphpDropDown
-            app.PhngphpDropDown = uidropdown(app.Hoi_Quy_Tab);
-            app.PhngphpDropDown.Items = {'Tiếp tuyến', 'Hàm mũ', 'Logarit', 'Option 4'};
-            app.PhngphpDropDown.ValueChangedFcn = createCallbackFcn(app, @ButtonPushed, true);
-            app.PhngphpDropDown.Position = [135 297 100 22];
-            app.PhngphpDropDown.Value = 'Hàm mũ';
-
-            % Create UIAxes2
-            app.UIAxes2 = uiaxes(app.Hoi_Quy_Tab);
-            title(app.UIAxes2, 'Đồ thị mô hình hồi quy')
-            xlabel(app.UIAxes2, 'X')
-            ylabel(app.UIAxes2, 'Y')
-            zlabel(app.UIAxes2, 'Z')
-            app.UIAxes2.PlotBoxAspectRatio = [1.66095890410959 1 1];
-            app.UIAxes2.Position = [363 174 436 289];
 
             % Create Dao_Ham_Tab
             app.Dao_Ham_Tab = uitab(app.TabGroup);
@@ -1442,10 +1286,382 @@ end
             app.Introduce_Tab = uitab(app.TabGroup);
             app.Introduce_Tab.Title = 'Giới Thiệu Nhóm';
 
+            % Create Image
+            app.Image = uiimage(app.Introduce_Tab);
+            app.Image.ScaleMethod = 'fill';
+            app.Image.Position = [0 152 850 356];
+            app.Image.ImageSource = fullfile(pathToMLAPP, 'Pics', 'Team5.png');
+
             % Create AVy
             app.AVy = uiimage(app.Introduce_Tab);
-            app.AVy.Position = [246 2 234 213];
-            app.AVy.ImageSource = fullfile(pathToMLAPP, 'NTV.png');
+            app.AVy.ImageClickedFcn = createCallbackFcn(app, @AVyImageClicked, true);
+            app.AVy.Position = [-38 14 234 213];
+            app.AVy.ImageSource = fullfile(pathToMLAPP, 'Pics', 'NTV.png');
+
+            % Create ThuanImage
+            app.ThuanImage = uiimage(app.Introduce_Tab);
+            app.ThuanImage.ImageClickedFcn = createCallbackFcn(app, @ThuanImageClicked, true);
+            app.ThuanImage.Position = [145 23 188 204];
+            app.ThuanImage.ImageSource = fullfile(pathToMLAPP, 'Pics', 'NDT.png');
+
+            % Create ThanhImage
+            app.ThanhImage = uiimage(app.Introduce_Tab);
+            app.ThanhImage.ImageClickedFcn = createCallbackFcn(app, @ThanhImageClicked, true);
+            app.ThanhImage.Position = [289 63 240 160];
+            app.ThanhImage.ImageSource = fullfile(pathToMLAPP, 'Pics', 'NTT.png');
+
+            % Create TamImage
+            app.TamImage = uiimage(app.Introduce_Tab);
+            app.TamImage.ImageClickedFcn = createCallbackFcn(app, @TamImageClicked, true);
+            app.TamImage.Position = [502 58 161 161];
+            app.TamImage.ImageSource = fullfile(pathToMLAPP, 'Pics', 'Tam.png');
+
+            % Create TienImage
+            app.TienImage = uiimage(app.Introduce_Tab);
+            app.TienImage.ImageClickedFcn = createCallbackFcn(app, @TienImageClicked, true);
+            app.TienImage.Position = [672 56 165 165];
+            app.TienImage.ImageSource = fullfile(pathToMLAPP, 'Pics', 'Tien.png');
+
+            % Create NguynThV22200186Button
+            app.NguynThV22200186Button = uibutton(app.Introduce_Tab, 'push');
+            app.NguynThV22200186Button.ButtonPushedFcn = createCallbackFcn(app, @NguynThV22200186ButtonPushed, true);
+            app.NguynThV22200186Button.FontName = 'Times New Roman';
+            app.NguynThV22200186Button.FontSize = 15;
+            app.NguynThV22200186Button.FontWeight = 'bold';
+            app.NguynThV22200186Button.Position = [21 13 115 44];
+            app.NguynThV22200186Button.Text = {'Nguyễn Thế Vỹ'; '22200186'};
+
+            % Create NguyncThun22200158Button
+            app.NguyncThun22200158Button = uibutton(app.Introduce_Tab, 'push');
+            app.NguyncThun22200158Button.ButtonPushedFcn = createCallbackFcn(app, @NguyncThun22200158ButtonPushed, true);
+            app.NguyncThun22200158Button.FontName = 'Times New Roman';
+            app.NguyncThun22200158Button.FontSize = 15;
+            app.NguyncThun22200158Button.FontWeight = 'bold';
+            app.NguyncThun22200158Button.Position = [161 13 141 44];
+            app.NguyncThun22200158Button.Text = {'Nguyễn Đức Thuận'; '22200158'};
+
+            % Create NguynVNhtThnh22200145Button
+            app.NguynVNhtThnh22200145Button = uibutton(app.Introduce_Tab, 'push');
+            app.NguynVNhtThnh22200145Button.ButtonPushedFcn = createCallbackFcn(app, @NguynVNhtThnh22200145ButtonPushed, true);
+            app.NguynVNhtThnh22200145Button.FontName = 'Times New Roman';
+            app.NguynVNhtThnh22200145Button.FontSize = 15;
+            app.NguynVNhtThnh22200145Button.FontWeight = 'bold';
+            app.NguynVNhtThnh22200145Button.Position = [325 13 168 44];
+            app.NguynVNhtThnh22200145Button.Text = {'Nguyễn Vũ Nhật Thành'; '22200145'};
+
+            % Create LngTm22200140Button
+            app.LngTm22200140Button = uibutton(app.Introduce_Tab, 'push');
+            app.LngTm22200140Button.ButtonPushedFcn = createCallbackFcn(app, @LngTm22200140ButtonPushed, true);
+            app.LngTm22200140Button.FontName = 'Times New Roman';
+            app.LngTm22200140Button.FontSize = 15;
+            app.LngTm22200140Button.FontWeight = 'bold';
+            app.LngTm22200140Button.Position = [533 13 104 44];
+            app.LngTm22200140Button.Text = {'Lê Đăng Tâm'; '22200140'};
+
+            % Create VThnhTin22200162Button
+            app.VThnhTin22200162Button = uibutton(app.Introduce_Tab, 'push');
+            app.VThnhTin22200162Button.ButtonPushedFcn = createCallbackFcn(app, @VThnhTin22200162ButtonPushed, true);
+            app.VThnhTin22200162Button.FontName = 'Times New Roman';
+            app.VThnhTin22200162Button.FontSize = 15;
+            app.VThnhTin22200162Button.FontWeight = 'bold';
+            app.VThnhTin22200162Button.Position = [699 13 112 44];
+            app.VThnhTin22200162Button.Text = {'Võ Thành Tiến'; '22200162'};
+
+            % Create GIITHIUNHMLabel
+            app.GIITHIUNHMLabel = uilabel(app.Introduce_Tab);
+            app.GIITHIUNHMLabel.HorizontalAlignment = 'center';
+            app.GIITHIUNHMLabel.FontName = 'Times New Roman';
+            app.GIITHIUNHMLabel.FontSize = 50;
+            app.GIITHIUNHMLabel.FontWeight = 'bold';
+            app.GIITHIUNHMLabel.FontColor = [1 1 1];
+            app.GIITHIUNHMLabel.Position = [133 269 584 123];
+            app.GIITHIUNHMLabel.Text = {'GIỚI THIỆU NHÓM'; '----------------------------------'};
+
+            % Create Label_4
+            app.Label_4 = uilabel(app.Introduce_Tab);
+            app.Label_4.FontName = 'Times New Roman';
+            app.Label_4.FontSize = 50;
+            app.Label_4.FontColor = [1 1 1];
+            app.Label_4.Position = [296 252 258 67];
+            app.Label_4.Text = '---------------';
+
+            % Create NguynThV_22200186Panel
+            app.NguynThV_22200186Panel = uipanel(app.Introduce_Tab);
+            app.NguynThV_22200186Panel.ForegroundColor = [0 0 1];
+            app.NguynThV_22200186Panel.Title = 'Nguyễn Thế Vỹ_22200186';
+            app.NguynThV_22200186Panel.Visible = 'off';
+            app.NguynThV_22200186Panel.BackgroundColor = [1 1 1];
+            app.NguynThV_22200186Panel.ButtonDownFcn = createCallbackFcn(app, @NguynThV_22200186PanelButtonDown, true);
+            app.NguynThV_22200186Panel.FontName = 'Times New Roman';
+            app.NguynThV_22200186Panel.FontAngle = 'italic';
+            app.NguynThV_22200186Panel.FontWeight = 'bold';
+            app.NguynThV_22200186Panel.FontSize = 20;
+            app.NguynThV_22200186Panel.Position = [195 234 462 243];
+
+            % Create XButton
+            app.XButton = uibutton(app.NguynThV_22200186Panel, 'push');
+            app.XButton.ButtonPushedFcn = createCallbackFcn(app, @XButtonPushed, true);
+            app.XButton.BackgroundColor = [1 0 0];
+            app.XButton.FontName = 'Calibri Light';
+            app.XButton.FontSize = 15;
+            app.XButton.FontWeight = 'bold';
+            app.XButton.FontColor = [1 0 0];
+            app.XButton.Position = [425 215 33 28];
+            app.XButton.Text = 'X';
+
+            % Create CngvicLabel
+            app.CngvicLabel = uilabel(app.NguynThV_22200186Panel);
+            app.CngvicLabel.FontName = 'Times New Roman';
+            app.CngvicLabel.FontSize = 20;
+            app.CngvicLabel.FontWeight = 'bold';
+            app.CngvicLabel.Position = [11 172 96 26];
+            app.CngvicLabel.Text = 'Công việc:';
+
+            % Create NghincuvthitkTabNghimTabNiSuyLabel
+            app.NghincuvthitkTabNghimTabNiSuyLabel = uilabel(app.NguynThV_22200186Panel);
+            app.NghincuvthitkTabNghimTabNiSuyLabel.FontName = 'Times New Roman';
+            app.NghincuvthitkTabNghimTabNiSuyLabel.FontSize = 16;
+            app.NghincuvthitkTabNghimTabNiSuyLabel.Position = [82 138 336 22];
+            app.NghincuvthitkTabNghimTabNiSuyLabel.Text = 'Nghiên cứu và thiết kế Tab Nghiệm + Tab Nội Suy';
+
+            % Create imtnhgiLabel
+            app.imtnhgiLabel = uilabel(app.NguynThV_22200186Panel);
+            app.imtnhgiLabel.FontName = 'Times New Roman';
+            app.imtnhgiLabel.FontSize = 20;
+            app.imtnhgiLabel.FontWeight = 'bold';
+            app.imtnhgiLabel.Position = [11 98 160 26];
+            app.imtnhgiLabel.Text = 'Điểm tự đánh giá:';
+
+            % Create Label_5
+            app.Label_5 = uilabel(app.NguynThV_22200186Panel);
+            app.Label_5.FontName = 'Times New Roman';
+            app.Label_5.FontSize = 16;
+            app.Label_5.Position = [79 65 25 22];
+            app.Label_5.Text = '.....';
+
+            % Create NguyncThun_22200158Panel
+            app.NguyncThun_22200158Panel = uipanel(app.Introduce_Tab);
+            app.NguyncThun_22200158Panel.ForegroundColor = [0 0 1];
+            app.NguyncThun_22200158Panel.Title = 'Nguyễn Đức Thuận_22200158';
+            app.NguyncThun_22200158Panel.Visible = 'off';
+            app.NguyncThun_22200158Panel.FontName = 'Times New Roman';
+            app.NguyncThun_22200158Panel.FontAngle = 'italic';
+            app.NguyncThun_22200158Panel.FontWeight = 'bold';
+            app.NguyncThun_22200158Panel.FontSize = 20;
+            app.NguyncThun_22200158Panel.Position = [194 234 462 243];
+
+            % Create XButton_2
+            app.XButton_2 = uibutton(app.NguyncThun_22200158Panel, 'push');
+            app.XButton_2.ButtonPushedFcn = createCallbackFcn(app, @XButton_2Pushed, true);
+            app.XButton_2.BackgroundColor = [1 0 0];
+            app.XButton_2.FontName = 'Calibri Light';
+            app.XButton_2.FontSize = 15;
+            app.XButton_2.FontWeight = 'bold';
+            app.XButton_2.FontColor = [1 0 0];
+            app.XButton_2.Position = [434 212 27 31];
+            app.XButton_2.Text = 'X';
+
+            % Create imtnhgiLabel_3
+            app.imtnhgiLabel_3 = uilabel(app.NguyncThun_22200158Panel);
+            app.imtnhgiLabel_3.FontName = 'Times New Roman';
+            app.imtnhgiLabel_3.FontSize = 20;
+            app.imtnhgiLabel_3.FontWeight = 'bold';
+            app.imtnhgiLabel_3.Position = [17 95 160 26];
+            app.imtnhgiLabel_3.Text = 'Điểm tự đánh giá:';
+
+            % Create NghincuvthitkTabTchPhnLabel_2
+            app.NghincuvthitkTabTchPhnLabel_2 = uilabel(app.NguyncThun_22200158Panel);
+            app.NghincuvthitkTabTchPhnLabel_2.HorizontalAlignment = 'center';
+            app.NghincuvthitkTabTchPhnLabel_2.FontName = 'Times New Roman';
+            app.NghincuvthitkTabTchPhnLabel_2.FontSize = 16;
+            app.NghincuvthitkTabTchPhnLabel_2.Position = [88 135 250 22];
+            app.NghincuvthitkTabTchPhnLabel_2.Text = 'Nghiên cứu và thiết kế Tab Tích Phân';
+
+            % Create CngvicLabel_3
+            app.CngvicLabel_3 = uilabel(app.NguyncThun_22200158Panel);
+            app.CngvicLabel_3.FontName = 'Times New Roman';
+            app.CngvicLabel_3.FontSize = 20;
+            app.CngvicLabel_3.FontWeight = 'bold';
+            app.CngvicLabel_3.Position = [17 169 96 26];
+            app.CngvicLabel_3.Text = 'Công việc:';
+
+            % Create Label_7
+            app.Label_7 = uilabel(app.NguyncThun_22200158Panel);
+            app.Label_7.FontName = 'Times New Roman';
+            app.Label_7.FontSize = 16;
+            app.Label_7.Position = [85 62 25 22];
+            app.Label_7.Text = '.....';
+
+            % Create NguynVNhtThnh_22200145Panel
+            app.NguynVNhtThnh_22200145Panel = uipanel(app.Introduce_Tab);
+            app.NguynVNhtThnh_22200145Panel.ForegroundColor = [0 0 1];
+            app.NguynVNhtThnh_22200145Panel.Title = 'Nguyễn Vũ Nhật Thành_22200145';
+            app.NguynVNhtThnh_22200145Panel.Visible = 'off';
+            app.NguynVNhtThnh_22200145Panel.FontName = 'Times New Roman';
+            app.NguynVNhtThnh_22200145Panel.FontAngle = 'italic';
+            app.NguynVNhtThnh_22200145Panel.FontWeight = 'bold';
+            app.NguynVNhtThnh_22200145Panel.FontSize = 20;
+            app.NguynVNhtThnh_22200145Panel.Position = [194 234 461 243];
+
+            % Create XButton_3
+            app.XButton_3 = uibutton(app.NguynVNhtThnh_22200145Panel, 'push');
+            app.XButton_3.ButtonPushedFcn = createCallbackFcn(app, @XButton_3Pushed, true);
+            app.XButton_3.BackgroundColor = [1 0 0];
+            app.XButton_3.FontName = 'Calibri Light';
+            app.XButton_3.FontSize = 15;
+            app.XButton_3.FontWeight = 'bold';
+            app.XButton_3.FontColor = [1 0 0];
+            app.XButton_3.Position = [433 212 27 31];
+            app.XButton_3.Text = 'X';
+
+            % Create CngvicLabel_2
+            app.CngvicLabel_2 = uilabel(app.NguynVNhtThnh_22200145Panel);
+            app.CngvicLabel_2.FontName = 'Times New Roman';
+            app.CngvicLabel_2.FontSize = 20;
+            app.CngvicLabel_2.FontWeight = 'bold';
+            app.CngvicLabel_2.Position = [6 169 96 26];
+            app.CngvicLabel_2.Text = 'Công việc:';
+
+            % Create NghincuvthitkTabohmLabel
+            app.NghincuvthitkTabohmLabel = uilabel(app.NguynVNhtThnh_22200145Panel);
+            app.NghincuvthitkTabohmLabel.HorizontalAlignment = 'center';
+            app.NghincuvthitkTabohmLabel.FontName = 'Times New Roman';
+            app.NghincuvthitkTabohmLabel.FontSize = 16;
+            app.NghincuvthitkTabohmLabel.Position = [81 135 242 22];
+            app.NghincuvthitkTabohmLabel.Text = 'Nghiên cứu và thiết kế Tab Đạo hàm';
+
+            % Create imtnhgiLabel_2
+            app.imtnhgiLabel_2 = uilabel(app.NguynVNhtThnh_22200145Panel);
+            app.imtnhgiLabel_2.FontName = 'Times New Roman';
+            app.imtnhgiLabel_2.FontSize = 20;
+            app.imtnhgiLabel_2.FontWeight = 'bold';
+            app.imtnhgiLabel_2.Position = [6 95 160 26];
+            app.imtnhgiLabel_2.Text = 'Điểm tự đánh giá:';
+
+            % Create Label_6
+            app.Label_6 = uilabel(app.NguynVNhtThnh_22200145Panel);
+            app.Label_6.FontName = 'Times New Roman';
+            app.Label_6.FontSize = 16;
+            app.Label_6.Position = [74 62 25 22];
+            app.Label_6.Text = '.....';
+
+            % Create LngTm_22200140Panel
+            app.LngTm_22200140Panel = uipanel(app.Introduce_Tab);
+            app.LngTm_22200140Panel.ForegroundColor = [0 0 1];
+            app.LngTm_22200140Panel.Title = 'Lê Đăng Tâm_22200140';
+            app.LngTm_22200140Panel.Visible = 'off';
+            app.LngTm_22200140Panel.FontName = 'Times New Roman';
+            app.LngTm_22200140Panel.FontAngle = 'italic';
+            app.LngTm_22200140Panel.FontWeight = 'bold';
+            app.LngTm_22200140Panel.FontSize = 20;
+            app.LngTm_22200140Panel.Position = [195 234 462 243];
+
+            % Create XButton_4
+            app.XButton_4 = uibutton(app.LngTm_22200140Panel, 'push');
+            app.XButton_4.ButtonPushedFcn = createCallbackFcn(app, @XButton_4Pushed, true);
+            app.XButton_4.BackgroundColor = [1 0 0];
+            app.XButton_4.FontName = 'Calibri Light';
+            app.XButton_4.FontSize = 15;
+            app.XButton_4.FontWeight = 'bold';
+            app.XButton_4.FontColor = [1 0 0];
+            app.XButton_4.Position = [433 211 29 32];
+            app.XButton_4.Text = 'X';
+
+            % Create CngvicLabel_4
+            app.CngvicLabel_4 = uilabel(app.LngTm_22200140Panel);
+            app.CngvicLabel_4.FontName = 'Times New Roman';
+            app.CngvicLabel_4.FontSize = 20;
+            app.CngvicLabel_4.FontWeight = 'bold';
+            app.CngvicLabel_4.Position = [9 170 96 26];
+            app.CngvicLabel_4.Text = 'Công việc:';
+
+            % Create NghincuvthitkTabGiithiunhmTnghpnidungvlmbocoLabel
+            app.NghincuvthitkTabGiithiunhmTnghpnidungvlmbocoLabel = uilabel(app.LngTm_22200140Panel);
+            app.NghincuvthitkTabGiithiunhmTnghpnidungvlmbocoLabel.FontName = 'Times New Roman';
+            app.NghincuvthitkTabGiithiunhmTnghpnidungvlmbocoLabel.FontSize = 16;
+            app.NghincuvthitkTabGiithiunhmTnghpnidungvlmbocoLabel.Position = [60 126 301 39];
+            app.NghincuvthitkTabGiithiunhmTnghpnidungvlmbocoLabel.Text = {'- Nghiên cứu và thiết kế Tab Giới thiệu nhóm'; '- Tổng hợp nội dung và làm báo cáo'};
+
+            % Create imtnhgiLabel_4
+            app.imtnhgiLabel_4 = uilabel(app.LngTm_22200140Panel);
+            app.imtnhgiLabel_4.FontName = 'Times New Roman';
+            app.imtnhgiLabel_4.FontSize = 20;
+            app.imtnhgiLabel_4.FontWeight = 'bold';
+            app.imtnhgiLabel_4.Position = [9 96 160 26];
+            app.imtnhgiLabel_4.Text = 'Điểm tự đánh giá:';
+
+            % Create Label_8
+            app.Label_8 = uilabel(app.LngTm_22200140Panel);
+            app.Label_8.HorizontalAlignment = 'center';
+            app.Label_8.FontName = 'Times New Roman';
+            app.Label_8.FontSize = 16;
+            app.Label_8.FontWeight = 'bold';
+            app.Label_8.FontColor = [1 0 0];
+            app.Label_8.Position = [200 55 25 22];
+            app.Label_8.Text = '7';
+
+            % Create Button_2
+            app.Button_2 = uibutton(app.Introduce_Tab, 'push');
+            app.Button_2.ButtonPushedFcn = createCallbackFcn(app, @Button_2Pushed, true);
+            app.Button_2.Icon = fullfile(pathToMLAPP, 'Pics', 'gitpic.png');
+            app.Button_2.IconAlignment = 'center';
+            app.Button_2.Position = [771 436 53 58];
+            app.Button_2.Text = '';
+
+            % Create VThnhTin_22200162Panel
+            app.VThnhTin_22200162Panel = uipanel(app.Introduce_Tab);
+            app.VThnhTin_22200162Panel.ForegroundColor = [0 0 1];
+            app.VThnhTin_22200162Panel.Title = 'Võ Thành Tiến_22200162';
+            app.VThnhTin_22200162Panel.Visible = 'off';
+            app.VThnhTin_22200162Panel.FontName = 'Times New Roman';
+            app.VThnhTin_22200162Panel.FontAngle = 'italic';
+            app.VThnhTin_22200162Panel.FontWeight = 'bold';
+            app.VThnhTin_22200162Panel.FontSize = 20;
+            app.VThnhTin_22200162Panel.Position = [195 234 462 243];
+
+            % Create XButton_5
+            app.XButton_5 = uibutton(app.VThnhTin_22200162Panel, 'push');
+            app.XButton_5.ButtonPushedFcn = createCallbackFcn(app, @XButton_5Pushed, true);
+            app.XButton_5.BackgroundColor = [1 0 0];
+            app.XButton_5.FontName = 'Calibri Light';
+            app.XButton_5.FontSize = 15;
+            app.XButton_5.FontWeight = 'bold';
+            app.XButton_5.FontColor = [1 0 0];
+            app.XButton_5.Position = [433 212 30 31];
+            app.XButton_5.Text = 'X';
+
+            % Create CngvicLabel_5
+            app.CngvicLabel_5 = uilabel(app.VThnhTin_22200162Panel);
+            app.CngvicLabel_5.FontName = 'Times New Roman';
+            app.CngvicLabel_5.FontSize = 20;
+            app.CngvicLabel_5.FontWeight = 'bold';
+            app.CngvicLabel_5.Position = [30 177 96 26];
+            app.CngvicLabel_5.Text = 'Công việc:';
+
+            % Create NghincuvthitkTabHiQuyLabel
+            app.NghincuvthitkTabHiQuyLabel = uilabel(app.VThnhTin_22200162Panel);
+            app.NghincuvthitkTabHiQuyLabel.HorizontalAlignment = 'center';
+            app.NghincuvthitkTabHiQuyLabel.FontName = 'Times New Roman';
+            app.NghincuvthitkTabHiQuyLabel.FontSize = 16;
+            app.NghincuvthitkTabHiQuyLabel.Position = [106 143 240 22];
+            app.NghincuvthitkTabHiQuyLabel.Text = 'Nghiên cứu và thiết kế Tab Hồi Quy';
+
+            % Create imtnhgiLabel_5
+            app.imtnhgiLabel_5 = uilabel(app.VThnhTin_22200162Panel);
+            app.imtnhgiLabel_5.FontName = 'Times New Roman';
+            app.imtnhgiLabel_5.FontSize = 20;
+            app.imtnhgiLabel_5.FontWeight = 'bold';
+            app.imtnhgiLabel_5.Position = [30 103 160 26];
+            app.imtnhgiLabel_5.Text = 'Điểm tự đánh giá:';
+
+            % Create Label_9
+            app.Label_9 = uilabel(app.VThnhTin_22200162Panel);
+            app.Label_9.FontName = 'Times New Roman';
+            app.Label_9.FontSize = 20;
+            app.Label_9.FontWeight = 'bold';
+            app.Label_9.FontColor = [1 0 0];
+            app.Label_9.Position = [200 70 30 26];
+            app.Label_9.Text = '.....';
 
             % Show the figure after all components are created
             app.UIFigure.Visible = 'on';
