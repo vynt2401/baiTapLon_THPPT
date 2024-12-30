@@ -5,136 +5,8 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         UIFigure                       matlab.ui.Figure
         TabGroup                       matlab.ui.container.TabGroup
         Tim_Nghiem_Tab                 matlab.ui.container.Tab
-
-        NhpphngtrnhEditFieldLabel      matlab.ui.control.Label
-        inputEquation                  matlab.ui.control.EditField
-        ChnphngphptmLabel              matlab.ui.control.Label
-        choseOption                    matlab.ui.control.DropDown
-        caculateEvent                  matlab.ui.control.Button
-        NhpkhongphnlyngimaEditFieldLabel  matlab.ui.control.Label
-        inputSeparationDistance_a      matlab.ui.control.NumericEditField
-        NhpkhongphnlynghimbEditFieldLabel  matlab.ui.control.Label
-        inputSeparationDistance_b      matlab.ui.control.NumericEditField
-        NhpsaisEditFieldLabel          matlab.ui.control.Label
-        inputAllowableError            matlab.ui.control.NumericEditField
-        SlnlpcaphngphptrnlLabel        matlab.ui.control.Label
-        resultLoop                     matlab.ui.control.NumericEditField
-        NghimcaphngphptrnlLabel        matlab.ui.control.Label
-        resultMethod                   matlab.ui.control.NumericEditField
-        NhphmlpEditFieldLabel          matlab.ui.control.Label
         inputIterativeFunction         matlab.ui.control.EditField
-        UIAxes                         matlab.ui.control.UIAxes
-        Noi_Suy_Tab                    matlab.ui.container.Tab
-        PhngphpnisuyDropDownLabel      matlab.ui.control.Label
-        choseOptionInterpolation       matlab.ui.control.DropDown
-        KtqunisuytrnlEditFieldLabel    matlab.ui.control.Label
-        restultInterpolation           matlab.ui.control.NumericEditField
-        Button                         matlab.ui.control.Button
-        NhpgitrxEditFieldLabel         matlab.ui.control.Label
-        InputArangeX                   matlab.ui.control.EditField
-        NhpgitryEditFieldLabel         matlab.ui.control.Label
-        InputArangeY                   matlab.ui.control.EditField
-        NhpgitrcnnisuyLabel            matlab.ui.control.Label
-        InputValueToInterpolated       matlab.ui.control.EditField
-        KtquathcnisuycaphngphptrnlEditFieldLabel  matlab.ui.control.Label
-        resultPolynomial               matlab.ui.control.EditField
-        UIAxesInterpolation            matlab.ui.control.UIAxes
-        Hoi_Quy_Tab                    matlab.ui.container.Tab
-        VtnhiuvtnhtonktquButton        matlab.ui.control.Button
-        KtqudonEditFieldLabel          matlab.ui.control.Label
-        EditFieldKetquadudoan          matlab.ui.control.NumericEditField
-        KtquchngtrnhhiquyEditFieldLabel  matlab.ui.control.Label
-        EditFieldKetquachuongtrinh     matlab.ui.control.EditField
-        PhngphpDropDownLabel           matlab.ui.control.Label
-        PhngphpDropDown                matlab.ui.control.DropDown
-        NhpdliuxEditFieldLabel_3       matlab.ui.control.Label
-        EditFieldX                     matlab.ui.control.EditField
-        NhpdliuyEditFieldLabel_3       matlab.ui.control.Label
-        EditFieldY                     matlab.ui.control.EditField
-        NhpgitrcndonEditFieldLabel     matlab.ui.control.Label
-        EditFieldNhapgiatridudoan      matlab.ui.control.EditField
-        UIAxes2                        matlab.ui.control.UIAxes
-        Dao_Ham_Tab                    matlab.ui.container.Tab
-        KetQua                         matlab.ui.control.Button
-        NhpbchEditFieldLabel           matlab.ui.control.Label
-        NhapBuoch                      matlab.ui.control.NumericEditField
-        NhpgitrcntnhohmEditFieldLabel  matlab.ui.control.Label
-        GiaTriCanTinhDaoHam            matlab.ui.control.NumericEditField
-        NhphmsEditFieldLabel           matlab.ui.control.Label
-        NhapHamSo                      matlab.ui.control.EditField
-        NhpdliuxEditFieldLabel         matlab.ui.control.Label
-        NhapDuLieux                    matlab.ui.control.EditField
-        NhpdliuyEditFieldLabel         matlab.ui.control.Label
-        NhapDuLieuy                    matlab.ui.control.EditField
-        ChnsaisOhhocOh2DropDownLabel   matlab.ui.control.Label
-        ChonSaiSo                      matlab.ui.control.DropDown
-        PhngphpohmDropDownLabel        matlab.ui.control.Label
-        PhuongPhapDaoHam               matlab.ui.control.DropDown
-        Tich_Phan_Tab                  matlab.ui.container.Tab
-        HocLabel                       matlab.ui.control.Label
-        NhpcnLabel                     matlab.ui.control.Label
-        Label                          matlab.ui.control.Label
-        Label_2                        matlab.ui.control.Label
-        Label_3                        matlab.ui.control.Label
-        KtquButton                     matlab.ui.control.Button
-        EditField2                     matlab.ui.control.NumericEditField
-        EditField2_2                   matlab.ui.control.NumericEditField
-        NhpdliuxEditFieldLabel_2       matlab.ui.control.Label
-        NhpdliuxEditField              matlab.ui.control.EditField
-        NhpdliuyEditFieldLabel_2       matlab.ui.control.Label
-        NhpdliuyEditField              matlab.ui.control.EditField
-        NhpNEditFieldLabel             matlab.ui.control.Label
-        NhpNEditField                  matlab.ui.control.NumericEditField
-        NhphmsEditFieldLabel_2         matlab.ui.control.Label
-        NhphmsEditField                matlab.ui.control.EditField
-        ChnPhngPhpDropDownLabel        matlab.ui.control.Label
-        ChnPhngPhpDropDown             matlab.ui.control.DropDown
-        Introduce_Tab                  matlab.ui.container.Tab
-        Image                          matlab.ui.control.Image
-        AVy                            matlab.ui.control.Image
-        ThuanImage                     matlab.ui.control.Image
-        ThanhImage                     matlab.ui.control.Image
-        TamImage                       matlab.ui.control.Image
-        TienImage                      matlab.ui.control.Image
-        NguynThV22200186Button         matlab.ui.control.Button
-        NguyncThun22200158Button       matlab.ui.control.Button
-        NguynVNhtThnh22200145Button    matlab.ui.control.Button
-        LngTm22200140Button            matlab.ui.control.Button
-        VThnhTin22200162Button         matlab.ui.control.Button
-        GIITHIUNHMLabel                matlab.ui.control.Label
-        Label_4                        matlab.ui.control.Label
-        Button_2                       matlab.ui.control.Button
-        NguynThV_22200186Panel         matlab.ui.container.Panel
-        XButton                        matlab.ui.control.Button
-        CngvicLabel                    matlab.ui.control.Label
-        NghincuvthitkTabNghimTabNiSuyLabel  matlab.ui.control.Label
-        imtnhgiLabel                   matlab.ui.control.Label
-        Label_5                        matlab.ui.control.Label
-        VThnhTin_22200162Panel         matlab.ui.container.Panel
-        XButton_5                      matlab.ui.control.Button
-        CngvicLabel_5                  matlab.ui.control.Label
-        NghincuvthitkTabHiQuyLabel     matlab.ui.control.Label
-        imtnhgiLabel_5                 matlab.ui.control.Label
-        Label_9                        matlab.ui.control.Label
-        NguynVNhtThnh_22200145Panel    matlab.ui.container.Panel
-        XButton_3                      matlab.ui.control.Button
-        CngvicLabel_2                  matlab.ui.control.Label
-        NghincuvthitkTabohmLabel       matlab.ui.control.Label
-        imtnhgiLabel_2                 matlab.ui.control.Label
-        Label_6                        matlab.ui.control.Label
-        NguyncThun_22200158Panel       matlab.ui.container.Panel
-        XButton_2                      matlab.ui.control.Button
-        imtnhgiLabel_3                 matlab.ui.control.Label
-        NghincuvthitkTabTchPhnLabel_2  matlab.ui.control.Label
-        CngvicLabel_3                  matlab.ui.control.Label
-        Label_7                        matlab.ui.control.Label
-        LngTm_22200140Panel            matlab.ui.container.Panel
-        XButton_4                      matlab.ui.control.Button
-        CngvicLabel_4                  matlab.ui.control.Label
-        NghincuvthitkTabGiithiunhmTnghpnidungvlmbocoLabel  matlab.ui.control.Label
-        imtnhgiLabel_4                 matlab.ui.control.Label
-        Label_8                        matlab.ui.control.Label
-
+        NhphmlpEditFieldLabel          matlab.ui.control.Label
         resultMethod                   matlab.ui.control.NumericEditField
         NghimcaphngphptrnlLabel        matlab.ui.control.Label
         resultLoop                     matlab.ui.control.NumericEditField
@@ -179,7 +51,7 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         KtquchngtrnhhiquyEditFieldLabel  matlab.ui.control.Label
         EditFieldKetquadudoan          matlab.ui.control.NumericEditField
         KtqudonEditFieldLabel          matlab.ui.control.Label
-        Button_3                       matlab.ui.control.Button
+        VtnhiuvtnhtonktquButton        matlab.ui.control.Button
         UIAxes2                        matlab.ui.control.UIAxes
         Dao_Ham_Tab                    matlab.ui.container.Tab
         PhuongPhapDaoHam               matlab.ui.control.DropDown
@@ -217,6 +89,9 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         NhpcnLabel                     matlab.ui.control.Label
         HocLabel                       matlab.ui.control.Label
         Introduce_Tab                  matlab.ui.container.Tab
+        LUPanel                        matlab.ui.container.Panel
+        Label_10                       matlab.ui.control.Label
+        XButton_6                      matlab.ui.control.Button
         LngTm_22200140Panel            matlab.ui.container.Panel
         Label_8                        matlab.ui.control.Label
         imtnhgiLabel_4                 matlab.ui.control.Label
@@ -261,7 +136,6 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
         ThuanImage                     matlab.ui.control.Image
         AVy                            matlab.ui.control.Image
         Image                          matlab.ui.control.Image
-
     end
 
     
@@ -372,7 +246,11 @@ classdef baiTapLon_PPT_exported < matlab.apps.AppBase
                 end
             end
         end
-
+        
+        
+        
+        
+        
         function results = NewtonForm(app, xIn, yIn, d, x) % function tính giá trị nội suy = đa thức newton
             % d là kết quả của function tính tỷ hiệu các cấp được khai báo
             % từ trước, results là giá trị trả về để tính các giá trị nội
@@ -878,6 +756,7 @@ end
             app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
             app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
             app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+            app.LUPanel.Visible="off";
         end
 
         % Button pushed function: XButton
@@ -885,10 +764,7 @@ end
             app.NguynThV_22200186Panel.Visible = 'off'; % Tắt Panel của Vỹ
         end
 
-        % Callback function: NguynThV_22200186Panel
-
         % Button down function: NguynThV_22200186Panel
-
         function NguynThV_22200186PanelButtonDown(app, event)
             
         end
@@ -905,6 +781,7 @@ end
             app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
             app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
             app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+            app.LUPanel.Visible="off";
         end
 
         % Image clicked function: ThuanImage
@@ -914,6 +791,7 @@ end
             app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
             app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
             app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+            app.LUPanel.Visible="off";
         end
 
         % Button pushed function: NguyncThun22200158Button
@@ -923,6 +801,7 @@ end
             app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
             app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
             app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+            app.LUPanel.Visible="off";
         
         end
 
@@ -933,6 +812,7 @@ end
             app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
             app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
             app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+            app.LUPanel.Visible="off";
         end
 
         % Button pushed function: NguynVNhtThnh22200145Button
@@ -942,6 +822,7 @@ end
                 app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
                 app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
                 app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+                app.LUPanel.Visible="off";
         end
 
         % Button pushed function: XButton_3
@@ -956,6 +837,7 @@ end
                 app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
                 app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
                 app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+                app.LUPanel.Visible="off";
         end
 
         % Button pushed function: LngTm22200140Button
@@ -965,6 +847,7 @@ end
             app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
             app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
             app.VThnhTin_22200162Panel.Visible = 'off'; % Close Panel của Tiến
+            app.LUPanel.Visible="off";
         end
 
         % Button pushed function: XButton_4
@@ -979,6 +862,7 @@ end
             app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
             app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
             app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+            app.LUPanel.Visible="off";
         end
 
         % Button pushed function: VThnhTin22200162Button
@@ -988,6 +872,7 @@ end
             app.NguyncThun_22200158Panel.Visible = 'off'; % Tắt Panel của Thuận
             app.NguynVNhtThnh_22200145Panel.Visible = 'off'; % Tắt panel của Thành
             app.LngTm_22200140Panel.Visible = 'off'; % Tắt Panel của Tâm
+            app.LUPanel.Visible="off";
         end
 
         % Button pushed function: XButton_5
@@ -1000,12 +885,10 @@ end
             url = 'https://github.com/vynt2401/baiTapLon_THPPT';
         web(url, '-browser');  % Mở URL trong trình duyệt
         end
+
         % Button pushed function: VtnhiuvtnhtonktquButton
         function VtnhiuvtnhtonktquButtonPushed(app, event)
-
-        % Button pushed function: Button_3
-        function Button_3Pushed(app, event)
-   
+      
                    % Lấy giá trị từ các trường EditFields
                 x = str2num(app.EditFieldX.Value);  % Chuyển chuỗi thành mảng số
                 y = str2num(app.EditFieldY.Value);  % Chuyển chuỗi thành mảng số
@@ -1113,6 +996,11 @@ end
        
     
         end
+
+        % Button pushed function: XButton_6
+        function XButton_6Pushed(app, event)
+            app.LUPanel.Visible="off"; %Tắt lưu ý
+        end
     end
 
     % Component initialization
@@ -1121,9 +1009,9 @@ end
         % Create UIFigure and components
         function createComponents(app)
 
-
             % Get the file path for locating images
             pathToMLAPP = fileparts(mfilename('fullpath'));
+
             % Create UIFigure and hide until all components are created
             app.UIFigure = uifigure('Visible', 'off');
             app.UIFigure.Position = [100 100 850 531];
@@ -1136,7 +1024,6 @@ end
             % Create Tim_Nghiem_Tab
             app.Tim_Nghiem_Tab = uitab(app.TabGroup);
             app.Tim_Nghiem_Tab.Title = 'Nghiệm';
-
 
             % Create UIAxes
             app.UIAxes = uiaxes(app.Tim_Nghiem_Tab);
@@ -1154,41 +1041,25 @@ end
 
             % Create inputEquation
             app.inputEquation = uieditfield(app.Tim_Nghiem_Tab, 'text');
-
             app.inputEquation.HorizontalAlignment = 'center';
-
-            app.inputEquation.HorizontalAlignment = 'right';
-
             app.inputEquation.Position = [184 441 109 22];
 
             % Create ChnphngphptmLabel
             app.ChnphngphptmLabel = uilabel(app.Tim_Nghiem_Tab);
             app.ChnphngphptmLabel.HorizontalAlignment = 'center';
-
             app.ChnphngphptmLabel.Position = [40 253 130 22];
-
-            app.ChnphngphptmLabel.Position = [41 297 130 22];
-
             app.ChnphngphptmLabel.Text = 'Chọn phương pháp tìm';
 
             % Create choseOption
             app.choseOption = uidropdown(app.Tim_Nghiem_Tab);
             app.choseOption.Items = {'Chia đôi', 'Lặp', 'Newton(Tiếp tuyến)'};
-
             app.choseOption.Position = [179 253 113 22];
-
-            app.choseOption.Position = [180 297 113 22];
-
             app.choseOption.Value = 'Chia đôi';
 
             % Create caculateEvent
             app.caculateEvent = uibutton(app.Tim_Nghiem_Tab, 'push');
             app.caculateEvent.ButtonPushedFcn = createCallbackFcn(app, @caculateEventButtonPushed, true);
-
             app.caculateEvent.Position = [129 198 139 22];
-
-            app.caculateEvent.Position = [120 222 139 22];
-
             app.caculateEvent.Text = 'Vẽ tín hiệu và tính toán';
 
             % Create NhpkhongphnlyngimaEditFieldLabel
@@ -1246,7 +1117,6 @@ end
             app.resultMethod.HorizontalAlignment = 'center';
             app.resultMethod.Position = [240 111 100 22];
 
-
             % Create NhphmlpEditFieldLabel
             app.NhphmlpEditFieldLabel = uilabel(app.Tim_Nghiem_Tab);
             app.NhphmlpEditFieldLabel.HorizontalAlignment = 'center';
@@ -1258,18 +1128,9 @@ end
             app.inputIterativeFunction.HorizontalAlignment = 'center';
             app.inputIterativeFunction.Position = [184 293 109 22];
 
-            % Create UIAxes
-            app.UIAxes = uiaxes(app.Tim_Nghiem_Tab);
-            title(app.UIAxes, 'Đồ thị ')
-            xlabel(app.UIAxes, 'X')
-            ylabel(app.UIAxes, 'Y')
-            zlabel(app.UIAxes, 'Z')
-            app.UIAxes.Position = [339 157 498 337];
-
             % Create Noi_Suy_Tab
             app.Noi_Suy_Tab = uitab(app.TabGroup);
             app.Noi_Suy_Tab.Title = 'Nội Suy';
-
 
             % Create UIAxesInterpolation
             app.UIAxesInterpolation = uiaxes(app.Noi_Suy_Tab);
@@ -1278,7 +1139,6 @@ end
             ylabel(app.UIAxesInterpolation, 'Y')
             zlabel(app.UIAxesInterpolation, 'Z')
             app.UIAxesInterpolation.Position = [322 152 515 342];
-
 
             % Create PhngphpnisuyDropDownLabel
             app.PhngphpnisuyDropDownLabel = uilabel(app.Noi_Suy_Tab);
@@ -1363,26 +1223,9 @@ end
             app.resultPolynomial.FontName = 'Arial';
             app.resultPolynomial.Position = [297 98 278 22];
 
-
-            % Create UIAxesInterpolation
-            app.UIAxesInterpolation = uiaxes(app.Noi_Suy_Tab);
-            title(app.UIAxesInterpolation, 'Đồ thị')
-            xlabel(app.UIAxesInterpolation, 'X')
-            ylabel(app.UIAxesInterpolation, 'Y')
-            zlabel(app.UIAxesInterpolation, 'Z')
-            app.UIAxesInterpolation.Position = [322 152 515 342];
-
-
             % Create Hoi_Quy_Tab
             app.Hoi_Quy_Tab = uitab(app.TabGroup);
             app.Hoi_Quy_Tab.Title = 'Hồi Quy';
-
-
-            % Create VtnhiuvtnhtonktquButton
-            app.VtnhiuvtnhtonktquButton = uibutton(app.Hoi_Quy_Tab, 'push');
-            app.VtnhiuvtnhtonktquButton.ButtonPushedFcn = createCallbackFcn(app, @VtnhiuvtnhtonktquButtonPushed, true);
-            app.VtnhiuvtnhtonktquButton.Position = [323 26 182 22];
-            app.VtnhiuvtnhtonktquButton.Text = 'Vẽ tín hiệu và tính toán kết quả';
 
             % Create UIAxes2
             app.UIAxes2 = uiaxes(app.Hoi_Quy_Tab);
@@ -1393,11 +1236,11 @@ end
             app.UIAxes2.PlotBoxAspectRatio = [1.66095890410959 1 1];
             app.UIAxes2.Position = [375 175 436 289];
 
-            % Create Button_3
-            app.Button_3 = uibutton(app.Hoi_Quy_Tab, 'push');
-            app.Button_3.ButtonPushedFcn = createCallbackFcn(app, @Button_3Pushed, true);
-            app.Button_3.Position = [364 26 100 22];
-
+            % Create VtnhiuvtnhtonktquButton
+            app.VtnhiuvtnhtonktquButton = uibutton(app.Hoi_Quy_Tab, 'push');
+            app.VtnhiuvtnhtonktquButton.ButtonPushedFcn = createCallbackFcn(app, @VtnhiuvtnhtonktquButtonPushed, true);
+            app.VtnhiuvtnhtonktquButton.Position = [323 26 182 22];
+            app.VtnhiuvtnhtonktquButton.Text = 'Vẽ tín hiệu và tính toán kết quả';
 
             % Create KtqudonEditFieldLabel
             app.KtqudonEditFieldLabel = uilabel(app.Hoi_Quy_Tab);
@@ -1427,11 +1270,7 @@ end
 
             % Create PhngphpDropDown
             app.PhngphpDropDown = uidropdown(app.Hoi_Quy_Tab);
-
             app.PhngphpDropDown.Items = {'Tiếp tuyến', 'Hàm mũ', 'Logarit'};
-
-            app.PhngphpDropDown.Items = {'Tiếp tuyến', 'Hàm mũ', 'Logarit', 'Option 4'};
-
             app.PhngphpDropDown.Position = [147 298 100 22];
             app.PhngphpDropDown.Value = 'Hàm mũ';
 
@@ -1464,16 +1303,6 @@ end
             % Create EditFieldNhapgiatridudoan
             app.EditFieldNhapgiatridudoan = uieditfield(app.Hoi_Quy_Tab, 'text');
             app.EditFieldNhapgiatridudoan.Position = [206 232 100 22];
-
-
-            % Create UIAxes2
-            app.UIAxes2 = uiaxes(app.Hoi_Quy_Tab);
-            title(app.UIAxes2, 'Đồ thị mô hình hồi quy')
-            xlabel(app.UIAxes2, 'X')
-            ylabel(app.UIAxes2, 'Y')
-            zlabel(app.UIAxes2, 'Z')
-            app.UIAxes2.PlotBoxAspectRatio = [1.66095890410959 1 1];
-            app.UIAxes2.Position = [375 175 436 289];
 
             % Create Dao_Ham_Tab
             app.Dao_Ham_Tab = uitab(app.TabGroup);
@@ -1698,61 +1527,37 @@ end
             app.Image = uiimage(app.Introduce_Tab);
             app.Image.ScaleMethod = 'fill';
             app.Image.Position = [0 152 850 356];
-
-            app.Image.ImageSource = 'C:\baiTapLon_THPPT\Pics\Team5.png';
-
             app.Image.ImageSource = fullfile(pathToMLAPP, 'Pics', 'Team5.png');
-
 
             % Create AVy
             app.AVy = uiimage(app.Introduce_Tab);
             app.AVy.ImageClickedFcn = createCallbackFcn(app, @AVyImageClicked, true);
             app.AVy.Position = [-38 14 234 213];
-
-            app.AVy.ImageSource = 'C:\baiTapLon_THPPT\Pics\NTV.png';
-
             app.AVy.ImageSource = fullfile(pathToMLAPP, 'Pics', 'NTV.png');
-
 
             % Create ThuanImage
             app.ThuanImage = uiimage(app.Introduce_Tab);
             app.ThuanImage.ImageClickedFcn = createCallbackFcn(app, @ThuanImageClicked, true);
             app.ThuanImage.Position = [145 23 188 204];
-
-            app.ThuanImage.ImageSource = 'C:\baiTapLon_THPPT\Pics\NDT.png';
-
             app.ThuanImage.ImageSource = fullfile(pathToMLAPP, 'Pics', 'NDT.png');
-
 
             % Create ThanhImage
             app.ThanhImage = uiimage(app.Introduce_Tab);
             app.ThanhImage.ImageClickedFcn = createCallbackFcn(app, @ThanhImageClicked, true);
             app.ThanhImage.Position = [289 63 240 160];
-
-            app.ThanhImage.ImageSource = 'C:\baiTapLon_THPPT\Pics\NTT.png';
-
             app.ThanhImage.ImageSource = fullfile(pathToMLAPP, 'Pics', 'NTT.png');
-
 
             % Create TamImage
             app.TamImage = uiimage(app.Introduce_Tab);
             app.TamImage.ImageClickedFcn = createCallbackFcn(app, @TamImageClicked, true);
             app.TamImage.Position = [502 58 161 161];
-
-            app.TamImage.ImageSource = 'C:\baiTapLon_THPPT\Pics\Tam.png';
-
             app.TamImage.ImageSource = fullfile(pathToMLAPP, 'Pics', 'Tam.png');
-
 
             % Create TienImage
             app.TienImage = uiimage(app.Introduce_Tab);
             app.TienImage.ImageClickedFcn = createCallbackFcn(app, @TienImageClicked, true);
             app.TienImage.Position = [672 56 165 165];
-
-            app.TienImage.ImageSource = 'C:\baiTapLon_THPPT\Pics\Tien.png';
-
             app.TienImage.ImageSource = fullfile(pathToMLAPP, 'Pics', 'Tien.png');
-
 
             % Create NguynThV22200186Button
             app.NguynThV22200186Button = uibutton(app.Introduce_Tab, 'push');
@@ -1820,11 +1625,7 @@ end
             % Create Button_2
             app.Button_2 = uibutton(app.Introduce_Tab, 'push');
             app.Button_2.ButtonPushedFcn = createCallbackFcn(app, @Button_2Pushed, true);
-
-            app.Button_2.Icon = 'C:\baiTapLon_THPPT\Pics\gitpic.png';
-
             app.Button_2.Icon = fullfile(pathToMLAPP, 'Pics', 'gitpic.png');
-
             app.Button_2.IconAlignment = 'center';
             app.Button_2.Position = [771 436 53 58];
             app.Button_2.Text = '';
@@ -1835,9 +1636,7 @@ end
             app.NguynThV_22200186Panel.Title = 'Nguyễn Thế Vỹ_22200186';
             app.NguynThV_22200186Panel.Visible = 'off';
             app.NguynThV_22200186Panel.BackgroundColor = [1 1 1];
-
             app.NguynThV_22200186Panel.ButtonDownFcn = createCallbackFcn(app, @NguynThV_22200186PanelButtonDown, true);
-
             app.NguynThV_22200186Panel.FontName = 'Times New Roman';
             app.NguynThV_22200186Panel.FontAngle = 'italic';
             app.NguynThV_22200186Panel.FontWeight = 'bold';
@@ -2105,6 +1904,34 @@ end
             app.Label_8.FontColor = [1 0 0];
             app.Label_8.Position = [200 48 25 29];
             app.Label_8.Text = '9';
+
+            % Create LUPanel
+            app.LUPanel = uipanel(app.Introduce_Tab);
+            app.LUPanel.ForegroundColor = [1 0 0];
+            app.LUPanel.BorderType = 'none';
+            app.LUPanel.TitlePosition = 'centertop';
+            app.LUPanel.Title = 'LƯU Ý';
+            app.LUPanel.BackgroundColor = [0.0588 1 1];
+            app.LUPanel.FontName = 'Times New Roman';
+            app.LUPanel.FontWeight = 'bold';
+            app.LUPanel.FontSize = 20;
+            app.LUPanel.Position = [87 406 668 82];
+
+            % Create XButton_6
+            app.XButton_6 = uibutton(app.LUPanel, 'push');
+            app.XButton_6.ButtonPushedFcn = createCallbackFcn(app, @XButton_6Pushed, true);
+            app.XButton_6.BackgroundColor = [1 0 0];
+            app.XButton_6.FontSize = 20;
+            app.XButton_6.FontWeight = 'bold';
+            app.XButton_6.FontColor = [1 1 1];
+            app.XButton_6.Position = [638 53 29 29];
+            app.XButton_6.Text = 'X';
+
+            % Create Label_10
+            app.Label_10 = uilabel(app.LUPanel);
+            app.Label_10.FontName = 'Times New Roman';
+            app.Label_10.Position = [7 12 659 22];
+            app.Label_10.Text = 'Nếu bị lỗi hiển thị hình ảnh, hãy chắc chắn rằng bạn đã tải đầy đủ gói đề tài (bao gồm Pics) và sử dụng MATLAB app designer -> Run. ';
 
             % Show the figure after all components are created
             app.UIFigure.Visible = 'on';
