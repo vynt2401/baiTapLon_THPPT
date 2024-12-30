@@ -1,5 +1,5 @@
-classdef baiTapLon_PPT_exported < matlab.apps.AppBase
-
+﻿classdef baiTapLon_PPT_exported < matlab.apps.AppBase
+%
     % Properties that correspond to app components
     properties (Access = public)
         UIFigure                    matlab.ui.Figure
